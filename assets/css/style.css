@@ -1,14 +1,45 @@
+/*START CSS */
 
 
-/*Start Renov eco CSS*/
 
-div.realeco.title {
-    text-align: center;
+/* Start Navbar CSS */
+.navbar{
+    margin-bottom: 0;
+}
+
+.navbar-default{
+    background-color: grey;
+    border: 0;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background-color: transparent;
+    color: #fff;
 }
 
 
-/*End Renov eco CSS*/
+.navbar-inverse .navbar-nav > li > a
+{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
 
+.navbar-right
+{
+    padding: 20px;
+}
+
+.logo
+{
+    width: 250px;
+    padding: 10px 10px;
+}
+/*End Navbar CSS*/
 
 /* section maçonnerie */
 
@@ -38,3 +69,43 @@ h2 {
 }
 
 /* fin section maçonnerie  */
+
+
+/*Start Renov eco CSS*/
+
+div.realeco.title {
+    text-align: center;
+}
+
+
+/*End Renov eco CSS*/
+
+
+
+
+
+
+/* START MEDIA QUERIES */
+
+@media screen and (max-width: 767px){ /* COL-XS */ 
+
+
+}
+
+@media screen and (min-width: 768px) AND (max-width: 991px){ /* COL-SM */ 
+
+
+}
+
+@media screen and (min-width: 992px) AND (max-width: 1199px){ /* COL-MD */
+
+
+}
+
+@media screen and (min-width: 1200px) { /* MEDIA FOR COL-LG */
+
+
+}
+
+/* END MEDIA QUERIES */
+
