@@ -1,6 +1,4 @@
-<?php
-include 'header.php';
-?>
+
 
 
     <nav class="navbar navbar-default">
@@ -32,6 +30,3 @@ include 'header.php';
 
 
 
-<?php
-include "footer.php";
-?>
