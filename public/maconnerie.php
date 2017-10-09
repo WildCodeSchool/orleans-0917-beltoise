@@ -1,5 +1,4 @@
 
-
 <section id="maconnerie">
     <div class="row separationImg">
     </div>
@@ -50,6 +49,3 @@
         </div> <!-- fin carrousel -->
     </div>
 </section>
-
-
-
