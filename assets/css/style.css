@@ -1,3 +1,4 @@
+
 /*START CSS */
 
 
@@ -41,6 +42,34 @@
 }
 /*End Navbar CSS*/
 
+/* START ACCUEIL */
+
+#accueil h2 {
+    text-align: center;
+}
+
+#accueil p {
+    font-size: large;
+}
+
+.logos-certifications {
+    display: flex;
+}
+
+.logos-certifications p+p {
+    padding-left: 20px;
+}
+
+.accueil-button {
+    padding-right: 15px;
+}
+
+.test {
+    height: 100%;
+}
+
+/* END ACCUEIL */
+
 /* section maçonnerie */
 
 .separationImg {
@@ -80,12 +109,8 @@ div.realeco.title {
 
 /*End Renov eco CSS*/
 
-
-
-
-
-
 /* START MEDIA QUERIES */
+
 
 @media screen and (max-width: 767px){ /* COL-XS */ 
 
