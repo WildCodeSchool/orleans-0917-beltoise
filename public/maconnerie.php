@@ -46,6 +46,6 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        </div> <!-- fin carrousel -->
+        </div> <!-- fin carousel -->
     </div>
 </section>
