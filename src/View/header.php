@@ -16,11 +16,11 @@ date_default_timezone_set('UTC');
 
 	<!-- Bootstrap core CSS -->
 	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<!-- Font Awesome -->
-	<link href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="../../public/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<!-- Custom styles for this template -->
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css">
+	<link href="../../public/assets/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
