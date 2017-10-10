@@ -48,7 +48,7 @@
 
     </div>
 
-    <div class="row realeco">
+    <div class="row">
 
         <div class="col-md-3">
             <h3>Realisation 7</h3>

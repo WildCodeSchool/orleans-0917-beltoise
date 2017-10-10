@@ -30,7 +30,7 @@
             <p class="twitter_icon"><a href="#" target="_blank"><img
                             src="http://via.placeholder.com/100x100" alt="Logo Twitter"></a></p>
         </div>
-        <div class="col-md-2 pull-right">
+        <div class="col-md-2 pull-right full-height">
             <div class="accueil-button">
                 <button type="button" class="btn btn-success btn-lg btn-block">Nous contacter</button>
             </div>

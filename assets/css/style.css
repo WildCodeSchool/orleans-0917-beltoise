@@ -1,7 +1,10 @@
 
 /*START CSS */
 
-
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
 
 /* Start Navbar CSS */
 .navbar{
@@ -60,12 +63,8 @@
     padding-left: 20px;
 }
 
-.accueil-button {
-    padding-right: 15px;
-}
-
-.test {
-    height: 100%;
+.full-height {
+    min-height: 100%;
 }
 
 /* END ACCUEIL */
@@ -74,6 +73,7 @@
 
 .separationImg {
     margin-bottom: 60px;  /*  !!!  margin container fluid */
+    margin-left:0;
     width: 100%;
     height: 300px;
     background: url("http://via.placeholder.com/1907x350") no-repeat fixed;
