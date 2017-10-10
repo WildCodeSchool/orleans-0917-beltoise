@@ -1,5 +1,6 @@
 
 <section id="maconnerie">
+    <!-- div pour mettre une image fixed en background -->
     <div class="row separationImg">
     </div>
     <h2>Maçonnerie</h2>
@@ -17,7 +18,7 @@
             </ul>
         </div>
         <!-- carrousel -->
-        <div class="col-md-5 col col-xs-12">
+        <div class="col-md-5 col-xs-12">
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
