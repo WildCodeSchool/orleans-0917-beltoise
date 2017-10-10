@@ -1,14 +1,7 @@
-
-
-
 <section id="accueil">
+    <h2>Beltoise & Fils</h2>
     <div class="row">
-        <div class="col-xs-12 col-md-offset-2 col-md-8">
-            <h2>Beltoise & Fils</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-offset-1 col-md-10">
+        <div class="col-xs-offset-1 col-xs-10">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis congue placerat.
                 Etiam eget augue in libero porttitor volutpat et et ligula. Cras ut pellentesque nisi. Maecenas a
                 eros quam. Suspendisse et arcu elementum, consectetur dui id, aliquet sapien. Nulla sed turpis

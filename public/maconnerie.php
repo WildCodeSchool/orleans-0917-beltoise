@@ -1,4 +1,3 @@
-
 <section id="maconnerie">
     <!-- div pour mettre une image fixed en background -->
     <div class="row separationImg">
