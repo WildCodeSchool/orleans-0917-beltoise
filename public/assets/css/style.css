@@ -1,0 +1,133 @@
+
+/*START CSS */
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/* Start Navbar CSS */
+.navbar{
+    margin-bottom: 0;
+}
+
+.navbar-default{
+    background-color: grey;
+    border: 0;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background-color: transparent;
+    color: #fff;
+}
+
+
+.navbar-inverse .navbar-nav > li > a
+{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.navbar-right
+{
+    padding: 20px;
+}
+
+.logo
+{
+    width: 250px;
+    padding: 10px 10px;
+}
+/*End Navbar CSS*/
+
+/* START ACCUEIL */
+
+#accueil h2 {
+    text-align: center;
+}
+
+#accueil p {
+    font-size: large;
+}
+
+.logos-certifications {
+    display: flex;
+}
+
+.logos-certifications p+p {
+    padding-left: 20px;
+}
+
+.full-height {
+    min-height: 100%;
+}
+
+/* END ACCUEIL */
+
+/* section maçonnerie */
+
+.separationImg {
+    margin-bottom: 60px;  /*  !!!  margin container fluid */
+    margin-left:0;
+    width: 100%;
+    height: 300px;
+    background: url("http://via.placeholder.com/1907x350") no-repeat fixed;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#myCarousel {
+    width: 100%;
+    height: 400px;
+
+}
+
+#myCarousel img {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+}
+
+/* fin section maçonnerie  */
+
+
+/*Start Renov eco CSS*/
+
+
+
+/*End Renov eco CSS*/
+
+/* START MEDIA QUERIES */
+
+
+@media screen and (max-width: 767px){ /* COL-XS */ 
+
+
+}
+
+@media screen and (min-width: 768px) AND (max-width: 991px){ /* COL-SM */ 
+
+
+}
+
+@media screen and (min-width: 992px) AND (max-width: 1199px){ /* COL-MD */
+
+
+}
+
+@media screen and (min-width: 1200px) { /* MEDIA FOR COL-LG */
+
+
+}
+
+/* END MEDIA QUERIES */
+
