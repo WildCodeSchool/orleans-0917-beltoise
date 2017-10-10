@@ -1,11 +1,11 @@
-<?php include 'header.php';?>
+<?php include '../src/View/header.php';?>
 
-<?php include 'navbar.php';?>
+<?php include '../src/View/navbar.php';?>
 
-<?php include 'accueil.php'; ?>
+<?php include '../src/View/accueil.php'; ?>
 
-<?php include 'maconnerie.php'; ?>
+<?php include '../src/View/maconnerie.php'; ?>
 
-<?php include 'realisationeco.php'; ?>
+<?php include '../src/View/realisationeco.php'; ?>
 
-<?php include 'footer.php'; ?>
+<?php include '../src/View/footer.php'; ?>
