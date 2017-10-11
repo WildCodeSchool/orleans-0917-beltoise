@@ -1,0 +1,23 @@
+/* START ACCUEIL */
+
+.accueil h2 {
+    text-align: center;
+}
+
+.accueil p {
+    font-size: large;
+}
+
+.logos-certifications {
+    display: flex;
+}
+
+.logos-certifications p+p {
+    padding-left: 20px;
+}
+
+.full-height {
+    min-height: 100%;
+}
+
+/* END ACCUEIL */
