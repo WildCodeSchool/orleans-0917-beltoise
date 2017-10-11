@@ -1,11 +1,5 @@
-<?php
-include 'header.php';
-//include '../src/functions.php';
-//include '../connect_bdd.php';
-//$bdd = mysqli_connect(SERVEUR, USER, PASSWORD, DATABASE);
-//Include n'arrête pas en cas d'erreur, si vous voulez stoper le chargement: utiliser require.
-?>
+<?php include '../src/View/header.html.twig';?>
 
-<?php include 'accueil.php'; ?>
+<?php include '../src/View/accueil.html.twig'; ?>
 
-<?php include 'footer.php'; ?>
+<?php include '../src/View/footer.html.twig'; ?>

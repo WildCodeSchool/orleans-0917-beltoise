@@ -1,2 +1,3 @@
-
-connect_bdd\.php
+.idea
+connect_bdd.php
+/vendor/
