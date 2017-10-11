@@ -47,11 +47,11 @@
 
 /* START ACCUEIL */
 
-#accueil h2 {
+.accueil h2 {
     text-align: center;
 }
 
-#accueil p {
+.accueil p {
     font-size: large;
 }
 
