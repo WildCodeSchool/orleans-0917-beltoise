@@ -106,28 +106,77 @@ h2 {
 
 /*End Renov eco CSS*/
 
-/* START MEDIA QUERIES */
-
-
-@media screen and (max-width: 767px){ /* COL-XS */ 
-
-
+/*Start footer CSS */
+.footer [class*="col-"] {
+    background-color: #202020;
+}
+.footer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #202020;
 }
 
-@media screen and (min-width: 768px) AND (max-width: 991px){ /* COL-SM */ 
-
-
+.logo-sap {
+    padding: 40px 0 10px 0;
 }
 
-@media screen and (min-width: 992px) AND (max-width: 1199px){ /* COL-MD */
-
-
+#footer-logo-gaston {
+    margin-top:10px;
+    width: 100%;
+    max-width: 350px;
 }
 
-@media screen and (min-width: 1200px) { /* MEDIA FOR COL-LG */
-
-
+.logo-gaston-footer {
+    padding-top: 10px;
 }
 
-/* END MEDIA QUERIES */
+.infolegale h4 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+.infolegale p {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-align: justify;
+}
 
+.legal-logo-wcs {
+    height: 30px;
+    margin-left: -35px;
+}
+
+.logoWCS {
+    padding-top: 30px;
+}
+
+.logoWCS a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.linkModal {
+    padding-top: 20px;
+}
+
+.linkModal a {
+    color: #557e02;
+    font-size: 18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.linkModal a:hover {
+    color: white;
+    text-decoration: none;
+}
+.modal.modal-wide .modal-dialog {
+    width: 80%;
+}
+.modal-wide .modal-body {
+    overflow-y: auto;
+}
+
+
+/*End footer CSS*/
