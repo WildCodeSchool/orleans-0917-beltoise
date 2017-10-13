@@ -21,3 +21,76 @@
 }
 
 /* END ACCUEIL */
+
+/*Start footer CSS*/
+.footer [class*="col-"] {
+    background-color: grey;
+}
+.footer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: grey;
+}
+
+.logo-certif {
+    padding: 40px 0 10px 0;
+}
+
+#footer-logo-beltoise {
+    margin-top:10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.logo-beltoise-footer {
+    padding-top: 10px;
+}
+
+.infolegale h4 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+.infolegale p {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.legal-logo-wcs {
+    height: 30px;
+    margin-left: -35px;
+}
+
+.logoWCS {
+    padding-top: 30px;
+}
+
+.logoWCS a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.linkModal {
+    padding-top: 20px;
+}
+
+.linkModal a {
+    color: #557e02;
+    font-size: 18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.linkModal a:hover {
+    color: white;
+    text-decoration: none;
+}
+.modal.modal-wide .modal-dialog {
+    width: 80%;
+}
+.modal-wide .modal-body {
+    overflow-y: auto;
+}
+/*End footer CSS*/
