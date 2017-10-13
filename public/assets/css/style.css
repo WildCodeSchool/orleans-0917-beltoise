@@ -7,9 +7,13 @@
     padding-left: 0;
 }
 
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 h2 {
     text-align: center;
-    margin-bottom: 60px;
 }
 /* Start Navbar CSS */
 .navbar{
@@ -52,10 +56,6 @@ h2 {
 
 /* START ACCUEIL */
 
-.accueil h2 {
-    text-align: center;
-}
-
 .accueil p {
     font-size: large;
 }
@@ -81,12 +81,14 @@ h2 {
     width: 100%;
     height: 300px;
     background: url("http://via.placeholder.com/1907x350") no-repeat fixed;
+    position: relative;
 }
-
 
 h2 {
     text-align: center;
-    margin-bottom: 60px;
+    position: absolute;
+    bottom: 42%;
+    width: 100%;
 }
 
 #myCarousel {
@@ -104,9 +106,7 @@ h2 {
 /* fin section maçonnerie  */
 /*Start Realisation eco CSS*/
 
-div.realeco.title {
-    text-align: center;
-}
+
 
 /*End Realisation eco CSS*/
 
@@ -121,6 +121,14 @@ div.realeco.title {
 }
 
 /*End Renovation CSS*/
+
+/*Start Contact CSS*/
+
+.contact-title {
+    position: static;
+}
+
+/*End Contact CSS*/
 
 /*Start footer CSS*/
 .footer [class*="col-"] {
