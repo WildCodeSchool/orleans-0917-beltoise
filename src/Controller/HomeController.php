@@ -8,9 +8,9 @@
 
 namespace Beltoise\Controller;
 
-class HomeController
+class HomeController extends Controller
 {
-    public function showAction() {
+    public function homeAction() {
         // appels éventules aux données de la vue
 
         //appel à la vue

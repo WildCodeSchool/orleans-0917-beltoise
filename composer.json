@@ -6,6 +6,9 @@
             "email": "thibaut.decherit@gmail.com"
         }
     ],
+    "autoload":{
+        "psr-4":{"Beltoise\\": "src/"}
+    },
     "require": {
         "twig/twig": "^2.4"
     }
