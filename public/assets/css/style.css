@@ -110,6 +110,18 @@ div.realeco.title {
 
 /*End Realisation eco CSS*/
 
+/*Start Renovation  CSS*/
+
+.restaurenov {
+    margin-bottom: 60px;  /*  !!!  margin container fluid */
+    margin-left:0;
+    width: 100%;
+    height: 300px;
+    background: url("http://via.placeholder.com/1907x350") no-repeat fixed;
+}
+
+/*End Renovation CSS*/
+
 /*Start footer CSS*/
 .footer [class*="col-"] {
     background-color: grey;
