@@ -1,3 +1,4 @@
 .idea
 connect.php
-/vendor/
+vendor/
+composer.json
