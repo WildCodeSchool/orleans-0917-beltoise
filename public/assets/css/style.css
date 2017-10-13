@@ -1,3 +1,16 @@
+/*START CSS */
+
+/*  Style global */
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
 /* Start Navbar CSS */
 .navbar{
     margin-bottom: 0;
