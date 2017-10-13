@@ -3,7 +3,7 @@ require '../vendor/autoload.php';
 
 use Beltoise\Controller\HomeController;
 
-if (!empty ($GET['route'])) {
+if (!empty ($_GET['route'])) {
     if ($_GET['route'] === 'one-page') {
         // charge la page
         $controller = new MenuController();
