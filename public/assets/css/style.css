@@ -7,6 +7,10 @@
     padding-left: 0;
 }
 
+section {
+    padding-bottom: 60px;
+}
+
 .row {
     margin-right: 0;
     margin-left: 0;
@@ -18,6 +22,7 @@ h2 {
 /* Start Navbar CSS */
 .navbar{
     margin-bottom: 0;
+    border-radius: 0;
 }
 
 .navbar-default{
@@ -80,7 +85,7 @@ h2 {
     margin-bottom: 60px;  /*  !!!  margin container fluid */
     width: 100%;
     height: 300px;
-    background: url("http://via.placeholder.com/1907x350") no-repeat fixed;
+    background: url("http://via.placeholder.com/2000x1100") no-repeat fixed;
     position: relative;
 }
 
@@ -186,7 +191,7 @@ h2 {
 }
 
 .linkModal a {
-    color: #557e02;
+    color: black;
     font-size: 18px;
     font-family: 'Montserrat Alternates', sans-serif;
 }
