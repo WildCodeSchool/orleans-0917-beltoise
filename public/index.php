@@ -1,11 +1,17 @@
-<?php include '../src/View/header.html.twig';?>
+<?php
+require '../vendor/autoload.php';
 
+use Beltoise\Controller\HomeController;
 
-<?php include '../src/View/accueil.html.twig'; ?>
+if (!empty ($GET['route'])) {
+    if ($_GET['route'] === 'one-page') {
+        // charge la page
+        $controller = new MenuController();
+        $controller->showAction();
+    } else {
+        $controller = new HomeController();
+        echo $controller -> showAction();
+    }
+}
 
-<?php include '../src/View/footer.html.twig'; ?>
-
-
-
-
-
+?>

@@ -1,3 +1,42 @@
+/* Start Navbar CSS */
+.navbar{
+    margin-bottom: 0;
+}
+
+.navbar-default{
+    background-color: grey;
+    border: 0;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background-color: transparent;
+    color: #fff;
+}
+
+
+.navbar-inverse .navbar-nav > li > a
+{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.navbar-right
+{
+    padding: 20px;
+}
+
+.logo
+{
+    width: 250px;
+    padding: 10px 10px;
+}
+/*End Navbar CSS*/
+
 /* START ACCUEIL */
 
 .accueil h2 {
