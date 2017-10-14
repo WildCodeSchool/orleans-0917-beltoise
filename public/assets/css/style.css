@@ -16,9 +16,21 @@ section {
     margin-left: 0;
 }
 
+.separationImg {
+    margin-bottom: 60px;  /*  !!!  margin container fluid */
+    width: 100%;
+    height: 300px;
+    background: url("../images/accueil/chantiergodat.jpg") no-repeat fixed;
+    position: relative;
+}
+
 h2 {
     text-align: center;
+    position: absolute;
+    bottom: 42%;
+    width: 100%;
 }
+
 /* Start Navbar CSS */
 
 .separationImgAccueil {
@@ -89,21 +101,6 @@ h2 {
 /* END ACCUEIL */
 
 /* section maçonnerie */
-
-.separationImg {
-    margin-bottom: 60px;  /*  !!!  margin container fluid */
-    width: 100%;
-    height: 300px;
-    background: url("../images/accueil/chantiergodat.jpg") no-repeat fixed;
-    position: relative;
-}
-
-h2 {
-    text-align: center;
-    position: absolute;
-    bottom: 42%;
-    width: 100%;
-}
 
 #myCarousel {
     width: 100%;
