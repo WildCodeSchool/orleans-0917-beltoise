@@ -2,13 +2,22 @@
 
 /*  Style global */
 
+body {
+    position: relative; /*needed for scroll spy*/
+}
+
 .container-fluid {
     padding-right: 0;
     padding-left: 0;
 }
 
+.anchor {
+    padding-top: 80px;
+}
+
 section {
     padding-bottom: 60px;
+    padding-top: 60px;
 }
 
 .row {
@@ -17,7 +26,6 @@ section {
 }
 
 .separationImg {
-    margin-bottom: 60px;  /*  !!!  margin container fluid */
     width: 100%;
     height: 300px;
     background: url("../images/accueil/chantiergodat.jpg") no-repeat fixed;
@@ -34,50 +42,68 @@ h2 {
 /* Start Navbar CSS */
 
 .separationImgAccueil {
-    margin-bottom: 60px;  /*  !!!  margin container fluid */
     width: 100%;
     height: 100vh;
     background: url("../images/accueil/chantiergodat.jpg") no-repeat fixed;
     position: relative;
 }
 
-.navbar{
+.navbar {
     margin-bottom: 0;
     border-radius: 0;
 }
 
-.navbar-default{
+.navbar-default {
     background-color: grey;
     border: 0;
+    z-index: 1;
 }
 
-.navbar-default .navbar-nav>li>a{
+.navbar-default .navbar-nav > li > a {
     color: #fff;
 }
 
-.navbar-default .navbar-nav>.active>a {
-    background-color: transparent;
+.navbar-default .navbar-nav > .active > a {
+    background-color: green;
     color: #fff;
 }
 
+.navbar-default .navbar-nav > .active > a:hover {
+    background-color: green;
+    color: #fff;
+}
 
-.navbar-inverse .navbar-nav > li > a
-{
+navbar-nav > a {
+    background-color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
     color: white;
     text-align: center;
     font-weight: bold;
 }
 
-.navbar-right
-{
+.navbar-inverse .navbar-nav > li:hover {
+    text-align: center;
+    font-weight: bold;
+}
+
+.navbar-right {
     padding: 20px;
 }
 
-.logo
-{
+/*top fixed navbar*/
+#navbar.navbar-fixed-top {
+    position: fixed;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.logo {
     width: 250px;
     padding: 10px 10px;
 }
+
 /*End Navbar CSS*/
 
 /* START ACCUEIL */
@@ -90,7 +116,7 @@ h2 {
     display: flex;
 }
 
-.logos-certifications p+p {
+.logos-certifications p + p {
     padding-left: 20px;
 }
 
@@ -117,15 +143,13 @@ h2 {
 /* fin section maçonnerie  */
 /*Start Realisation eco CSS*/
 
-
-
 /*End Realisation eco CSS*/
 
 /*Start Renovation  CSS*/
 
 .restaurenov {
-    margin-bottom: 60px;  /*  !!!  margin container fluid */
-    margin-left:0;
+    margin-bottom: 60px; /*  !!!  margin container fluid */
+    margin-left: 0;
     width: 100%;
     height: 300px;
     background: url("http://via.placeholder.com/1907x350") no-repeat fixed;
@@ -145,6 +169,7 @@ h2 {
 .footer [class*="col-"] {
     background-color: grey;
 }
+
 .footer {
     padding-top: 10px;
     padding-bottom: 20px;
@@ -156,7 +181,7 @@ h2 {
 }
 
 #footer-logo-beltoise {
-    margin-top:10px;
+    margin-top: 10px;
     width: 100%;
     max-width: 350px;
 }
@@ -170,6 +195,7 @@ h2 {
     font-weight: bold;
     text-align: left;
 }
+
 .infolegale p {
     font-size: 16px;
     font-weight: normal;
@@ -206,10 +232,13 @@ h2 {
     color: white;
     text-decoration: none;
 }
+
 .modal.modal-wide .modal-dialog {
     width: 80%;
 }
+
 .modal-wide .modal-body {
     overflow-y: auto;
 }
+
 /*End footer CSS*/
