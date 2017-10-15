@@ -54,23 +54,68 @@ h2 {
 }
 
 .navbar-default {
-    background-color: grey;
+    background-color: #004741;
     border: 0;
     z-index: 1;
 }
 
+.nav > li > a {
+    padding: 10px 0px;
+    margin-left: 15px;
+}
+
+.nav > li > a + a {
+}
+
 .navbar-default .navbar-nav > li > a {
+    position: relative; /*needed for link hover underline*/
+    color: #fff;
+}
+
+/*prepare link hover underline*/
+.navbar-default .navbar-nav > li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00756c;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+/*show link underline animation when hover*/
+.navbar-default .navbar-nav > li > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.navbar-default .navbar-nav > li > a:hover {
     color: #fff;
 }
 
 .navbar-default .navbar-nav > .active > a {
-    background-color: green;
+    background-color: #004741;
     color: #fff;
 }
 
+.navbar-default .navbar-nav > .active > a:before {
+    visibility: visible;
+    transform: scaleX(1);
+    background-color: #00756c;
+}
+
+.navbar-default .navbar-nav > .active > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+    background-color: #00756c;
+}
+
 .navbar-default .navbar-nav > .active > a:hover {
-    background-color: green;
     color: #fff;
+    background-color: #004741;
 }
 
 navbar-nav > a {
@@ -167,13 +212,13 @@ navbar-nav > a {
 
 /*Start footer CSS*/
 .footer [class*="col-"] {
-    background-color: grey;
+    background-color: #004741;
 }
 
 .footer {
     padding-top: 10px;
     padding-bottom: 20px;
-    background-color: grey;
+    background-color: #004741;
 }
 
 .logo-certif {
