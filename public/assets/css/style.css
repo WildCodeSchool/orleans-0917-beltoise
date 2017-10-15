@@ -96,8 +96,13 @@ h2 {
     color: #fff;
 }
 
+/*prevents color overwrite by bootstrap in case the user clicks and drags the element*/
+.navbar-default .navbar-nav > li > a:visited {
+    color: #fff;
+}
+
 .navbar-default .navbar-nav > .active > a {
-    background-color: #004741;
+    background-color: transparent;
     color: #fff;
 }
 
@@ -111,9 +116,15 @@ h2 {
     visibility: visible;
     transform: scaleX(1);
     background-color: #00756c;
+    color: #fff;
 }
 
 .navbar-default .navbar-nav > .active > a:hover {
+    color: #fff;
+}
+
+/*prevents color overwrite by bootstrap in case the user clicks or drags the element*/
+.navbar-default .navbar-nav > .active > a:visited {
     color: #fff;
     background-color: #004741;
 }
