@@ -1,7 +1,7 @@
 <div class="row separationImgAccueil">
 
     <a href="#"><img class="logo" src="../../assets/images/logos/ENTETE_BELTOISE3.jpg" alt=""></a>
-    <nav id ="navbar" class="navbar navbar-default">
+    <nav id="navbar" class="navbar navbar-default">
         <div class="container-fluid ">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -13,8 +13,26 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="navspy">
+            <div class="navspy hidden-md hidden-lg">
+                <!-- navbar smartphone !important : doit être AVANT la navbar lg/md -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <a href="#anchorPresentation">Présentation</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <a href="#anchorMaconnerie">Maçonnerie</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <a href="#anchorRealeco">Réalisations écologiques</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <a href="#anchorPlatrerie">Plâtrerie</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <a href="#anchorRenovation">Rénovation</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <a href="#anchorContact">Nous contacter</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div> <!-- /.navspy -->
+            <div class="navspy hidden-xs hidden-sm">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#anchorPresentation">Présentation</a></li>
@@ -22,11 +40,10 @@
                         <li><a href="#anchorRealeco">Réalisations écologiques</a></li>
                         <li><a href="#anchorPlatrerie">Plâtrerie</a></li>
                         <li><a href="#anchorRenovation">Rénovation</a></li>
-                        <li><a href="#anchorContact">Nous contacter</a>
-                        </li>
+                        <li><a href="#anchorContact">Nous contacter</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
-            </div> <!-- /.navspy -->
+            </div>
         </div><!-- /.container-fluid -->
     </nav>
 </div>

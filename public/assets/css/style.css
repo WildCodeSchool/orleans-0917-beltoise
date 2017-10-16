@@ -32,11 +32,22 @@ section {
     position: relative;
 }
 
+.center-title {
+    position: absolute;
+    bottom: 38%;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin: auto;
+}
+
 h2 {
     text-align: center;
-    position: absolute;
-    bottom: 42%;
-    width: 100%;
+    color: white;
+    border-bottom: solid 5px #004741;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 300%;
+    text-transform: uppercase;
 }
 
 /* Start Navbar CSS */
@@ -209,6 +220,8 @@ navbar-nav > a {
 
 .contact-title {
     position: static;
+    color: black;
+    border: none;
 }
 
 /*End Contact CSS*/
