@@ -227,18 +227,32 @@ navbar-nav > a {
 /*End Contact CSS*/
 
 /*Start footer CSS*/
+
+hr.separator {
+
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 71, 65, 0.75), rgba(0, 0, 0, 0));
+    border: 0 none;
+    height: 1px;
+
+}
+
 .footer [class*="col-"] {
-    background-color: #004741;
+    background-color: white;
 }
 
 .footer {
     padding-top: 10px;
     padding-bottom: 20px;
-    background-color: #004741;
+    background-color: white;
 }
+
 
 .logo-certif {
     padding: 40px 0 10px 0;
+}
+.logo-certif img {
+    width: 50px;
+    height: 50px;
 }
 
 #footer-logo-beltoise {
@@ -270,13 +284,13 @@ navbar-nav > a {
 }
 
 .logoWCS {
-    padding-top: 30px;
+
 }
 
 .logoWCS a {
-    color: white;
+    color: black;
     text-decoration: none;
-    font-family: 'Montserrat Alternates', sans-serif;
+
 }
 
 .linkModal {
@@ -286,11 +300,11 @@ navbar-nav > a {
 .linkModal a {
     color: black;
     font-size: 18px;
-    font-family: 'Montserrat Alternates', sans-serif;
+
 }
 
 .linkModal a:hover {
-    color: white;
+    color: #004741;
     text-decoration: none;
 }
 
