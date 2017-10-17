@@ -26,17 +26,20 @@ section {
 }
 
 .separationImg {
-    width: 100%;
     height: 300px;
     background: url("../images/realeco/chantier_picard_2.jpg") no-repeat fixed;
     position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .center-title {
     position: absolute;
     bottom: 38%;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     margin: auto;
 }
 
@@ -193,7 +196,7 @@ navbar-nav > a {
     min-height: 100%;
 }
 
-/* END ACCUEIL */
+/* END PRESENTATION */
 
 /* section maçonnerie */
 
