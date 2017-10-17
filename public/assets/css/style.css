@@ -69,10 +69,13 @@ h2 {
     border-radius: 0;
 }
 
+
+
 .navbar-default {
     background-color: #004741;
     border: 0;
     z-index: 1;
+    padding-right: 15px;
 }
 
 .nav > li > a {
@@ -133,8 +136,14 @@ h2 {
     color: #fff;
 }
 
+.navbar-default .navbar-nav > .active:not(:last-child) > a {
+    color: #fff;
+    background-color: #004741;
+}
+
 .navbar-default .navbar-nav > .active > a:hover {
     color: #fff;
+    background-color: #004741;
 }
 
 /*prevents color overwrite by bootstrap in case the user clicks or drags the element*/
@@ -168,6 +177,11 @@ h2 {
 .navbar-button:hover .btn-success:hover {
     background-color: #009a91;
     border-color: #009a91;
+}
+
+.navbar-default .navbar-nav > .active:last-child > a {
+    color: #fff;
+    background-color: #009a91;
 }
 
 .navbar-default .navbar-nav > .active:last-child > a:visited {
