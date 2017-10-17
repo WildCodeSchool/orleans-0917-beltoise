@@ -12,7 +12,7 @@ body {
 }
 
 .anchor {
-    padding-top: 66px;
+    padding-top: 65px;
 }
 
 section {
@@ -53,21 +53,6 @@ h2 {
     text-transform: uppercase;
 }
 
-.btn-success, .btn-success:visited {
-    background-color: #004741;
-    border-color: #004741;
-    outline: none;
-}
-
-.btn-success:hover {
-    background-color: #00756c;
-    border-color: #00756c;
-}
-
-.btn-success:active:focus {
-    background-color: #00403a;
-}
-
 /* Start Navbar CSS */
 
 .separationImgAccueil {
@@ -93,9 +78,7 @@ h2 {
 .nav > li > a {
     padding: 10px 0px;
     margin-left: 15px;
-}
-
-.nav > li > a + a {
+    font-size: large;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -111,14 +94,14 @@ h2 {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #00756c;
+    background-color: #00857c;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
 }
 
 /*show link underline animation when hover*/
-.navbar-default .navbar-nav > li > a:hover:before {
+.navbar-default .navbar-nav > li:not(:last-child) > a:hover:before {
     visibility: visible;
     transform: scaleX(1);
 }
@@ -132,21 +115,21 @@ h2 {
     color: #fff;
 }
 
-.navbar-default .navbar-nav > .active > a {
+.navbar-default .navbar-nav > .active > a:not(:last-child) {
     background-color: transparent;
     color: #fff;
 }
 
-.navbar-default .navbar-nav > .active > a:before {
+.navbar-default .navbar-nav > .active:not(:last-child) > a:before {
     visibility: visible;
     transform: scaleX(1);
-    background-color: #00756c;
+    background-color: #00857c;
 }
 
-.navbar-default .navbar-nav > .active > a:hover:before {
+.navbar-default .navbar-nav > .active:not(:last-child) > a:hover:before {
     visibility: visible;
     transform: scaleX(1);
-    background-color: #00756c;
+    background-color: #00857c;
     color: #fff;
 }
 
@@ -155,13 +138,9 @@ h2 {
 }
 
 /*prevents color overwrite by bootstrap in case the user clicks or drags the element*/
-.navbar-default .navbar-nav > .active > a:visited {
+.navbar-default .navbar-nav > .active:not(:last-child) > a:visited {
     color: #fff;
     background-color: #004741;
-}
-
-navbar-nav > a {
-    background-color: #fff;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -177,6 +156,23 @@ navbar-nav > a {
 
 .navbar-right {
     padding: 20px;
+}
+
+.navbar-button .btn-success, navbar-button .btn-success:visited {
+    background-color: #00857c;
+    border-color: #00857c;
+    padding: 10px 16px;
+    outline: none;
+}
+
+.navbar-button:hover .btn-success:hover {
+    background-color: #009a91;
+    border-color: #009a91;
+}
+
+.navbar-default .navbar-nav > .active:last-child > a:visited {
+    color: #fff;
+    background-color: #009a91;
 }
 
 /*top fixed navbar*/
@@ -228,10 +224,6 @@ navbar-nav > a {
     padding-left: 20px;
 }
 
-.full-height {
-    min-height: 100%;
-}
-
 /* END PRESENTATION */
 
 /* section maçonnerie */
@@ -263,6 +255,21 @@ navbar-nav > a {
     position: static;
     color: black;
     border: none;
+}
+
+.button-contact .btn-success, .button-contact .btn-success:visited {
+    background-color: #004741;
+    border-color: #004741;
+    outline: none;
+}
+
+.button-contact .btn-success:hover {
+    background-color: #00857c;
+    border-color: #00857c;
+}
+
+.button-contact .btn-success:active {
+    background-color: #00403a;
 }
 
 /*End Contact CSS*/
