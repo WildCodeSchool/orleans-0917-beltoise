@@ -53,6 +53,21 @@ h2 {
     text-transform: uppercase;
 }
 
+.btn-success, .btn-success:visited {
+    background-color: #004741;
+    border-color: #004741;
+    outline: none;
+}
+
+.btn-success:hover {
+    background-color: #00756c;
+    border-color: #00756c;
+}
+
+.btn-success:active:focus {
+    background-color: #00403a;
+}
+
 /* Start Navbar CSS */
 
 .separationImgAccueil {
@@ -178,14 +193,35 @@ navbar-nav > a {
 
 /*End Navbar CSS*/
 
-/* START ACCUEIL */
+/* START PRESENTATION */
 
-.accueil p {
-    font-size: large;
+.presentation-title {
+    color: black;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.presentation-text {
+    padding: 40px 0px;
+}
+
+.presentation p {
+    font-size: x-large;
+}
+
+.green-bold {
+    color: #004741;
+    font-weight: bold;
 }
 
 .logos-certifications {
     display: flex;
+}
+
+.presentation img {
+    width: 100px;
+    height: 100px;
 }
 
 .logos-certifications p + p {
