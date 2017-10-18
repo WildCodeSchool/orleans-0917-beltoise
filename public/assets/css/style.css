@@ -270,6 +270,14 @@ h2 {
     }
 }
 
+.navbar-toggle:hover, .navbar-toggle:focus {
+    background-color: #00857c !important;
+}
+
+.navbar-toggle:visited {
+    background-color: #004741;
+}
+
 /*End Navbar CSS*/
 
 /* START PRESENTATION */
