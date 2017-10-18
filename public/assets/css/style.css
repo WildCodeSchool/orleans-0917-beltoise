@@ -73,7 +73,12 @@ h2 {
     background-color: #004741;
     border: 0;
     z-index: 1;
-    padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+    .navbar-default {
+        padding-right: 15px;
+    }
 }
 
 .nav > li > a {
