@@ -5,6 +5,5 @@ define("PASS", "");
 
 //à insérer dans le fichier pour se connecter :
 //include "../connect.php";
-//// appeler connexion à la BD
-
-$bdd = new PDO(DSN, USER, PASS);
+//// appeler connexion à la BD :
+//$bdd = new PDO(DSN, USER, PASS);
