@@ -1,15 +1,17 @@
 {
-    "name": "wilder2/orleans-0917-beltoise",
+    "name": "wilder1/orleans-0917-beltoise",
     "authors": [
         {
-            "name": "Thibaut Decherit",
-            "email": "thibaut.decherit@gmail.com"
+            "name": "Maxime",
+            "email": "xm.mx@laposte.net"
         }
     ],
+
     "autoload":{
         "psr-4":{"Beltoise\\": "src/"}
     },
     "require": {
         "twig/twig": "^2.4"
     }
+
 }
