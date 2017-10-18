@@ -6,7 +6,7 @@
  * Time: 13:05
  */
 
-class model
+class Model
 {
 
 }
