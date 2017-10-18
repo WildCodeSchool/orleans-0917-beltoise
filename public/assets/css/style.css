@@ -15,6 +15,12 @@ body {
     padding-top: 65px;
 }
 
+@media (max-width: 768px) {
+    .anchor {
+        padding-top: 36px;
+    }
+}
+
 section {
     padding-bottom: 60px;
     padding-top: 60px;
@@ -75,12 +81,6 @@ h2 {
     z-index: 1;
 }
 
-@media (max-width: 768px) {
-    .navbar-default {
-        padding-right: 15px;
-    }
-}
-
 .nav > li > a {
     padding: 10px 0px;
     margin-left: 15px;
@@ -92,104 +92,107 @@ h2 {
     color: #fff;
 }
 
-/*prepare link hover underline*/
-.navbar-default .navbar-nav > li > a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #00857c;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
-}
-
-/*show link underline animation when hover*/
-.navbar-default .navbar-nav > li:not(:last-child) > a:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
 .navbar-default .navbar-nav > li > a:hover {
     color: #fff;
 }
 
-/*prevents color overwrite by bootstrap in case the user clicks and drags the element*/
-.navbar-default .navbar-nav > li > a:visited {
-    color: #fff;
-}
+/*link hover underline*/
+@media (min-width: 992px) {
+    /*prepare link hover underline*/
+    .navbar-default .navbar-nav > li > a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #00857c;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
 
-.navbar-default .navbar-nav > .active > a:not(:last-child) {
-    background-color: transparent;
-    color: #fff;
-}
+    /*show link underline animation when hover*/
+    .navbar-default .navbar-nav > li:not(:last-child) > a:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
 
-.navbar-default .navbar-nav > .active:not(:last-child) > a:before {
-    visibility: visible;
-    transform: scaleX(1);
-    background-color: #00857c;
-}
+    /*prevents color overwrite by bootstrap in case the user clicks and drags the element*/
+    .navbar-default .navbar-nav > li > a:visited {
+        color: #fff;
+    }
 
-.navbar-default .navbar-nav > .active:not(:last-child) > a:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-    background-color: #00857c;
-    color: #fff;
-}
+    .navbar-default .navbar-nav > .active > a:not(:last-child) {
+        background-color: transparent;
+        color: #fff;
+    }
 
-.navbar-default .navbar-nav > .active:not(:last-child) > a {
-    color: #fff;
-    background-color: #004741;
-}
+    .navbar-default .navbar-nav > .active:not(:last-child) > a:before {
+        visibility: visible;
+        transform: scaleX(1);
+        background-color: #00857c;
+    }
 
-.navbar-default .navbar-nav > .active > a:hover {
-    color: #fff;
-    background-color: #004741;
-}
+    .navbar-default .navbar-nav > .active:not(:last-child) > a:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+        background-color: #00857c;
+        color: #fff;
+    }
 
-/*prevents color overwrite by bootstrap in case the user clicks or drags the element*/
-.navbar-default .navbar-nav > .active:not(:last-child) > a:visited {
-    color: #fff;
-    background-color: #004741;
-}
+    .navbar-default .navbar-nav > .active:not(:last-child) > a {
+        color: #fff;
+        background-color: #004741;
+    }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
+    .navbar-default .navbar-nav > .active > a:hover {
+        color: #fff;
+        background-color: #004741;
+    }
 
-.navbar-inverse .navbar-nav > li:hover {
-    text-align: center;
-    font-weight: bold;
-}
+    /*prevents color overwrite by bootstrap in case the user clicks or drags the element*/
+    .navbar-default .navbar-nav > .active:not(:last-child) > a:visited {
+        color: #fff;
+        background-color: #004741;
+    }
 
-.navbar-right {
-    padding: 20px;
-}
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
+        text-align: center;
+        font-weight: bold;
+    }
 
-.navbar-button .btn-success, navbar-button .btn-success:visited {
-    background-color: #00857c;
-    border-color: #00857c;
-    padding: 10px 16px;
-    outline: none;
-}
+    .navbar-inverse .navbar-nav > li:hover {
+        text-align: center;
+        font-weight: bold;
+    }
 
-.navbar-button:hover .btn-success:hover {
-    background-color: #009a91;
-    border-color: #009a91;
-}
+    .navbar-right {
+        padding: 20px;
+    }
 
-.navbar-default .navbar-nav > .active:last-child > a {
-    color: #fff;
-    background-color: #009a91;
-}
+    .navbar-button .btn-success, navbar-button .btn-success:visited {
+        background-color: #00857c;
+        border-color: #00857c;
+        padding: 10px 16px;
+        outline: none;
+    }
 
-.navbar-default .navbar-nav > .active:last-child > a:visited {
-    color: #fff;
-    background-color: #009a91;
+    .navbar-button:hover .btn-success:hover {
+        background-color: #009a91;
+        border-color: #009a91;
+    }
+
+    .navbar-default .navbar-nav > .active:last-child > a {
+        color: #fff;
+        background-color: #009a91;
+    }
+
+    .navbar-default .navbar-nav > .active:last-child > a:visited {
+        color: #fff;
+        background-color: #009a91;
+    }
 }
 
 /*top fixed navbar*/
@@ -216,13 +219,16 @@ h2 {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
+
     .navbar-nav .open .dropdown-menu > li > a {
         line-height: 20px;
     }
+
     .navbar-nav .open .dropdown-menu > li > a,
     .navbar-nav .open .dropdown-menu .dropdown-header {
         padding: 5px 15px 5px 25px;
     }
+
     .dropdown-menu > li > a {
         display: block;
         padding: 3px 20px;
@@ -232,41 +238,51 @@ h2 {
         color: #333;
         white-space: nowrap;
     }
+
     .navbar-header {
         float: none;
     }
+
     .navbar-toggle {
         display: block;
     }
+
     .navbar-collapse {
         border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
+
     .navbar-collapse.collapse {
-        display: none!important;
+        display: none !important;
     }
+
     .navbar-nav {
-        float: none!important;
+        float: none !important;
         /*margin: 7.5px -15px;*/
         margin: 7.5px 50px 7.5px -15px
     }
-    .navbar-nav>li {
+
+    .navbar-nav > li {
         float: none;
     }
-    .navbar-nav>li>a {
+
+    .navbar-nav > li > a {
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
     .navbar-text {
         float: none;
         margin: 15px 0;
     }
+
     /* since 3.1.0 */
     .navbar-collapse.collapse.in {
-        display: block!important;
+        display: block !important;
     }
+
     .collapsing {
-        overflow: hidden!important;
+        overflow: hidden !important;
     }
 }
 
@@ -276,6 +292,55 @@ h2 {
 
 .navbar-toggle:visited {
     background-color: #004741;
+}
+
+/* style specific to xs and sm */
+@media (max-width: 991px) {
+
+    .nav li {
+        text-align: center;
+    }
+
+    .navbar-default {
+        padding-right: 15px;
+    }
+
+    .navbar-default .navbar-nav > .active:not(:last-child) > a {
+        color: white;
+        background-color: #004741;
+    }
+
+    .navbar-default .navbar-nav > .active:last-child > a {
+        background-color: #00857c;
+        border-color: #00857c;
+        padding: 10px 16px;
+        outline: none;
+        color: white;
+    }
+
+    .navbar-default .navbar-nav > li:last-child > a:hover {
+        background-color: #00857c;
+        border-color: #00857c;
+        padding: 10px 16px;
+        outline: none;
+        color: white;
+    }
+
+    .navbar-default .navbar-nav > .active:last-child > a:hover {
+        background-color: #00857c;
+        border-color: #00857c;
+        padding: 10px 16px;
+        outline: none;
+        color: white;
+    }
+
+    .navbar-collapse .btn-success:visited {
+        background-color: #00857c;
+        border-color: #00857c;
+        padding: 10px 16px;
+        outline: none;
+    }
+
 }
 
 /*End Navbar CSS*/
