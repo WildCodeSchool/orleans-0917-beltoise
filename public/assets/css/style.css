@@ -195,13 +195,13 @@ navbar-nav > a {
 
 /* section maçonnerie */
 
-#myCarousel {
+.myCarousel {
     width: 100%;
     height: 400px;
 
 }
 
-#myCarousel img {
+.myCarousel img {
     width: 100%;
     height: 400px;
     max-height: 400px;
