@@ -14,6 +14,6 @@ class HomeController extends Controller
         // appels éventules aux données de la vue
 
         //appel à la vue
-        return $this->twig->render('Home/home.html.twig');
+        return $this->twig->render('Admin/admin.html.twig');
     }
 }
