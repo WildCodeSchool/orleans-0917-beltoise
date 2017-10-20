@@ -193,6 +193,30 @@ navbar-nav > a {
 
 /* END ACCUEIL */
 
+section h3 {
+    font-size: x-large;
+    text-align: center;
+    color: #004741;
+}
+
+section p, section ul {
+    font-size: large;
+    text-align: center;
+}
+
+.thumbnail img {
+    margin-bottom: 30px;
+    border-radius: 3%;
+    border: 1px solid #004741;
+    width: 100%;
+}
+
+section .thumbnail {
+    width: 80%;
+    border: none;
+}
+
+
 /* section maçonnerie */
 
 .myCarousel {
