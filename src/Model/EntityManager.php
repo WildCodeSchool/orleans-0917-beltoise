@@ -15,7 +15,7 @@ class EntityManager
 
     public function __construct()
     {
-        $this->pdo = new \PDO(DSN, USER, PASS);
+        $this->pdo = new \PDO(DSN, USERNAME, PASSWORD);
     }
 
 }

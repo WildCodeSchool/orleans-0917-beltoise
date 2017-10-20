@@ -8,12 +8,22 @@
 
 namespace Beltoise\Controller;
 
+use Beltoise\Model\EntityManager;
+use Beltoise\Model\Renov;
+use Beltoise\Model\RenovManager;
+
 class HomeController extends Controller
 {
     public function homeAction() {
         // appels éventules aux données de la vue
+        $renovManager = new RenovManager();
+        $renov = $renovManager->findAll();
 
-        //appel à la vue
-        return $this->twig->render('Admin/admin.html.twig');
+        
+        return $this->twig->render('Home/home.html.twig', [
+            'renovations' => $renov,
+        ]);
+
+
     }
 }
