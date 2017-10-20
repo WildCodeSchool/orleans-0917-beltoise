@@ -1,5 +1,10 @@
-<?php include '../src/View/header.html.twig';?>
+<?php
+require '../vendor/autoload.php';
 
-<?php include '../src/View/accueil.html.twig'; ?>
+use Beltoise\Controller\HomeController;
 
-<?php include '../src/View/footer.html.twig'; ?>
+if (empty ($_GET['route'])) {
+
+        $controller = new HomeController();
+        echo $controller -> homeAction();
+}

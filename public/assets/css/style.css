@@ -1,8 +1,179 @@
-/* START ACCUEIL */
+/*START CSS */
 
-.accueil h2 {
-    text-align: center;
+/*  Style global */
+
+body {
+    position: relative; /*needed for scroll spy*/
 }
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.anchor {
+    padding-top: 66px;
+}
+
+.section-content {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.separationImg {
+    width: 100%;
+    height: 300px;
+    background: url("../images/chantiergodat.jpg") no-repeat fixed;
+    position: relative;
+}
+
+.center-title {
+    position: absolute;
+    bottom: 38%;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    border-bottom: solid 5px #004741;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 300%;
+    text-transform: uppercase;
+}
+
+/* Start Navbar CSS */
+
+.separationImgAccueil {
+    width: 100%;
+    height: 100vh;
+    background: url("../images/chantiergodat.jpg") no-repeat fixed;
+    position: relative;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.navbar-default {
+    background-color: #004741;
+    border: 0;
+    z-index: 1;
+}
+
+.nav > li > a {
+    padding: 10px 0px;
+    margin-left: 15px;
+}
+
+.nav > li > a + a {
+}
+
+.navbar-default .navbar-nav > li > a {
+    position: relative; /*needed for link hover underline*/
+    color: #fff;
+}
+
+/*prepare link hover underline*/
+.navbar-default .navbar-nav > li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00756c;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+/*show link underline animation when hover*/
+.navbar-default .navbar-nav > li > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+}
+
+/*prevents color overwrite by bootstrap in case the user clicks and drags the element*/
+.navbar-default .navbar-nav > li > a:visited {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    background-color: transparent;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a:before {
+    visibility: visible;
+    transform: scaleX(1);
+    background-color: #00756c;
+}
+
+.navbar-default .navbar-nav > .active > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+    background-color: #00756c;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+    color: #fff;
+}
+
+/*prevents color overwrite by bootstrap in case the user clicks or drags the element*/
+.navbar-default .navbar-nav > .active > a:visited {
+    color: #fff;
+    background-color: #004741;
+}
+
+navbar-nav > a {
+    background-color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > li:hover {
+    text-align: center;
+    font-weight: bold;
+}
+
+.navbar-right {
+    padding: 20px;
+}
+
+/*top fixed navbar*/
+#navbar.navbar-fixed-top {
+    position: fixed;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.logo {
+    width: 250px;
+    padding: 10px 10px;
+}
+
+/*End Navbar CSS*/
+
+/* START ACCUEIL */
 
 .accueil p {
     font-size: large;
@@ -12,7 +183,7 @@
     display: flex;
 }
 
-.logos-certifications p+p {
+.logos-certifications p + p {
     padding-left: 20px;
 }
 
@@ -21,3 +192,114 @@
 }
 
 /* END ACCUEIL */
+
+/* section maçonnerie */
+
+.myCarousel {
+    width: 100%;
+    height: 400px;
+
+}
+
+.myCarousel img {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+}
+
+/* fin section maçonnerie  */
+/*Start Realisation eco CSS*/
+
+/*End Realisation eco CSS*/
+
+/*Start Renovation  CSS*/
+
+/*End Renovation CSS*/
+
+/*Start Contact CSS*/
+
+.contact-title {
+    position: static;
+    color: black;
+    border: none;
+}
+
+/*End Contact CSS*/
+
+/*Start footer CSS*/
+.footer [class*="col-"] {
+    background-color: #004741;
+}
+
+.footer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #004741;
+}
+
+.logo-certif {
+    padding: 40px 0 10px 0;
+}
+
+.footer-logo-beltoise {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.logo-beltoise-footer {
+    padding-top: 10px;
+}
+
+.infolegale h4 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.infolegale p {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.legal-logo-wcs {
+    height: 30px;
+    margin-left: -35px;
+}
+
+.logoWCS {
+    padding-top: 30px;
+}
+
+.logoWCS a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.linkModal {
+    padding-top: 20px;
+}
+
+.linkModal a {
+    color: black;
+    font-size: 18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.linkModal a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.modal.modal-wide .modal-dialog {
+    width: 80%;
+}
+
+.modal-wide .modal-body {
+    overflow-y: auto;
+}
+
+/*End footer CSS*/
