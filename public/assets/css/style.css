@@ -2,10 +2,6 @@
 
 /*  Style global */
 
-body {
-    position: relative; /*needed for scroll spy*/
-}
-
 .container-fluid {
     padding-right: 0;
     padding-left: 0;
@@ -242,6 +238,7 @@ h2 {
 
 .presentation-text {
     padding: 40px 0px;
+    text-align: left;
 }
 
 .presentation p {
@@ -276,7 +273,6 @@ section h3 {
 
 section p, section ul {
     font-size: large;
-    text-align: center;
 }
 
 .thumbnail img {
