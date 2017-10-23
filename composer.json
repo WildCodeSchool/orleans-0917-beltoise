@@ -1,0 +1,17 @@
+{
+    "name": "wilder1/orleans-0917-beltoise",
+    "authors": [
+        {
+            "name": "Maxime",
+            "email": "xm.mx@laposte.net"
+        }
+    ],
+
+    "autoload":{
+        "psr-4":{"Beltoise\\": "src/"}
+    },
+    "require": {
+        "twig/twig": "^2.4"
+    }
+
+}

@@ -1,0 +1,425 @@
+/*START CSS */
+
+/*  Style global */
+
+body {
+    position: relative; /*needed for scroll spy*/
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.anchor {
+    padding-top: 65px;
+}
+
+@media (max-width: 768px) {
+    .anchor {
+        padding-top: 36px;
+    }
+}
+
+.section-content {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.separationImg {
+    height: 300px;
+    background: url("../images/chantiergodat.jpg") no-repeat fixed;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center-title {
+    position: absolute;
+    bottom: 38%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    border-bottom: solid 5px #004741;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 300%;
+    text-transform: uppercase;
+}
+
+/* Start Navbar CSS */
+
+.separationImgAccueil {
+    height: 100vh;
+    background: url("../images/chantiergodat.jpg") no-repeat fixed;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.navbar-default {
+    background-color: #004741;
+    border: 0;
+    z-index: 1;
+}
+
+.nav > li > a {
+    padding: 10px 0px;
+    margin-left: 15px;
+    font-size: large;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+}
+
+.navbar-right {
+    padding: 20px;
+}
+
+.navbar-button .btn-success {
+    background-color: #00857c;
+    border-color: #00857c;
+    padding: 10px 16px;
+    outline: none;
+}
+
+.navbar-button:hover .btn-success:hover {
+    background-color: #009a91;
+    border-color: #009a91;
+}
+
+/*top fixed navbar*/
+#navbar.navbar-fixed-top {
+    position: fixed;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.logo {
+    width: 250px;
+    padding: 10px 10px;
+}
+
+/* Forces the burger menu to be displayed in sm (default is xs only) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .navbar-nav .open .dropdown-menu > li > a {
+        line-height: 20px;
+    }
+
+    .navbar-nav .open .dropdown-menu > li > a,
+    .navbar-nav .open .dropdown-menu .dropdown-header {
+        padding: 5px 15px 5px 25px;
+    }
+
+    .dropdown-menu > li > a {
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.42857143;
+        color: #333;
+        white-space: nowrap;
+    }
+
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-nav {
+        float: none !important;
+        /*margin: 7.5px -15px;*/
+        margin: 7.5px 50px 7.5px -15px
+    }
+
+    .navbar-nav > li {
+        float: none;
+    }
+
+    .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+
+    .collapsing {
+        overflow: hidden !important;
+    }
+}
+
+.navbar-toggle:hover, .navbar-toggle:focus {
+    background-color: #00857c !important;
+}
+
+.navbar-toggle:visited {
+    background-color: #004741;
+}
+
+/* Style specific to xs and sm */
+@media (max-width: 991px) {
+
+    .nav li {
+        text-align: center;
+    }
+
+    .navbar-default {
+        padding-right: 15px;
+    }
+
+    .navbar-collapse .btn-success {
+        background-color: #00857c;
+        border-color: #00857c;
+        padding: 10px 16px;
+        outline: none;
+    }
+}
+
+/*End Navbar CSS*/
+
+/* START PRESENTATION */
+
+.presentation-title {
+    color: black;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.presentation-text {
+    padding: 40px 0px;
+}
+
+.presentation p {
+    font-size: x-large;
+}
+
+.green-bold {
+    color: #004741;
+    font-weight: bold;
+}
+
+.logos-certifications {
+    display: flex;
+}
+
+.presentation img {
+    width: 100px;
+    height: 100px;
+}
+
+.logos-certifications p + p {
+    padding-left: 20px;
+}
+
+/* END PRESENTATION */
+
+section h3 {
+    font-size: x-large;
+    text-align: center;
+    color: #004741;
+}
+
+section p, section ul {
+    font-size: large;
+    text-align: center;
+}
+
+.thumbnail img {
+    margin-bottom: 30px;
+    border-radius: 3%;
+    border: 1px solid #004741;
+    width: 100%;
+}
+
+section .thumbnail {
+    width: 80%;
+    border: none;
+}
+
+/* section maçonnerie */
+
+.myCarousel {
+    width: 100%;
+    height: 400px;
+
+}
+
+.myCarousel img {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+}
+
+/* Fin section maçonnerie  */
+
+/*Start Contact CSS*/
+
+.contact-title {
+    position: static;
+    color: black;
+    border: none;
+}
+
+.button-contact .btn-success, .button-contact .btn-success:visited {
+    background-color: #004741;
+    border-color: #004741;
+    outline: none;
+}
+
+.button-contact .btn-success:hover {
+    background-color: #00857c;
+    border-color: #00857c;
+}
+
+.button-contact .btn-success:active {
+    background-color: #00403a;
+}
+
+/*End Contact CSS*/
+
+/*Start footer CSS*/
+
+hr.separator {
+
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 71, 65, 0.75), rgba(0, 0, 0, 0));
+    border: 0 none;
+    height: 1px;
+
+}
+
+.footer [class*="col-"] {
+    background-color: white;
+}
+
+.footer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+
+.logo-certif {
+    padding: 40px 0 10px 0;
+}
+
+.logo-certif img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-logo-beltoise {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.logo-beltoise-footer {
+    padding-top: 10px;
+}
+
+.infolegale h4 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.infolegale p {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.legal-logo-wcs {
+    height: 30px;
+    margin-left: -35px;
+}
+
+.logoWCS {
+
+}
+
+.logoWCS a {
+    color: black;
+    text-decoration: none;
+
+}
+
+.linkModal {
+    padding-top: 20px;
+}
+
+.linkModal a {
+    color: black;
+    font-size: 18px;
+
+}
+
+.linkModal a:hover {
+    color: #004741;
+    text-decoration: none;
+}
+
+.modal.modal-wide .modal-dialog {
+    width: 80%;
+}
+
+.modal-wide .modal-body {
+    overflow-y: auto;
+}
+
+/*End footer CSS*/
