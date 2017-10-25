@@ -15,6 +15,23 @@ class Renov
     private $imageBefore;
     private $imageAfter;
     private $text;
+    private $title;
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
     /**
      * @return mixed

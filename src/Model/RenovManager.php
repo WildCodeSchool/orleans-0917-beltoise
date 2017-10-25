@@ -33,16 +33,24 @@ class RenovManager extends EntityManager
     public function insert(Renov $renov)
     {
         $query = "INSERT INTO renov 
-                  (imageBefore, imageAfter, text) 
-                  VALUES (:image_before, :image_after, :text)";
+                  (imageBefore, imageAfter, text, title) 
+                  VALUES (:image_before, :image_after, :text, :title)";
         $statement = $this->pdo->prepare($query);
-        $statement->bindValue('image_before', $renov->getImageBefore(), \PDO::PARAM_STR);
-        $statement->bindValue('image_after', $renov->getImageAfter(), \PDO::PARAM_STR);
+        $statement->bindValue('imageBefore', $renov->getImageBefore(), \PDO::PARAM_STR);
+        $statement->bindValue('imageAfter', $renov->getImageAfter(), \PDO::PARAM_STR);
         $statement->bindValue('text', $renov->getText(), \PDO::PARAM_STR);
+        $statement->bindValue('title', $renov->getTitle(), \PDO::PARAM_STR);
         $statement->execute();
     }
 
-
+    public function update(Renov $renov)
+    {
+        $query = "UPDATE renov SET text=:text, title=:title WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('text', $renov->getText(), \PDO::PARAM_STR);
+        $statement->bindValue('title', $renov->getTitle(), \PDO::PARAM_STR);
+        $statement->execute();
+    }
 
     public function delete(Renov $renov)
     {
