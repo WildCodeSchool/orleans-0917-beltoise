@@ -8,11 +8,10 @@ $route = $_GET['route'];
 if ($route=='home') {
     $controller = new HomeController();
     echo $controller->showAllAction();
-}
-if ($route=='admin') {
+} elseif ($route=='admin') {
     $controller = new AdminController();
     echo $controller->showAllAction();
-} elseif ($route == 'delete') {
+} elseif ($route == 'deleteEcoPlatrerie') {
     $controller = new AdminController();
-    echo $controller->deleteAction();
+    echo $controller->deleteEcoPlatrerieAction();
 }

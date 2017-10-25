@@ -6,11 +6,6 @@ use Beltoise\Model\RealEcoPlatrerieManager;
 
 class AdminController extends Controller
 {
-    public function adminAction()
-    {
-        return $this->twig->render('Admin/admin.html.twig');
-    }
-
     public function showAllAction()
     {
         $realEcoPlatrerieManager = new RealEcoPlatrerieManager();
@@ -22,7 +17,7 @@ class AdminController extends Controller
         ]);
     }
 
-    public function deleteAction()
+    public function deleteEcoPlatrerieAction()
     {
         if (!empty($_POST['id'])) {
             $realEcoPlatrerieManager = new RealEcoPlatrerieManager();
