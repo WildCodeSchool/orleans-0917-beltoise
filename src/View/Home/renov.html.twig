@@ -7,21 +7,20 @@
 <section>
     <div class="section-content">
         <div class="row">
-        {% for renov in renovs %}
-            <div class="col-md-5 col-md-offset-1">
-                <figure class="thumbnail center-block">
-                    <h3>{{ renov.title }}</h3>
-                    <div class="col-md-6">
-                        <img src="{{ renov.imageBefore }}" class="img-responsive">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{ renov.imageAfter }}" class="img-responsive">
-                    </div>
-                    <figcaption class="text-center">{{ renov.text }}</figcaption>
-                </figure>
-            </div>
+            {% for renov in renovs %}
+                <div class="col-md-5">
+                    <figure class="thumbnail center-block">
+                        <h3>{{ renov.title }}</h3>
+                        <div class="col-md-5 col-md-offset-1">
+                            <img src="{{ renov.imageBefore }}" class="img-responsive">
+                        </div>
+                        <div class="col-md-5 col-md-offset-1">
+                            <img src="{{ renov.imageAfter }}" class="img-responsive">
+                        </div>
+                        <figcaption class="text-center">{{ renov.text }}</figcaption>
+                    </figure>
+                </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-
 </section>
