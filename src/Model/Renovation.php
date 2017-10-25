@@ -9,7 +9,7 @@
 namespace Beltoise\Model;
 
 
-class Renov
+class Renovation
 {
     private $id;
     private $imageBefore;
