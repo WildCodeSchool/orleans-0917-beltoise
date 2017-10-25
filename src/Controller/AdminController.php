@@ -29,6 +29,7 @@ class AdminController extends Controller
             $slideCertificationManager = new SlideCertificationManager();
             $slideCertification = $slideCertificationManager->find($_POST['id']);
             $slideCertificationManager->delete($slideCertification);
+            unlink('assets/uploads/' . $slideCertification-> getUri());
             header('Location: index.php?route=admin');
         }
     }
