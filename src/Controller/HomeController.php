@@ -8,12 +8,21 @@
 
 namespace Beltoise\Controller;
 
+use Beltoise\Model\SlideCertification;
+use Beltoise\Model\SlideCertificationManager;
+
 class HomeController extends Controller
 {
-    public function homeAction() {
-        // appels éventules aux données de la vue
+    public function showAllAction()
+    {
+        $slideCertificationManager = new SlideCertificationManager();
+        $logos = $slideCertificationManager->findAllLogos();
+        $slides = $slideCertificationManager->findAllSlides();
 
-        //appel à la vue
-        return $this->twig->render('Home/home.html.twig');
+        return $this->twig->render('Home/home.html.twig', [
+            'logos' => $logos,
+            'slides' => $slides,
+        ]);
     }
+
 }
