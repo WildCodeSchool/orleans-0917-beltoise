@@ -28,4 +28,22 @@ class RealEcoPlatrerieManager extends EntityManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\RealEcoPlatrerie::class);
     }
 
+    public function delete(RealEcoPlatrerie $realEcoPlatrerie)
+    {
+        $query = "DELETE FROM realecoPlatrerie WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $realEcoPlatrerie->getId(), \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    public function find(int $id) : RealEcoPlatrerie
+    {
+        $query = "SELECT * FROM realecoPlatrerie WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        $realecoPlatrerie = $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\RealEcoPlatrerie::class);
+        return $realecoPlatrerie[0];
+    }
+
 }

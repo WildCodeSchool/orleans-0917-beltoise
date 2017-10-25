@@ -8,13 +8,13 @@
     <div class="section-content">
         <div class="row">
             {% for realEco in realEcos %}
-            <div class="col-md-6 col-xs-12 ">
-                <div class="thumbnail center-block">
-                    <h3>{{ realEco.titre }}</h3>
-                    <img src="{{ realEco.image }}" class="img-responsive">
-                    <p>{{ realEco.texte }}</p>
+                <div class="col-md-6 col-xs-12 ">
+                    <figure class="thumbnail center-block">
+                        <h3>{{ realEco.titre }}</h3>
+                        <img src="{{ realEco.image }}" class="img-responsive">
+                        <figcaption>{{ realEco.texte }}</figcaption>
+                    </figure>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>

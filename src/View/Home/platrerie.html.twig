@@ -9,11 +9,11 @@
         <div class="row">
             {% for platrerie in platreries %}
                 <div class="col-md-6 col-xs-12">
-                    <div class="thumbnail center-block">
+                    <figure class="thumbnail center-block">
                         <h3>{{ platrerie.titre }}</h3>
                         <img src="{{ platrerie.image }}" class="img-responsive">
-                        <p>{{ platrerie.texte }}</p>
-                    </div>
+                        <figcaption>{{ platrerie.texte }}</figcaption>
+                    </figure>
                 </div>
             {% endfor %}
         </div>

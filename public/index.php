@@ -11,5 +11,8 @@ if ($route=='home') {
 }
 if ($route=='admin') {
     $controller = new AdminController();
-    echo $controller->adminAction();
+    echo $controller->showAllAction();
+} elseif ($route == 'delete') {
+    $controller = new AdminController();
+    echo $controller->deleteAction();
 }
