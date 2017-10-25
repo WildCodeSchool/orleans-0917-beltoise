@@ -23,6 +23,7 @@ class AdminController extends Controller
             $realisationManager = new RealisationManager();
             $realisation = $realisationManager->find($_POST['id']);
             $realisationManager->delete($realisation);
+            unlink ('assets/uploads/'. $realisation->getImage() );
             header('Location: index.php?route=admin');
         }
     }
