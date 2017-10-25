@@ -7,8 +7,8 @@
  */
 
 namespace Beltoise\Controller;
-use Beltoise\Model\RealEcoPlatrerie;
-use Beltoise\Model\RealEcoPlatrerieManager;
+use Beltoise\Model\realisation;
+use Beltoise\Model\RealisationManager;
 
 class HomeController extends Controller
 {
@@ -21,7 +21,7 @@ class HomeController extends Controller
 
     public function showAllAction()
     {
-        $realEcoPlatrerieManager = new RealEcoPlatrerieManager();
+        $realEcoPlatrerieManager = new RealisationManager();
         $platreries = $realEcoPlatrerieManager->findAllPlatrerie();
         $realEcos = $realEcoPlatrerieManager->findAllRealEco();
         return $this->twig->render('Home/home.html.twig', [

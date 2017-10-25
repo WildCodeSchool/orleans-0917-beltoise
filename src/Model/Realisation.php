@@ -8,12 +8,31 @@
 
 namespace Beltoise\Model;
 
-class RealEcoPlatrerie
+class Realisation
 {
     private $id;
     private $titre;
     private $image;
+    private $texte;
     private $section;
+
+    /**
+     * @return mixed
+     */
+    public function getTexte()
+    {
+        return $this->texte;
+    }
+
+    /**
+     * @param mixed $texte
+     * @return realisation
+     */
+    public function setTexte($texte)
+    {
+        $this->texte = $texte;
+        return $this;
+    }
 
     /**
      * @return mixed
@@ -25,7 +44,7 @@ class RealEcoPlatrerie
 
     /**
      * @param mixed $id
-     * @return RealEcoPlatrerie
+     * @return realisation
      */
     public function setId($id)
     {
@@ -43,7 +62,7 @@ class RealEcoPlatrerie
 
     /**
      * @param mixed $titre
-     * @return RealEcoPlatrerie
+     * @return realisation
      */
     public function setTitre($titre)
     {
@@ -61,7 +80,7 @@ class RealEcoPlatrerie
 
     /**
      * @param mixed $image
-     * @return RealEcoPlatrerie
+     * @return realisation
      */
     public function setImage($image)
     {
@@ -79,7 +98,7 @@ class RealEcoPlatrerie
 
     /**
      * @param mixed $section
-     * @return RealEcoPlatrerie
+     * @return realisation
      */
     public function setSection($section)
     {

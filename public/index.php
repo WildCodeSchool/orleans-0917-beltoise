@@ -13,5 +13,8 @@ if ($route=='home') {
     echo $controller->showAllAction();
 } elseif ($route == 'deleteEcoPlatrerie') {
     $controller = new AdminController();
-    echo $controller->deleteEcoPlatrerieAction();
+    echo $controller->deleteRealisationAction();
+} elseif ($route == 'addEcoPlatrerie') {
+    $controller = new AdminController();
+    echo $controller->addRealisationAction();
 }
