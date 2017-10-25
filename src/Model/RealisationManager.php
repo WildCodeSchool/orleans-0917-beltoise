@@ -46,7 +46,7 @@ class RealisationManager extends EntityManager
         return $realisation[0];
     }
 
-    public function insert(realisation $realisation)
+    public function insertRealisation(realisation $realisation)
     {
         $query = "INSERT INTO realisation  (titre, image, texte, section) 
                   VALUES (:titre, :image, :texte, :section)";

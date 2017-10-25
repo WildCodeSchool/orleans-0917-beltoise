@@ -20,9 +20,9 @@ class AdminController extends Controller
     public function deleteRealisationAction()
     {
         if (!empty($_POST['id'])) {
-            $realEcoPlatrerieManager = new RealisationManager();
-            $realEcoPlatrerie = $realEcoPlatrerieManager->find($_POST['id']);
-            $realEcoPlatrerieManager->delete($realEcoPlatrerie);
+            $realisationManager = new RealisationManager();
+            $platreries = $realisationManager->find($_POST['id']);
+            $realisationManager->delete($platreries);
             header('Location: index.php?route=admin');
         }
     }
