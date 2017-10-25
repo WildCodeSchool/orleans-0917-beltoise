@@ -8,7 +8,7 @@
 
 namespace Beltoise\Controller;
 
-use Beltoise\Model\SlideCertification;
+
 use Beltoise\Model\SlideCertificationManager;
 
 class HomeController extends Controller
@@ -24,5 +24,4 @@ class HomeController extends Controller
             'slides' => $slides,
         ]);
     }
-
 }

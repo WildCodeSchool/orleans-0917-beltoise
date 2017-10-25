@@ -64,5 +64,4 @@ class SlideCertification
     {
         $this->uri = $uri;
     }
-
 }
