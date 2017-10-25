@@ -27,15 +27,15 @@
                     <ol class="carousel-indicators">
                         {% for slide in slides %}
                             <li data-target="#myCarousel"
-                                data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}>
-
+                                data-slide-to="{{ loop.index0 }}"
+                                class="{{ loop.index0 == 0 ? 'active' }}">
                             </li>
                         {% endfor %}
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         {% for slide in slides %}
-                            <div {% if loop.index0 == 0 %} class="item active" {% else %} class="item" {% endif %}>
+                            <div class="item {{  loop.index0 == 0 ? 'active' }}">
                                 <img class="img-responsive" src="assets/uploads/{{ slide.uri }}" alt="image">
                             </div>
                         {% endfor %}
