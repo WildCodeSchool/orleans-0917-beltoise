@@ -1,0 +1,16 @@
+<section>
+    <h2>Logos de certification</h2>
+    <div class="row">
+        {% for logo in logos %}
+            <div class="col-md-2">
+                <figure class="thumbnail center-block">
+                    <img src="assets/uploads/{{ logo.uri }}" class="img-responsive">
+                </figure>
+                <form action="?route=deleteSlideCertification" method="post">
+                    <input type="hidden" name="id" value="{{ logo.id }}"/>
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</section>
