@@ -7,12 +7,16 @@
                     <figure class="thumbnail center-block">
                         <h3>{{ renov.title }}</h3>
                         <div class="col-md-5 col-md-offset-1">
-                            <img src="{{ renov.imageBefore }}" class="img-responsive">
+                            <img src="assets/uploads/{{ renov.imageBefore }}" class="img-responsive">
                         </div>
                         <div class="col-md-5 col-md-offset-1">
-                            <img src="{{ renov.imageAfter }}" class="img-responsive">
+                            <img src="assets/uploads/{{ renov.imageAfter }}" class="img-responsive">
                         </div>
                         <figcaption class="text-center">{{ renov.text }}</figcaption>
+                        <form action="?route=deleteRenov" method="post">
+                            <input type="hidden" name="id" value="{{ renov.id }}"/>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </figure>
                 </div>
             {% endfor %}

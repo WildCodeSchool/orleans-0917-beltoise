@@ -13,13 +13,13 @@ use Beltoise\Model\RenovManager;
 
 class AdminController extends Controller
 {
-    public function AdminAction() {
+    public function adminAction() {
         // appels éventules aux données de la vue
 
         //appel à la vue
         return $this->twig->render('Admin/admin.html.twig');
     }
-    public function ShowAllAction()
+    public function showAllAction()
     {
         $renovmanager = new RenovManager();
         $renovs = $renovmanager->findAll();
@@ -27,5 +27,14 @@ class AdminController extends Controller
         return $this->twig->render('Admin/admin.html.twig', [
             'renovs' => $renovs,
         ]);
+    }
+    public function deleteRenovAction()
+    {
+        if (!empty($_POST['id'])) {
+            $renovManager = new RenovManager();
+            $renov = $renovManager->find($_POST['id']);
+            $renovManager->delete($renov);
+            header('Location: index.php?route=admin');
+        }
     }
 }

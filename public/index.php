@@ -11,13 +11,18 @@ use Beltoise\Controller\AdminController;
 // On appelle une methode d'un controlleur en fonction de la route saisie en URL
 if ($route == 'admin') {
 
-    $AdminController = new AdminController();
-    echo  $AdminController->showAllAction();
+    $controller = new AdminController();
+    echo  $controller->showAllAction();
 
 } elseif ($route == 'home') {
 
-    $HomeController = new HomeController();
-    echo $HomeController->ShowAllAction();
+    $controller = new HomeController();
+    echo $controller->showAllAction();
+
+}elseif ($route == 'deleteRenov') {
+
+    $controller = new AdminController();
+    echo  $controller->deleteRenovAction();
 }else {
     echo 'La page n\'existe pas';
 }
