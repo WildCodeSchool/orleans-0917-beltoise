@@ -11,11 +11,11 @@
             </form>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
-            {#<form action="?route=adminRenovations" method="post" enctype="multipart/form-data">
-                Select image to upload:
+            <form action="?route=adminRenovations" method="post" enctype="multipart/form-data">
+                Selectionner l'image représentant l'après :
                 <input type="file" name="upload">
                 <input type="submit" value="Envoyer" name="submit">
-            </form>#}
+            </form>
         </div>
     </div>
     <div class="row">
@@ -27,8 +27,8 @@
                 <figure class="thumbnail center-block">
                     <img src="assets/uploads/{{ renovation.imageAfter }}" class="img-responsive">
                 </figure>
-                <form action="?route=deleteCertification" method="post">
-                    <input type="hidden" name="id" value="{{ certification.id }}"/>
+                <form action="?route=deleteRenovation" method="post">
+                    <input type="hidden" name="id" value="{{ renovation.id }}"/>
                     <button type="submit" class="btn btn-danger">Supprimer</button>
                 </form>
             </div>
