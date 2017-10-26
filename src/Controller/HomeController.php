@@ -7,6 +7,7 @@
  */
 
 namespace Beltoise\Controller;
+use Beltoise\Model\RenovationManager;
 
 class HomeController extends Controller
 {
@@ -15,5 +16,14 @@ class HomeController extends Controller
 
         //appel à la vue
         return $this->twig->render('Home/home.html.twig');
+    }
+    public function ShowAllAction()
+    {
+        $renovationmanager = new RenovationManager();
+        $renovations = $renovationmanager->findAll();
+
+        return $this->twig->render('Home/home.html.twig', [
+            'renovations' => $renovations,
+        ]);
     }
 }
