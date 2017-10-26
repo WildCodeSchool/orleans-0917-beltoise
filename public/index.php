@@ -16,7 +16,10 @@ if ($route=='home') {
 if ($route=='admin') {
     $controller = new AdminController();
     echo $controller->showAllAction();
-} elseif ($route == 'deleteSlideCertification') {
+} elseif ($route == 'deleteSlide') {
     $controller = new AdminController();
-    echo $controller->deleteSlideCertificationAction();
+    echo $controller->deleteSlideAction();
+} elseif ($route == 'deleteCertification') {
+    $controller = new AdminController();
+    echo $controller->deleteCertificationAction();
 }

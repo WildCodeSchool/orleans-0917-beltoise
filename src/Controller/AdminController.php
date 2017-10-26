@@ -23,13 +23,25 @@ class AdminController extends Controller
         ]);
     }
 
-    public function deleteSlideCertificationAction()
+    public function deleteSlideAction()
     {
         if (!empty($_POST['id'])) {
             $slideCertificationManager = new SlideCertificationManager();
-            $slideCertification = $slideCertificationManager->find($_POST['id']);
-            $slideCertificationManager->delete($slideCertification);
-            header('Location: index.php?route=admin');
+            $slide   = $slideCertificationManager->find($_POST['id']);
+            $slideCertificationManager->delete($slide);
+            unlink('assets/uploads/' . $slide-> getUri());
+            header('Location: index.php?route=admin#anchorMaconnerie');
+        }
+    }
+
+    public function deleteCertificationAction()
+    {
+        if (!empty($_POST['id'])) {
+            $slideCertificationManager = new SlideCertificationManager();
+            $certification   = $slideCertificationManager->find($_POST['id']);
+            $slideCertificationManager->delete($certification);
+            unlink('assets/uploads/' . $certification-> getUri());
+            header('Location: index.php?route=admin#anchorCertifications');
         }
     }
 }
