@@ -11,7 +11,7 @@ namespace Beltoise\Model;
 
 class SlideCertificationManager extends EntityManager
 {
-    public function findAllLogos()
+    public function findAllCertifications()
     {
         $query = "SELECT * FROM slide_certification WHERE role='CERTIFICATION'";
         $statement = $this->pdo->query($query);
@@ -42,6 +42,17 @@ class SlideCertificationManager extends EntityManager
         $query = "DELETE FROM slide_certification WHERE id=:id";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('id', $slideCertification->getId(), \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    public function insert(SlideCertification $slideCertification)
+    {
+        $query = "INSERT INTO slide_certification 
+                  (role, uri) 
+                  VALUES (:role, :uri)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('role', $slideCertification->getRole(), \PDO::PARAM_STR);
+        $statement->bindValue('uri', $slideCertification->getUri(), \PDO::PARAM_STR);
         $statement->execute();
     }
 }

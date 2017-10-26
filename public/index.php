@@ -6,6 +6,7 @@ require '../connect.php';
 
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
+use Beltoise\Controller\SlideCertificationController;
 
 // Routeur basique, necessite une url index.php?route=xxx
 $route = $_GET['route'];
@@ -16,14 +17,11 @@ if ($route == 'home') {
 } elseif ($route == 'admin') {
     $controller = new AdminController();
     echo $controller->showAllAction();
-} elseif ($route == 'deleteRenovation') {
-    $controller = new AdminController();
-    echo $controller->deleteRenovationAction();
-} elseif ($route == 'deleteRealisation') {
-    $controller = new AdminController();
-    echo $controller->deleteRealisationAction();
+} elseif ($route == 'adminCertifications') {
+    $controller = new SlideCertificationController();
+    echo $controller->showAdminCertifications();
 } elseif ($route == 'deleteCertification') {
-    $controller = new AdminController();
+    $controller = new SlideCertificationController();
     echo $controller->deleteCertificationAction();
 } elseif ($route == 'deleteSlide') {
     $controller = new AdminController();

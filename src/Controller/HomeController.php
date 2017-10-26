@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function showAllAction()
     {
         $slideCertificationManager = new SlideCertificationManager();
-        $logos = $slideCertificationManager->findAllLogos();
+        $logos = $slideCertificationManager->findAllCertifications();
         $slides = $slideCertificationManager->findAllSlides();
 
         $renovationmanager = new RenovationManager();
