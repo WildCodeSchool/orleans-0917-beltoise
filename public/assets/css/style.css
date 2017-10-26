@@ -55,6 +55,12 @@ h2 {
     text-transform: uppercase;
 }
 
+figure img {
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+}
+
 /* Start Navbar CSS */
 
 .separationImgAccueil {

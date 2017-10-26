@@ -1,0 +1,26 @@
+<span id="anchorRenovation" class="anchor"></span>
+<div class="row separationImg">
+    <div class="center-title">
+        <h2>Rénovation et Restauration</h2>
+    </div>
+</div>
+<section>
+    <div class="section-content">
+        <div class="row">
+            {% for renovation in renovations %}
+                <div class="col-md-5">
+                    <figure class="thumbnail center-block">
+                        <h3>{{ renovation.title }}</h3>
+                        <div class="col-md-5 col-md-offset-1">
+                            <img src="assets/uploads/{{ renovation.imageBefore }}" class="img-responsive">
+                        </div>
+                        <div class="col-md-5 col-md-offset-1">
+                            <img src="assets/uploads/{{ renovation.imageAfter }}" class="img-responsive">
+                        </div>
+                        <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                    </figure>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
