@@ -1,4 +1,4 @@
-<section>
+<section id="anchorMaconnerie">
     <h2>Diaporama maçonnerie</h2>
     <div class="row">
         {% for slide in slides %}
@@ -6,7 +6,7 @@
                 <figure class="thumbnail center-block">
                     <img src="assets/uploads/{{ slide.uri }}" class="img-responsive">
                 </figure>
-                <form action="?route=deleteSlideCertification" method="post">
+                <form action="?route=deleteSlide" method="post">
                     <input type="hidden" name="id" value="{{ slide.id }}"/>
                     <button type="submit" class="btn btn-danger">Supprimer</button>
                 </form>
