@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: wilder15
+ * User: wilder2
  * Date: 24/10/17
- * Time: 16:44
+ * Time: 16:40
  */
 
 namespace Beltoise\Model;
@@ -15,7 +15,7 @@ class EntityManager
 
     public function __construct()
     {
-        $this->pdo = new \PDO(DSN, USERNAME,PASSWORD);
+        $this->pdo = new \PDO(DSN, USERNAME, PASSWORD);
     }
 
 }
