@@ -7,9 +7,9 @@
  */
 
 namespace Beltoise\Controller;
+
+
 use Beltoise\Model\RenovationManager;
-
-
 use Beltoise\Model\SlideCertificationManager;
 
 class HomeController extends Controller
@@ -20,17 +20,12 @@ class HomeController extends Controller
         $logos = $slideCertificationManager->findAllLogos();
         $slides = $slideCertificationManager->findAllSlides();
 
-        return $this->twig->render('Home/home.html.twig', [
-            'logos' => $logos,
-            'slides' => $slides,
-        ]);
-    }
-    public function ShowAllAction()
-    {
         $renovationmanager = new RenovationManager();
         $renovations = $renovationmanager->findAll();
 
         return $this->twig->render('Home/home.html.twig', [
+            'logos' => $logos,
+            'slides' => $slides,
             'renovations' => $renovations,
         ]);
     }
