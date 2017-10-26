@@ -1,20 +1,25 @@
 <?php
 
 namespace Beltoise\Controller;
-use Beltoise\Model\realisation;
+
+use Beltoise\Model\RenovationManager;
 use Beltoise\Model\RealisationManager;
 
 class AdminController extends Controller
 {
     public function showAllAction()
     {
-        $realisationManager = new RealisationManager();
-        $platreries = $realisationManager->findAllPlatrerie();
-        $realEcos = $realisationManager->findAllRealEco();
+        $renovationmanager = new RenovationManager();
+        $renovations = $renovationmanager->findAll();
+
+        $realEcoPlatrerieManager = new RealisationManager();
+        $platreries = $realEcoPlatrerieManager->findAllPlatrerie();
+        $realEcos = $realEcoPlatrerieManager->findAllRealEco();
+
         return $this->twig->render('Admin/admin.html.twig', [
+            'renovations' => $renovations,
             'platreries' => $platreries,
             'realEcos' => $realEcos,
-            'renovations' => $renovations,
         ]);
     }
 
@@ -24,8 +29,10 @@ class AdminController extends Controller
             $realisationManager = new RealisationManager();
             $realisation = $realisationManager->find($_POST['id']);
             $realisationManager->delete($realisation);
-            unlink ('assets/uploads/'. $realisation->getImage() );
+            unlink('assets/uploads/' . $realisation->getImage());
             header('Location: index.php?route=admin');
+        }
+    }
 
     public function deleteRenovationAction()
     {
@@ -33,8 +40,8 @@ class AdminController extends Controller
             $renovationManager = new RenovationManager();
             $renovation = $renovationManager->find($_POST['id']);
             $renovationManager->delete($renovation);
-            unlink( 'assets/uploads/' . $renovation->getImageBefore());
-            unlink( 'assets/uploads/' . $renovation->getImageAfter());
+            unlink('assets/uploads/' . $renovation->getImageBefore());
+            unlink('assets/uploads/' . $renovation->getImageAfter());
             header('Location: index.php?route=admin#AnchorRenovation');
         }
     }

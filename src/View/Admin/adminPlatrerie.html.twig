@@ -1,19 +1,5 @@
 <section>
     <h2>Platrerie</h2>
-    <form action="?route=addEcoPlatrerie" method = post>
-        <fieldset>
-            <legend>Ajouter une vignette:</legend>
-            <label for="titre">Titre :</label>
-            <input type="text" name="titre" id="titre" placeholder="Entrez le titre" value="" class="form-control"/>
-            <label for="texte">Texte :</label>
-            <textarea name="texte" id="texte" class="form-control"></textarea>
-            <label>Sélectionnez votre photo :</label>
-            <button type="submit" class="btn btn-success">
-                <span class="glyphicon glyphicon-plus"></span>Ajouter
-            </button>
-        </fieldset>
-    </form>
-
     <div class="row">
         {% for platrerie in platreries %}
             <div class="col-md-2">
