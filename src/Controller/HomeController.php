@@ -10,13 +10,26 @@ namespace Beltoise\Controller;
 use Beltoise\Model\realisation;
 use Beltoise\Model\RealisationManager;
 
+
+use Beltoise\Model\RenovationManager;
+use Beltoise\Model\SlideCertificationManager;
+
 class HomeController extends Controller
 {
-    public function homeAction() {
-        // appels éventules aux données de la vue
+    public function showAllAction()
+    {
+        $slideCertificationManager = new SlideCertificationManager();
+        $logos = $slideCertificationManager->findAllLogos();
+        $slides = $slideCertificationManager->findAllSlides();
 
-        //appel à la vue
-        return $this->twig->render('Home/home.html.twig');
+        $renovationmanager = new RenovationManager();
+        $renovations = $renovationmanager->findAll();
+
+        return $this->twig->render('Home/home.html.twig', [
+            'logos' => $logos,
+            'slides' => $slides,
+            'renovations' => $renovations,
+        ]);
     }
 
     public function showAllAction()

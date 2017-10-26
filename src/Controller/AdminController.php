@@ -13,7 +13,8 @@ class AdminController extends Controller
         $realEcos = $realisationManager->findAllRealEco();
         return $this->twig->render('Admin/admin.html.twig', [
             'platreries' => $platreries,
-            'realEcos' => $realEcos
+            'realEcos' => $realEcos,
+            'renovations' => $renovations,
         ]);
     }
 
@@ -25,6 +26,16 @@ class AdminController extends Controller
             $realisationManager->delete($realisation);
             unlink ('assets/uploads/'. $realisation->getImage() );
             header('Location: index.php?route=admin');
+
+    public function deleteRenovationAction()
+    {
+        if (!empty($_POST['id'])) {
+            $renovationManager = new RenovationManager();
+            $renovation = $renovationManager->find($_POST['id']);
+            $renovationManager->delete($renovation);
+            unlink( 'assets/uploads/' . $renovation->getImageBefore());
+            unlink( 'assets/uploads/' . $renovation->getImageAfter());
+            header('Location: index.php?route=admin#AnchorRenovation');
         }
     }
 }
