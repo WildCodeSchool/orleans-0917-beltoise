@@ -20,11 +20,14 @@ if ($route == 'home') {
 } elseif ($route == 'adminCertifications') {
     $controller = new SlideCertificationController();
     echo $controller->showAdminCertifications();
+} elseif ($route == 'adminSlider') {
+    $controller = new SlideCertificationController();
+    echo $controller->showAdminSlider();
 } elseif ($route == 'deleteCertification') {
     $controller = new SlideCertificationController();
     echo $controller->deleteCertificationAction();
 } elseif ($route == 'deleteSlide') {
-    $controller = new AdminController();
+    $controller = new SlideCertificationController();
     echo $controller->deleteSlideAction();
 } else {
     echo 'La page n\'existe pas';

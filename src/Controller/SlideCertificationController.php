@@ -46,6 +46,37 @@ class SlideCertificationController extends Controller
         ]);
     }
 
+    public function showAdminSlider()
+    {
+        $slide = new SlideCertification();
+//        $errors = []; TODO
+
+        if (!empty($_POST)) {
+            $slide->setRole($_POST['role']);
+
+            $imageName = uploadFile::upload($_FILES);
+
+            $slide->setUri($imageName);
+
+            if (empty($errors)) {
+
+                $slideCertificationManager = new SlideCertificationManager();
+                $slideCertificationManager->insert($slide);
+
+                header('Location: index.php?route=adminSlider');
+                exit;
+            }
+
+        }
+
+        $slideCertificationManager = new SlideCertificationManager();
+        $slides = $slideCertificationManager->findAllSlides();
+
+        return $this->twig->render('Admin/adminSlider.html.twig', [
+            'slides' => $slides,
+        ]);
+    }
+
     public function deleteSlideAction()
     {
         if (!empty($_POST['id'])) {
@@ -53,7 +84,7 @@ class SlideCertificationController extends Controller
             $slide = $slideCertificationManager->find($_POST['id']);
             $slideCertificationManager->delete($slide);
             unlink('assets/uploads/' . $slide->getUri());
-            header('Location: index.php?route=admin#anchorMaconnerie');
+            header('Location: index.php?route=adminSlider');
         }
     }
 
