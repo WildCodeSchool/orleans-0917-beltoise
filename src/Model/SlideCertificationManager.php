@@ -13,7 +13,7 @@ class SlideCertificationManager extends EntityManager
 {
     public function findAllLogos()
     {
-        $query = "SELECT * FROM slide_certification WHERE role='certification'";
+        $query = "SELECT * FROM slide_certification WHERE role='CERTIFICATION'";
         $statement = $this->pdo->query($query);
 
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\SlideCertification::class);
@@ -21,7 +21,7 @@ class SlideCertificationManager extends EntityManager
 
     public function findAllSlides()
     {
-        $query = "SELECT * FROM slide_certification WHERE role='slide'";
+        $query = "SELECT * FROM slide_certification WHERE role='SLIDE'";
         $statement = $this->pdo->query($query);
 
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\SlideCertification::class);
