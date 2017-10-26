@@ -23,7 +23,7 @@ class HomeController extends Controller
         $slides = $slideCertificationManager->findAllSlides();
 
         $renovationmanager = new RenovationManager();
-        $renovations = $renovationmanager->findAll();
+        $renovations = $renovationmanager->findAllRenovations();
 
         $realEcoPlatrerieManager = new RealisationManager();
         $platreries = $realEcoPlatrerieManager->findAllPlatrerie();

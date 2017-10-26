@@ -5,6 +5,7 @@ require '../connect.php';
 
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
+use Beltoise\Controller\RenovationController;
 
 // Routeur basique, necessite une url index.php?route=xxx
 $route = $_GET['route'];
@@ -15,12 +16,12 @@ if ($route == 'admin') {
 } elseif ($route == 'home') {
     $controller = new HomeController();
     echo $controller->showAllAction();
+} elseif ($route == 'adminRenovations') {
+    $controller = new RenovationController();
+    echo $controller->showAdminRenovation();
 } elseif ($route == 'deleteRenovation') {
-    $controller = new AdminController();
+    $controller = new RenovationController();
     echo $controller->deleteRenovationAction();
-} elseif ($route == 'deleteEcoPlatrerie') {
-    $controller = new AdminController();
-    echo $controller->deleteRealisationAction();
 } else {
     echo 'La page n\'existe pas';
 }

@@ -11,14 +11,14 @@ namespace Beltoise\Model;
 
 class RenovationManager extends EntityManager
 {
-    public function findAll()
+    public function findAllRenovations()
     {
         $query = "SELECT * FROM renovation";
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Renovation::class);
     }
 
-    public function find(int $id): Renovation
+    public function find(int $id)
     {
         $query = "SELECT * FROM renovation WHERE id=:id";
         $statement = $this->pdo->prepare($query);

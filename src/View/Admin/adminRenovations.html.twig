@@ -1,0 +1,39 @@
+{% include 'Admin/adminHeader.html.twig' %}
+
+<section>
+    <h2>Rénovation</h2>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <form action="?route=adminRenovations" method="post" enctype="multipart/form-data">
+                Selectionner l'image  représentant le avant :
+                <input type="file" name="upload">
+                <input type="submit" value="Envoyer" name="submit">
+            </form>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            {#<form action="?route=adminRenovations" method="post" enctype="multipart/form-data">
+                Select image to upload:
+                <input type="file" name="upload">
+                <input type="submit" value="Envoyer" name="submit">
+            </form>#}
+        </div>
+    </div>
+    <div class="row">
+        {% for renovation in renovations %}
+            <div class="col-md-2">
+                <figure class="thumbnail center-block">
+                    <img src="assets/uploads/{{ renovation.imageBefore }}" class="img-responsive">
+                </figure>
+                <figure class="thumbnail center-block">
+                    <img src="assets/uploads/{{ renovation.imageAfter }}" class="img-responsive">
+                </figure>
+                <form action="?route=deleteCertification" method="post">
+                    <input type="hidden" name="id" value="{{ certification.id }}"/>
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% include 'Admin/adminFooter.html.twig' %}
