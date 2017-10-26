@@ -19,10 +19,10 @@ if ($route == 'admin') {
     $controller = new HomeController();
     echo $controller->showAllAction();
 
-}elseif ($route == 'deleteRenov') {
+}elseif ($route == 'deleteRenovation') {
 
     $controller = new AdminController();
-    echo  $controller->deleteRenovAction();
+    echo  $controller->deleteRenovationAction();
 }else {
     echo 'La page n\'existe pas';
 }

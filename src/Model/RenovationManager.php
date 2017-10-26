@@ -15,7 +15,6 @@ class RenovationManager extends EntityManager
     {
         $query = "SELECT * FROM renovation";
         $statement = $this->pdo->query($query);
-
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Renovation::class);
     }
 
@@ -25,20 +24,20 @@ class RenovationManager extends EntityManager
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
-
-        $persons = $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Renovation::class);
-        return $persons[0];
+        $renovations = $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Renovation::class);
+        return $renovations[0];
     }
 
     public function insert(Renovation $renovation)
     {
         $query = "INSERT INTO renovation
-                  (imageBefore, imageAfter, text) 
-                  VALUES (:image_before, :image_after, :text)";
+                  (imageBefore, imageAfter, text, title) 
+                  VALUES (:image_before, :image_after, :text, :title)";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('image_before', $renovation->getImageBefore(), \PDO::PARAM_STR);
         $statement->bindValue('image_after', $renovation->getImageAfter(), \PDO::PARAM_STR);
         $statement->bindValue('text', $renovation->getText(), \PDO::PARAM_STR);
+        $statement->bindValue('title', $renovation->getText(), \PDO::PARAM_STR);
         $statement->execute();
     }
 
@@ -51,5 +50,7 @@ class RenovationManager extends EntityManager
         $statement->bindValue('id', $renovation->getId(), \PDO::PARAM_INT);
         $statement->execute();
     }
+
+
 
 }

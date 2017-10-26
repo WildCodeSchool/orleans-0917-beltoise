@@ -9,7 +9,7 @@
 namespace Beltoise\Controller;
 
 
-use Beltoise\Model\RenovManager;
+use Beltoise\Model\RenovationManager;
 
 class AdminController extends Controller
 {
@@ -21,20 +21,22 @@ class AdminController extends Controller
     }
     public function showAllAction()
     {
-        $renovmanager = new RenovManager();
-        $renovs = $renovmanager->findAll();
+        $renovationmanager = new RenovationManager();
+        $renovations = $renovationmanager->findAll();
 
         return $this->twig->render('Admin/admin.html.twig', [
-            'renovs' => $renovs,
+            'renovations' => $renovations,
         ]);
     }
-    public function deleteRenovAction()
+    public function deleteRenovationAction()
     {
         if (!empty($_POST['id'])) {
-            $renovManager = new RenovManager();
-            $renov = $renovManager->find($_POST['id']);
-            $renovManager->delete($renov);
-            header('Location: index.php?route=admin');
+            $renovationManager = new RenovationManager();
+            $renovation = $renovationManager->find($_POST['id']);
+            $renovationManager->delete($renovation);
+            unlink( 'assets/uploads/' . $renovation->getImageBefore());
+            unlink( 'assets/uploads/' . $renovation->getImageAfter());
+            header('Location: index.php?route=admin#AnchorRenovation');
         }
     }
 }
