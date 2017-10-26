@@ -27,9 +27,9 @@ class AdminController extends Controller
     {
         if (!empty($_POST['id'])) {
             $slideCertificationManager = new SlideCertificationManager();
-            $slide   = $slideCertificationManager->find($_POST['id']);
+            $slide = $slideCertificationManager->find($_POST['id']);
             $slideCertificationManager->delete($slide);
-            unlink('assets/uploads/' . $slide-> getUri());
+            unlink('assets/uploads/' . $slide->getUri());
             header('Location: index.php?route=admin#anchorMaconnerie');
         }
     }
@@ -38,9 +38,9 @@ class AdminController extends Controller
     {
         if (!empty($_POST['id'])) {
             $slideCertificationManager = new SlideCertificationManager();
-            $certification   = $slideCertificationManager->find($_POST['id']);
+            $certification = $slideCertificationManager->find($_POST['id']);
             $slideCertificationManager->delete($certification);
-            unlink('assets/uploads/' . $certification-> getUri());
+            unlink('assets/uploads/' . $certification->getUri());
             header('Location: index.php?route=admin#anchorCertifications');
         }
     }
