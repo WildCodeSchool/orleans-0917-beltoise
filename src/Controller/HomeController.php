@@ -25,21 +25,16 @@ class HomeController extends Controller
         $renovationmanager = new RenovationManager();
         $renovations = $renovationmanager->findAll();
 
+        $realEcoPlatrerieManager = new RealisationManager();
+        $platreries = $realEcoPlatrerieManager->findAllPlatrerie();
+        $realEcos = $realEcoPlatrerieManager->findAllRealEco();
+
         return $this->twig->render('Home/home.html.twig', [
             'logos' => $logos,
             'slides' => $slides,
             'renovations' => $renovations,
-        ]);
-    }
-
-    public function showAllAction()
-    {
-        $realEcoPlatrerieManager = new RealisationManager();
-        $platreries = $realEcoPlatrerieManager->findAllPlatrerie();
-        $realEcos = $realEcoPlatrerieManager->findAllRealEco();
-        return $this->twig->render('Home/home.html.twig', [
             'platreries' => $platreries,
-            'realEcos' => $realEcos
+            'realEcos' => $realEcos,
         ]);
     }
 }
