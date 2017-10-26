@@ -1,10 +1,10 @@
 <?php
+
 require '../vendor/autoload.php';
 require '../connect.php';
 
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
-
 
 // Routeur basique, necessite une url index.php?route=xxx
 $route = $_GET['route'];
@@ -18,6 +18,10 @@ if ($route == 'admin') {
 } elseif ($route == 'deleteRenovation') {
     $controller = new AdminController();
     echo $controller->deleteRenovationAction();
+} elseif ($route == 'deleteEcoPlatrerie') {
+    $controller = new AdminController();
+    echo $controller->deleteRealisationAction();
 } else {
     echo 'La page n\'existe pas';
 }
+

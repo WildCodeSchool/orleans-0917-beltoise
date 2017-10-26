@@ -1,33 +1,32 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wilder15
- * Date: 25/10/17
- * Time: 11:40
- */
 
 namespace Beltoise\Controller;
-
-
-use Beltoise\Model\RenovationManager;
+use Beltoise\Model\realisation;
+use Beltoise\Model\RealisationManager;
 
 class AdminController extends Controller
 {
-    public function adminAction() {
-        // appels éventules aux données de la vue
-
-        //appel à la vue
-        return $this->twig->render('Admin/admin.html.twig');
-    }
     public function showAllAction()
     {
-        $renovationmanager = new RenovationManager();
-        $renovations = $renovationmanager->findAll();
-
+        $realisationManager = new RealisationManager();
+        $platreries = $realisationManager->findAllPlatrerie();
+        $realEcos = $realisationManager->findAllRealEco();
         return $this->twig->render('Admin/admin.html.twig', [
+            'platreries' => $platreries,
+            'realEcos' => $realEcos,
             'renovations' => $renovations,
         ]);
     }
+
+    public function deleteRealisationAction()
+    {
+        if (!empty($_POST['id'])) {
+            $realisationManager = new RealisationManager();
+            $realisation = $realisationManager->find($_POST['id']);
+            $realisationManager->delete($realisation);
+            unlink ('assets/uploads/'. $realisation->getImage() );
+            header('Location: index.php?route=admin');
+
     public function deleteRenovationAction()
     {
         if (!empty($_POST['id'])) {
