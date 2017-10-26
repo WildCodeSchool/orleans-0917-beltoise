@@ -7,8 +7,11 @@
  */
 
 namespace Beltoise\Controller;
+use Beltoise\Model\realisation;
+use Beltoise\Model\RealisationManager;
 
 
+use Beltoise\Model\RenovationManager;
 use Beltoise\Model\SlideCertificationManager;
 
 class HomeController extends Controller
@@ -19,9 +22,19 @@ class HomeController extends Controller
         $logos = $slideCertificationManager->findAllLogos();
         $slides = $slideCertificationManager->findAllSlides();
 
+        $renovationmanager = new RenovationManager();
+        $renovations = $renovationmanager->findAll();
+
+        $realEcoPlatrerieManager = new RealisationManager();
+        $platreries = $realEcoPlatrerieManager->findAllPlatrerie();
+        $realEcos = $realEcoPlatrerieManager->findAllRealEco();
+
         return $this->twig->render('Home/home.html.twig', [
             'logos' => $logos,
             'slides' => $slides,
+            'renovations' => $renovations,
+            'platreries' => $platreries,
+            'realEcos' => $realEcos,
         ]);
     }
 }
