@@ -22,6 +22,12 @@ if ($route == 'admin') {
 } elseif ($route == 'deleteEcoPlatrerie') {
     $controller = new AdminController();
     echo $controller->deleteRealisationAction();
+} elseif ($route == 'deleteSlide') {
+    $controller = new AdminController();
+    echo $controller->deleteSlideAction();
+}  elseif ($route == 'deleteCertification') {
+    $controller = new AdminController();
+    echo $controller->deleteCertificationAction();
 } else {
     echo 'La page n\'existe pas';
 }

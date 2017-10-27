@@ -35,9 +35,12 @@ class AdminController extends Controller
         if (!empty($_POST['id'])) {
             $realisationManager = new RealisationManager();
             $realisation = $realisationManager->find($_POST['id']);
-            $realisationManager->delete($realisation);
-            unlink('assets/uploads/' . $realisation->getImage());
-            header('Location: index.php?route=admin');
+
+            if (file_exists('assets/uploads/' . $realisation->getImage())) {
+                $realisationManager->delete($realisation);
+                unlink('assets/uploads/' . $realisation->getImage());
+                header('Location: index.php?route=admin');
+            }
         }
     }
 
@@ -46,22 +49,28 @@ class AdminController extends Controller
         if (!empty($_POST['id'])) {
             $renovationManager = new RenovationManager();
             $renovation = $renovationManager->find($_POST['id']);
-            $renovationManager->delete($renovation);
-            unlink('assets/uploads/' . $renovation->getImageBefore());
-            unlink('assets/uploads/' . $renovation->getImageAfter());
-            header('Location: index.php?route=admin#AnchorRenovation');
+
+            if (file_exists('assets/uploads/' . $renovation->getImageBefore())
+                and 'assets/uploads/' . $renovation->getImageBefore()) {
+                $renovationManager->delete($renovation);
+                unlink('assets/uploads/' . $renovation->getImageBefore());
+                unlink('assets/uploads/' . $renovation->getImageAfter());
+                header('Location: index.php?route=admin#AnchorRenovation');
+            }
         }
     }
-
 
     public function deleteSlideAction()
     {
         if (!empty($_POST['id'])) {
             $slideCertificationManager = new SlideCertificationManager();
             $slide = $slideCertificationManager->find($_POST['id']);
-            $slideCertificationManager->delete($slide);
-            unlink('assets/uploads/' . $slide->getUri());
-            header('Location: index.php?route=admin#anchorMaconnerie');
+
+            if (file_exists('assets/uploads/' . $slide->getUri())) {
+                $slideCertificationManager->delete($slide);
+                unlink('assets/uploads/' . $slide->getUri());
+                header('Location: index.php?route=admin#anchorMaconnerie');
+            }
         }
     }
 
@@ -70,9 +79,12 @@ class AdminController extends Controller
         if (!empty($_POST['id'])) {
             $slideCertificationManager = new SlideCertificationManager();
             $certification = $slideCertificationManager->find($_POST['id']);
-            $slideCertificationManager->delete($certification);
-            unlink('assets/uploads/' . $certification->getUri());
-            header('Location: index.php?route=admin#anchorCertifications');
+
+            if (file_exists('assets/uploads/' . $certification->getUri())) {
+                $slideCertificationManager->delete($certification);
+                unlink('assets/uploads/' . $certification->getUri());
+                header('Location: index.php?route=admin#anchorCertifications');
+            }
         }
     }
 }
