@@ -10,7 +10,7 @@ namespace Beltoise\Controller;
 
 
 use Beltoise\Model\Renovation;
-use Beltoise\model\RenovationManager;
+use Beltoise\Model\RenovationManager;
 use Beltoise\Service\UploadFile;
 
 class RenovationController extends Controller

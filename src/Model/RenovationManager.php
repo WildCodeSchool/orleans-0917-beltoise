@@ -37,7 +37,7 @@ class RenovationManager extends EntityManager
         $statement->bindValue('image_before', $renovation->getImageBefore(), \PDO::PARAM_STR);
         $statement->bindValue('image_after', $renovation->getImageAfter(), \PDO::PARAM_STR);
         $statement->bindValue('text', $renovation->getText(), \PDO::PARAM_STR);
-        $statement->bindValue('title', $renovation->getText(), \PDO::PARAM_STR);
+        $statement->bindValue('title', $renovation->getTitle(), \PDO::PARAM_STR);
         $statement->execute();
     }
 
