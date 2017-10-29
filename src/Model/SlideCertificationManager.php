@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wilder2
- * Date: 24/10/17
- * Time: 16:45
- */
 
 namespace Beltoise\Model;
 

@@ -1,33 +1,30 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wilder2
- * Date: 26/10/17
- * Time: 17:07
- */
 
 namespace Beltoise\Controller;
 
 
 use Beltoise\Model\SlideCertification;
 use Beltoise\Model\SlideCertificationManager;
-use Beltoise\Service\uploadFile;
+use Beltoise\Service\UploadImageManager;
 
 class SlideCertificationController extends Controller
 {
+    /**
+     * @return string
+     */
     public function showAdminCertifications()
     {
         $certification = new SlideCertification();
-//        $errors = []; TODO
+        $uploadErrors = [];
 
         if (!empty($_POST)) {
-            $certification->setRole($_POST['role']);
+            $certification->setRole('CERTIFICATION');
 
-            $imageName = uploadFile::upload($_FILES);
+            $uploadImageManager = new UploadImageManager();
+            $uploadErrors = $uploadImageManager->imageUpload($_FILES);
 
-            $certification->setUri($imageName);
-
-            if (empty($errors)) {
+            if (empty($uploadErrors)) {
+                $certification->setUri($uploadImageManager->getImageName());
 
                 $slideCertificationManager = new SlideCertificationManager();
                 $slideCertificationManager->insert($certification);
@@ -35,7 +32,6 @@ class SlideCertificationController extends Controller
                 header('Location: index.php?route=adminCertifications');
                 exit;
             }
-
         }
 
         $slideCertificationManager = new SlideCertificationManager();
@@ -43,22 +39,26 @@ class SlideCertificationController extends Controller
 
         return $this->twig->render('Admin/adminCertifications.html.twig', [
             'certifications' => $certifications,
+            'uploadErrors' => $uploadErrors,
         ]);
     }
 
+    /**
+     * @return string
+     */
     public function showAdminSlider()
     {
         $slide = new SlideCertification();
-//        $errors = []; TODO
+        $uploadErrors = [];
 
         if (!empty($_POST)) {
-            $slide->setRole($_POST['role']);
+            $slide->setRole('SLIDE');
 
-            $imageName = uploadFile::upload($_FILES);
+            $uploadImageManager = new UploadImageManager();
+            $uploadErrors = $uploadImageManager->imageUpload($_FILES);
 
-            $slide->setUri($imageName);
-
-            if (empty($errors)) {
+            if (empty($uploadErrors)) {
+                $slide->setUri($uploadImageManager->getImageName());
 
                 $slideCertificationManager = new SlideCertificationManager();
                 $slideCertificationManager->insert($slide);
@@ -66,7 +66,6 @@ class SlideCertificationController extends Controller
                 header('Location: index.php?route=adminSlider');
                 exit;
             }
-
         }
 
         $slideCertificationManager = new SlideCertificationManager();
@@ -74,6 +73,7 @@ class SlideCertificationController extends Controller
 
         return $this->twig->render('Admin/adminSlider.html.twig', [
             'slides' => $slides,
+            'uploadErrors' => $uploadErrors,
         ]);
     }
 
@@ -96,23 +96,6 @@ class SlideCertificationController extends Controller
             $slideCertificationManager->delete($certification);
             unlink('assets/uploads/' . $certification->getUri());
             header('Location: index.php?route=adminCertifications');
-        }
-    }
-
-    public function addSlideCertificationAction()
-    {
-        $slideCertification = new SlideCertification();
-        $errors = [];
-
-        if (!empty($_FILES)) {
-            $slideCertification->setRole($_POST['role']);
-            $slideCertification->setUri($_FILES['name']);
-
-            if (empty($errors)) {
-                $slideCertificationManager = new SlideCertificationManager();
-                $slideCertificationManager->insert($slideCertification);
-                header('Location: index.php?route=admin#anchorCertifications');
-            }
         }
     }
 }
