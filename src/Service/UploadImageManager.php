@@ -6,7 +6,6 @@ use Beltoise\Model\EntityManager;
 
 class UploadImageManager extends EntityManager
 {
-    const SIZELIMIT = '1000000';
     private $imageName;
     private $image;
 
@@ -51,6 +50,7 @@ class UploadImageManager extends EntityManager
         $imageFile = current($imageFile);
         $uploadErrors = [];
 
+        // Tableau d'erreurs PHP
         $fileUploadErrors = [
             0 => "Aucune erreur détectée.",
             1 => "L'image est trop lourde.",
@@ -66,7 +66,7 @@ class UploadImageManager extends EntityManager
             $imageName = "image" . uniqid();
             $extension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
 
-            if ($imageFile['size'] > self::SIZELIMIT) {
+            if ($imageFile['size'] > EntityManager::UPLOAD_SIZELIMIT) {
                 $uploadErrors[] = "L'image est trop lourde.";
             }
 
@@ -81,6 +81,7 @@ class UploadImageManager extends EntityManager
             }
         }
 
+        // Récuếration de l'erreur PHP si elle existe
         if ($imageFile['error']){
             $uploadErrors[] = $fileUploadErrors[$imageFile['error']];
         }
