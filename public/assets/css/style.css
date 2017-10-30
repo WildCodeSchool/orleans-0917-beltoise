@@ -56,8 +56,9 @@ h2 {
 }
 
 figure img {
-    width: 100%;
-    height: 400px;
+    min-width: 50px;
+    max-width: 200px;
+    height: 200px;
     max-height: 400px;
 }
 
@@ -345,13 +346,13 @@ hr.separator {
 }
 
 .footer [class*="col-"] {
-    background-color: white;
+    background-color: #004741;
 }
 
 .footer {
     padding-top: 10px;
     padding-bottom: 20px;
-    background-color: white;
+    background-color: #004741;
 }
 
 .logo-certif-mini {
@@ -391,12 +392,9 @@ hr.separator {
     margin-left: -35px;
 }
 
-.logoWCS {
-
-}
 
 .logoWCS a {
-    color: black;
+    color: white;
     text-decoration: none;
 
 }
@@ -406,7 +404,7 @@ hr.separator {
 }
 
 .linkModal a {
-    color: black;
+    color: white;
     font-size: 18px;
 
 }
