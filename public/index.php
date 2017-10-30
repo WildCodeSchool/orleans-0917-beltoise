@@ -3,6 +3,7 @@
 require '../vendor/autoload.php';
 require '../connect.php';
 
+
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
 use Beltoise\Controller\RenovationController;
@@ -22,6 +23,15 @@ if ($route == 'admin') {
 } elseif ($route == 'deleteRenovation') {
     $controller = new RenovationController();
     echo $controller->deleteRenovationAction();
+} elseif ($route == 'deleteEcoPlatrerie') {
+    $controller = new AdminController();
+    echo $controller->deleteRealisationAction();
+} elseif ($route == 'deleteSlide') {
+    $controller = new AdminController();
+    echo $controller->deleteSlideAction();
+}  elseif ($route == 'deleteCertification') {
+    $controller = new AdminController();
+    echo $controller->deleteCertificationAction();
 } else {
     echo 'La page n\'existe pas';
 }
