@@ -51,7 +51,7 @@ class AdminController extends Controller
             $renovation = $renovationManager->find($_POST['id']);
 
             if (file_exists('assets/uploads/' . $renovation->getImageBefore())
-                and 'assets/uploads/' . $renovation->getImageBefore()) {
+                and 'assets/uploads/' . $renovation->getImageAfter()) {
                 $renovationManager->delete($renovation);
                 unlink('assets/uploads/' . $renovation->getImageBefore());
                 unlink('assets/uploads/' . $renovation->getImageAfter());
