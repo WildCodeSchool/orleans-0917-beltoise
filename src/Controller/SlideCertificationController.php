@@ -82,8 +82,10 @@ class SlideCertificationController extends Controller
         if (!empty($_POST['id'])) {
             $slideCertificationManager = new SlideCertificationManager();
             $slide = $slideCertificationManager->find($_POST['id']);
-            $slideCertificationManager->delete($slide);
-            unlink('assets/uploads/' . $slide->getName());
+            if (file_exists('assets/uploads/' . $slide->getName())) {
+                $slideCertificationManager->delete($slide);
+                unlink('assets/uploads/' . $slide->getName());
+            }
             header('Location: index.php?route=adminSlider');
         }
     }
@@ -93,8 +95,10 @@ class SlideCertificationController extends Controller
         if (!empty($_POST['id'])) {
             $slideCertificationManager = new SlideCertificationManager();
             $certification = $slideCertificationManager->find($_POST['id']);
-            $slideCertificationManager->delete($certification);
-            unlink('assets/uploads/' . $certification->getName());
+            if (file_exists('assets/uploads/' . $certification->getName())) {
+                $slideCertificationManager->delete($certification);
+                unlink('assets/uploads/' . $certification->getName());
+            }
             header('Location: index.php?route=adminCertifications');
         }
     }
