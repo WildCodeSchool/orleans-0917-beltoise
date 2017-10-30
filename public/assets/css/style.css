@@ -8,7 +8,7 @@
 }
 
 .anchor {
-    padding-top: 65px;
+    padding-top: 75px;
 }
 
 @media (max-width: 768px) {
@@ -73,14 +73,19 @@ figure img {
 }
 
 .navbar {
-    margin-bottom: 0;
     border-radius: 0;
+    position: fixed;
+    width: 100%;
 }
 
 .navbar-default {
     background-color: #004741;
     border: 0;
     z-index: 1;
+}
+
+.navbar-header {
+    padding: 0px 15px;
 }
 
 .nav > li > a {
@@ -98,7 +103,7 @@ figure img {
 }
 
 .navbar-right {
-    padding: 20px;
+    padding: 25px;
 }
 
 .navbar-button .btn-success {
@@ -113,20 +118,17 @@ figure img {
     border-color: #009a91;
 }
 
-/*top fixed navbar*/
-#navbar.navbar-fixed-top {
-    position: fixed;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
 .logo {
-    width: 250px;
     padding: 10px 10px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 100%;
+    width: auto;
 }
 
-/* Forces the burger menu to be displayed in sm (default is xs only) */
-@media (min-width: 768px) and (max-width: 991px) {
+/* Forces the burger menu to be displayed sooner (default is xs only) */
+@media (min-width: 768px) and (max-width: 1085px) {
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -159,6 +161,7 @@ figure img {
 
     .navbar-header {
         float: none;
+        padding: 0;
     }
 
     .navbar-toggle {
@@ -204,6 +207,13 @@ figure img {
     }
 }
 
+/*Forces the drop down menu to hide in sync with the burger menu*/
+@media (min-width: 1085px) {
+    .navbar-smartphone {
+        display: none;
+    }
+}
+
 .navbar-toggle:hover, .navbar-toggle:focus {
     background-color: #00857c !important;
 }
@@ -213,14 +223,10 @@ figure img {
 }
 
 /* Style specific to xs and sm */
-@media (max-width: 991px) {
+@media (max-width: 1085px) {
 
     .nav li {
         text-align: center;
-    }
-
-    .navbar-default {
-        padding-right: 15px;
     }
 
     .navbar-collapse .btn-success {
