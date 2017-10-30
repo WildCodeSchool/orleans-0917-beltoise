@@ -24,7 +24,7 @@ class SlideCertificationController extends Controller
             $uploadErrors = $uploadImageManager->imageUpload($_FILES);
 
             if (empty($uploadErrors)) {
-                $certification->setUri($uploadImageManager->getImageName());
+                $certification->setName($uploadImageManager->getImageName());
 
                 $slideCertificationManager = new SlideCertificationManager();
                 $slideCertificationManager->insert($certification);
@@ -58,7 +58,7 @@ class SlideCertificationController extends Controller
             $uploadErrors = $uploadImageManager->imageUpload($_FILES);
 
             if (empty($uploadErrors)) {
-                $slide->setUri($uploadImageManager->getImageName());
+                $slide->setName($uploadImageManager->getImageName());
 
                 $slideCertificationManager = new SlideCertificationManager();
                 $slideCertificationManager->insert($slide);
@@ -83,7 +83,7 @@ class SlideCertificationController extends Controller
             $slideCertificationManager = new SlideCertificationManager();
             $slide = $slideCertificationManager->find($_POST['id']);
             $slideCertificationManager->delete($slide);
-            unlink('assets/uploads/' . $slide->getUri());
+            unlink('assets/uploads/' . $slide->getName());
             header('Location: index.php?route=adminSlider');
         }
     }
@@ -94,7 +94,7 @@ class SlideCertificationController extends Controller
             $slideCertificationManager = new SlideCertificationManager();
             $certification = $slideCertificationManager->find($_POST['id']);
             $slideCertificationManager->delete($certification);
-            unlink('assets/uploads/' . $certification->getUri());
+            unlink('assets/uploads/' . $certification->getName());
             header('Location: index.php?route=adminCertifications');
         }
     }
