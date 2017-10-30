@@ -19,7 +19,7 @@ class RenovationController extends Controller
     public function showAdminRenovation()
     {
         $renovation = new Renovation();
-        //$errors = []; TODO
+
 
         if (!empty($_POST)) {
             $renovation->setTitle($_POST['title']);
@@ -59,77 +59,76 @@ class RenovationController extends Controller
                 $renovationManager->delete($renovation);
                 unlink('assets/uploads/' . $renovation->getImageBefore());
                 unlink('assets/uploads/' . $renovation->getImageAfter());
-                header('Location: index.php?route=adminRenovations');
             }
+            header('Location: index.php?route=adminRenovations');
         }
     }
 
 
-    public function addRenovationAction()
-    {
-        $renovation = new Renovation();
-        $errors = [];
-        $errorsUpload = [];
-            if (!empty($_FILES['imageBefore']) AND !empty($_FILES['imageAfter'])) {
 
-                if (!empty($_POST['title'])) {
+public function addRenovationAction()
+{
+    $renovation = new Renovation();
+    $errors = [];
+    $errorsUpload = [];
+    if (!empty($_FILES['imageBefore']) AND !empty($_FILES['imageAfter'])) {
 
-                    $renovation->setTitle($_POST['title']);
-                    $renovation->setText($_POST['text']);
+        if (!empty($_POST['title'])) {
+
+            $renovation->setTitle($_POST['title']);
+            $renovation->setText($_POST['text']);
+            $renovation->setImageBefore($_FILES['imageBefore']['name']);
+            $renovation->setImageAfter($_FILES['imageAfter']['name']);
+
+            if (empty(['title'] or ['text'])) {
+                echo 'Vous devez remplir le titre et le texte';
+            }
+
+            if (empty($errors)) {
+
+
+                $uploadImageBeforeManager = new UploadImageManager();
+                $errorsUpload[] = $uploadImageBeforeManager->imageUploadBeforeAfter($_FILES['imageBefore']);
+                $uploadImageAfterManager = new UploadImageManager();
+                $errorsUpload[] = $uploadImageAfterManager->imageUploadBeforeAfter($_FILES['imageAfter']);
+
+
+                if (empty($errorsUpload)) {
+
                     $renovation->setImageBefore($_FILES['imageBefore']['name']);
                     $renovation->setImageAfter($_FILES['imageAfter']['name']);
+                    echo "post et file";
 
-                    if (empty(['title'] or ['text'])) {
-                        echo 'Vous devez remplir le titre et le texte';
-                    }
+                    die();
+                    // TRAITEMENT MISE EN BASE DE DONNEE
 
-                    if (empty($errors)) {
-
-
-                        $uploadImageBeforeManager = new UploadImageManager();
-                        $errorsUpload[] = $uploadImageBeforeManager->imageUploadBeforeAfter($_FILES['imageBefore']);
-                        $uploadImageAfterManager = new UploadImageManager();
-                        $errorsUpload[] = $uploadImageAfterManager->imageUploadBeforeAfter($_FILES['imageAfter']);
-
-
-
-                        if (empty($errorsUpload)) {
-
-                            $renovation->setImageBefore($_FILES['imageBefore']['name']);
-                            $renovation->setImageAfter($_FILES['imageAfter']['name']);
-                            echo "post et file";
-
-                            die();
-                            // TRAITEMENT MISE EN BASE DE DONNEE
-
-                            header('Location: index.php?route=admin');
-                            exit;
-                        }
-                        echo "errorsUpload";
-
-                    }
-                } else {
-                    $errors[] = 'Vous devez remplir tous les champs';
+                    header('Location: index.php?route=adminRenovations');
+                    exit;
                 }
-            } else {
-                $errors[] = 'Vous devez ajouter un fichier BEFORE et AFTER';
+                echo "errorsUpload";
+
             }
-        echo "errors";
-
-
-        /**/
-
-        if (empty($errors)) {
-            $renovationManager = new RenovationManager();
-            $renovationManager->insert($renovation);
-            header('Location: index.php?route=admin#anchorRenovations');
+        } else {
+            $errors[] = 'Vous devez remplir tous les champs';
         }
-        $renovationManager = new RenovationManager();
-        $renovations = $renovationManager->findAllRenovations();
-
-        return $this->twig->render('Admin/adminRenovations.html.twig', [
-            'renovations' => $renovations,
-        ]);
-
+    } else {
+        $errors[] = 'Vous devez ajouter un fichier BEFORE et AFTER';
     }
+
+
+
+    if (empty($errors)) {
+        $renovationManager = new RenovationManager();
+        $renovationManager->insert($renovation);
+        header('Location: index.php?route=admin#anchorRenovations');
+    }
+    $renovationManager = new RenovationManager();
+    $renovations = $renovationManager->findAllRenovations();
+
+    return $this->twig->render('Admin/adminRenovations.html.twig', [
+        'renovations' => $renovations,
+        'errors' => $errors,
+    ]);
+
+}
 }
