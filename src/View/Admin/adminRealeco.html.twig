@@ -8,7 +8,7 @@
                     <img src="assets/uploads/{{ realEco.image }}" class="img-responsive">
                     <figcaption>{{ realEco.texte }}</figcaption>
                 </figure>
-                <form action="?route=deleteEcoPlatrerie" method="post">
+                <form action="?route=deleteRealisation" method="post">
                     <input type="hidden" name="id" value="{{ realEco.id }}"/>
                     <button type="submit" class="btn btn-danger">Supprimer</button>
                 </form>
