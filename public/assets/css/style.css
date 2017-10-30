@@ -327,6 +327,7 @@ section .thumbnail {
     background-color: #004741;
     border-color: #004741;
     outline: none;
+    font-family: 'Dosis', sans-serif;
 }
 
 .button-contact .btn-success:hover {
@@ -358,6 +359,7 @@ hr.separator {
     padding-top: 10px;
     padding-bottom: 20px;
     background-color: white;
+    font-family: 'Dosis', sans-serif;
 }
 
 .logo-certif-mini {
