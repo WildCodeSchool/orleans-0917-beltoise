@@ -46,5 +46,17 @@ class RealisationManager extends EntityManager
         return $realisation[0];
     }
 
+    public function insert(Realisation $realisation)
+    {
+        $query = "INSERT INTO realisation (titre, image, texte, section) 
+                  VALUES (:titre, :image, :texte, :section)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('titre', $realisation->getTitre(), \PDO::PARAM_STR);
+        $statement->bindValue('image', $realisation->getImage(), \PDO::PARAM_STR);
+        $statement->bindValue('texte', $realisation->getTexte(), \PDO::PARAM_STR);
+        $statement->bindValue('section', $realisation->getSection(), \PDO::PARAM_STR);
+        $statement->execute();
+    }
+
 
 }

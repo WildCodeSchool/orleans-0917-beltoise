@@ -35,7 +35,13 @@ if ($route == 'home') {
     echo $controller->showAdminPlatrerie();
 } elseif ($route == 'adminRealEco') {
     $controller = new RealisationController();
-    echo $controller - showAdminRealEco();
+    echo $controller->showAdminRealEco();
+} elseif ($route == 'deletePlatrerie') {
+    $controller = new RealisationController();
+    echo $controller->deletePlatrerieAction();
+} elseif ($route == 'deleteRealEco') {
+    $controller = new RealisationController();
+    echo $controller->deleteRealEcoAction();
 } else {
     echo 'La page n\'existe pas';
 }
