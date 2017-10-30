@@ -7,6 +7,7 @@ require '../connect.php';
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
 use Beltoise\Controller\SlideCertificationController;
+use Beltoise\Controller\RealisationController;
 
 // Routeur basique, necessite une url index.php?route=xxx
 $route = $_GET['route'];
@@ -29,6 +30,12 @@ if ($route == 'home') {
 } elseif ($route == 'deleteSlide') {
     $controller = new SlideCertificationController();
     echo $controller->deleteSlideAction();
+} elseif ($route == 'adminPlatrerie') {
+    $controller = new RealisationController();
+    echo $controller->showAdminPlatrerie();
+} elseif ($route == 'adminRealEco') {
+    $controller = new RealisationController();
+    echo $controller - showAdminRealEco();
 } else {
     echo 'La page n\'existe pas';
 }
