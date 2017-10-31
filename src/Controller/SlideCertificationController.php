@@ -12,7 +12,7 @@ class SlideCertificationController extends Controller
     /**
      * @return string
      */
-    public function showAdminCertifications()
+    public function showAdminCertificationsAction()
     {
         $certification = new SlideCertification();
         $uploadErrors = [];
@@ -46,7 +46,7 @@ class SlideCertificationController extends Controller
     /**
      * @return string
      */
-    public function showAdminSlider()
+    public function showAdminSliderAction()
     {
         $slide = new SlideCertification();
         $uploadErrors = [];
