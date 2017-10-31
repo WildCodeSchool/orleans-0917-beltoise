@@ -19,28 +19,30 @@
                     <label for="formLastName" class="control-label">Nom : </label>
                     <input type="text" id="formLastName" class="form-control" name="formLastName"
                            value="{{ post.formLastName ? post.formLastName }}" required>
-                    <p class="errorForm">{{ errors['formLastName'] ? errors['formLastName'] }}</p>
+                    <p class="errorForm">{{ formErrors['formLastName'] ? formErrors['formLastName'] }}</p>
                 </div>
                 <div class="form-group">
                     <label for="firstNameForm" class="control-label">Prénom : </label>
-                    <input type="text" id="firstNameForm" class="form-control" name="formFirstName"
+                    <input type="text" id="formFirstName" class="form-control" name="formFirstName"
                            value="{{ post.formFirstName ? post.formFirstName }}" required>
+                    <p class="errorForm">{{ formErrors['formFirstName'] ? formErrors['formFirstName'] }}</p>
                 </div>
                 <div class="form-group">
                     <label for="formMail">Email :</label>
                     <input type="email" pattern="[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$" id="formMail"
                            class="form-control"
                            name="formMail" value="{{ post.formMail ? post.formMail }}" required>
-                    <p class="errorForm">{{ errors['formMail'] ? errors['formMail'] }}</p>
+                    <p class="errorForm">{{ formErrors['formMail'] ? formErrors['formMail'] }}</p>
                 </div>
                 <div class="form-group">
                     <label for="formMessage">Message :</label>
                     <textarea id="formMessage" class="form-control" name="formMessage"
                               required>{{ post.formMessage ? post.formMessage : (post.modelName ? "À propos du modèle " ~ post.modelName ~ " :") }}</textarea>
-                    <p class="errorForm">{{ errors['formMessage'] ? errors['formMessage'] }}</p>
+                    <p class="errorForm">{{ formErrors['formMessage'] ? formErrors['formMessage'] }}</p>
                 </div>
                 <div class="button-contact">
-                    <input class="btn btn-success btn-lg" type="submit" name="add" value="Envoyer">
+                    <input class="btn btn-success btn-lg" type="submit" name="submitForm" value="Envoyer">
+                    <p class="successForm">{{ formSuccessMessage ? formSuccessMessage }}</p>
                 </div>
             </form>
         </div>

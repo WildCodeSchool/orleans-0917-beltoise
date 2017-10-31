@@ -7,8 +7,8 @@ $setTo = $findAddress->getReceptionAddress();
 
 //CONFIGURE THE EMAIL SENDING
 $transport = (new \Swift_SmtpTransport(HOST, PORT, SECURITY))
-    ->setUsername(USERNAME) //TODO
-    ->setPassword(PASSWORD); //TODO
+    ->setUsername(MAIL_ADDRESS)
+    ->setPassword(MAIL_PASSWORD);
 
 $mailer = new \Swift_Mailer($transport);
 
@@ -17,14 +17,14 @@ $message = (new \Swift_Message($header))
     ->setTo($setTo)
     ->setBody($messageSent);
 
-if (empty($errors)) {
+if (empty($formErrors)) {
 
     $mailer->send($message);
 
     $messageAccusingReception = (new \Swift_Message($header))
         ->setFrom($setTo)
         ->setTo([$setFrom => $firstName])
-        ->setBody('Nous avons bien reçu votre message, et vous répondrons dans les meilleurs délais.' . "\r\n" . 'Bonne journée à vous.' . "\r\n\r\n" . 'Beltoise & Fils' . "\r\n\r\n" . 'Message envoyé : ' . "\r\n" . $formMessage);
+        ->setBody('Nous avons bien reçu votre message, et vous répondrons dans les meilleurs délais.' . "\r\n" . 'Bonne journée à vous.' . "\r\n\r\n" . 'Beltoise & Fils' . "\r\n\r\n" . 'Message envoyé : ' . "\r\n" . $formMessage . "\r\n\r\n"  . 'Ce mail a été généré automatiquement, merci de ne pas y répondre.');
 
     $mailer->send($messageAccusingReception);
 }
