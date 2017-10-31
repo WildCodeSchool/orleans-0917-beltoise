@@ -9,6 +9,10 @@
 namespace Beltoise\Model;
 
 
+/**
+ * Class Renovation
+ * @package Beltoise\Model
+ */
 class Renovation
 {
     private $id;

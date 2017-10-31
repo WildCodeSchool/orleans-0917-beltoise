@@ -4,6 +4,10 @@
 namespace Beltoise\Model;
 
 
+/**
+ * Class EntityManager
+ * @package Beltoise\Model
+ */
 class EntityManager
 {
     const UPLOAD_DIR = 'assets/uploads/';

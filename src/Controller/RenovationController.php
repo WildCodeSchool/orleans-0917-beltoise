@@ -14,8 +14,15 @@ use Beltoise\Model\RenovationManager;
 use Beltoise\Service\UploadFile;
 use Beltoise\Service\UploadImageManager;
 
+/**
+ * Class RenovationController
+ * @package Beltoise\Controller
+ */
 class RenovationController extends Controller
 {
+    /**
+     * @return string
+     */
     public function showAdminRenovation()
     {
         $renovation = new Renovation();
@@ -57,6 +64,10 @@ class RenovationController extends Controller
         ]);
 
     }
+
+    /**
+     *
+     */
     public function deleteRenovationAction()
     {
         if (!empty($_POST['id'])) {
