@@ -54,10 +54,9 @@ p, figcaption, ul {
     font-family: 'Dosis', sans-serif;
 }
 
-figure img {
-    width: 100%;
-    height: 400px;
-    max-height: 400px;
+.img-renovation{
+    min-height: 250px;
+    max-height: 250px;
 }
 
 /* Start Navbar CSS */

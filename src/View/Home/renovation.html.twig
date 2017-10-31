@@ -7,16 +7,49 @@
 <section>
     <div class="section-content">
         <div class="row">
+            <p class="text-center">Vbi curarum abiectis ponderibus aliis tamquam nodum et codicem difficillimum Caesarem
+                convellere nisu
+                valido cogitabat, eique deliberanti cum proximis </p>
+        </div>
+        <div class="row">
             {% for renovation in renovations %}
                 <div class="col-md-6">
-                    <figure class="thumbnail center-block">
+                    <figure class="thumbnail renovation">
                         <h3>{{ renovation.title }}</h3>
                         <div class="col-md-6">
-                            <img src="assets/uploads/{{ renovation.imageBefore }}" class="img-responsive">
+                            <a data-toggle="modal" data-target="#1"> <img
+                                        src="assets/uploads/{{ renovation.imageBefore }}"
+                                        data-toggle="" class="img-renovation"> </a>
+                            <div class="modal fade" id="1" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">Image avant
+                                            <button type="button" class="close" data-dismiss="modal">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="assets/uploads/{{ renovation.imageBefore }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="assets/uploads/{{ renovation.imageAfter }}" class="img-responsive">
-                        </div>
+                            <img src="assets/uploads/{{ renovation.imageAfter }}" class="img-renovation"
+                                 data-toggle="modal" data-target="#2">
+                            <div class="modal fade" id="2" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">Image après
+                                            <button type="button" class="close" data-dismiss="modal">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="assets/uploads/{{ renovation.imageAfter }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         <figcaption class="text-center">{{ renovation.text }}</figcaption>
                     </figure>
                 </div>
