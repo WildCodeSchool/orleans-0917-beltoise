@@ -5,12 +5,16 @@ namespace Beltoise\Controller;
 
 use Beltoise\Service\UploadImageManager;
 
+/**
+ * Class ImageAccueilController
+ * @package Beltoise\Controller
+ */
 class ImageAccueilController extends Controller
 {
     /**
      * @return string
      */
-    public function showAdminImageAccueil()
+    public function showAdminImageAccueilAction()
     {
         $uploadErrors = [];
 

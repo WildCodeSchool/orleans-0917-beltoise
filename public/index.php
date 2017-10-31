@@ -28,7 +28,7 @@ if ($route == 'home') {
     echo $controller->showAdminSlider();
 } elseif ($route == 'adminImageAccueil') {
     $controller = new ImageAccueilController();
-    echo $controller->showAdminImageAccueil();
+    echo $controller->showAdminImageAccueilAction();
 } elseif ($route == 'deleteCertification') {
     $controller = new SlideCertificationController();
     echo $controller->deleteCertificationAction();
