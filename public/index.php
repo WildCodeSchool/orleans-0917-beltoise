@@ -7,6 +7,9 @@ require '../connect.php';
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
 use Beltoise\Controller\SlideCertificationController;
+use Beltoise\Controller\ImageAccueilController;
+use Beltoise\Controller\LogoEntrepriseController;
+
 
 // Routeur basique, necessite une url index.php?route=xxx
 $route = $_GET['route'];
@@ -23,6 +26,9 @@ if ($route == 'home') {
 } elseif ($route == 'adminSlider') {
     $controller = new SlideCertificationController();
     echo $controller->showAdminSlider();
+} elseif ($route == 'adminImageAccueil') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageAccueil();
 } elseif ($route == 'deleteCertification') {
     $controller = new SlideCertificationController();
     echo $controller->deleteCertificationAction();
