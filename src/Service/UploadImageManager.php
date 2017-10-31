@@ -93,17 +93,63 @@ class UploadImageManager extends EntityManager
         return $uploadErrors;
     }
 
-    public function imageUploadBeforeAfter($imageFile)
+    public function imageUploadBefore(array $imageFile)
     {
         $uploadErrors = [];
 
         // Tableau d'erreurs PHP
         $fileUploadErrors = [
             0 => "Aucune erreur détectée.",
-            1 => "L'image est trop lourde.",
-            2 => "L'image est trop lourde.",
-            3 => "Le fichier n'a été que partiellement téléchargé.",
-            4 => "Aucun fichier n'a été téléchargé.",
+            1 => "L'image avant est trop lourde.(2MO max)",
+            2 => "L'image avant est trop lourde.(2MO max)",
+            3 => "Le fichier avant n'a été que partiellement téléchargé.",
+            4 => "l'image n'a pas été téléchargé.",
+            6 => "Un dossier temporaire est manquant, contactez l'administrateur du site.",
+            7 => "Échec de l'écriture  du fichier sur le disque, contactez l'administrateur du site.",
+            8 => "Erreur inconnue, contactez l'administrateur du site.",
+        ];
+
+        if (!empty($imageFile) && !$imageFile['error']) {
+            $imageName = "image" . uniqid();
+            $extension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
+
+            if ($imageFile['size'] > EntityManager::UPLOAD_SIZELIMIT) {
+                $uploadErrors[] = "L'image avant est trop lourde.";
+            }
+
+            $allowedMimes = ['image/jpeg', 'image/png'];
+            if (!in_array(mime_content_type($imageFile['tmp_name']), $allowedMimes)) {
+                $uploadErrors[] = "Seuls les formats jpg et png sont autorisés.";
+            }
+
+            if (empty($uploadErrors)) {
+                $this->setImageName($imageName . '.' . $extension);
+                move_uploaded_file($imageFile['tmp_name'], EntityManager::UPLOAD_DIR . $imageName . '.' . $extension);
+            }
+        }
+
+        // Récuếration de l'erreur PHP si elle existe
+        if ($imageFile['error']) {
+            $uploadErrors[] = $fileUploadErrors[$imageFile['error']];
+        }
+
+        if (empty($imageFile['name'])) {
+            $uploadErrors[] = "Vous devez envoyer une image.";
+        }
+
+        return $uploadErrors;
+    }
+    public function imageUploadAfter(array $imageFile)
+    {
+        $uploadErrors = [];
+
+        // Tableau d'erreurs PHP
+        $fileUploadErrors = [
+            0 => "Aucune erreur détectée.",
+            1 => "L'image après est trop lourde.(2MO max)",
+            2 => "L'image après est trop lourde.(2MO max)",
+            3 => "L'image après n'a été que partiellement téléchargé.",
+            4 => "l'image après n'a pas été téléchargé.",
             6 => "Un dossier temporaire est manquant, contactez l'administrateur du site.",
             7 => "Échec de l'écriture du fichier sur le disque, contactez l'administrateur du site.",
             8 => "Erreur inconnue, contactez l'administrateur du site.",
