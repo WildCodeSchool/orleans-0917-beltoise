@@ -8,10 +8,16 @@
 
 namespace Beltoise\Model;
 
-
+/**
+ * Class RealisationManager
+ * @package Beltoise\Model
+ */
 class RealisationManager extends EntityManager
 {
 
+    /**
+     * @return array
+     */
     public function findAllPlatrerie()
     {
         $query = "SELECT * FROM realisation WHERE section = 'PLATRERIE'";
@@ -20,6 +26,9 @@ class RealisationManager extends EntityManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Realisation::class);
     }
 
+    /**
+     * @return array
+     */
     public function findAllRealEco()
     {
         $query = "SELECT * FROM realisation WHERE section = 'ECOLOGIE'";
@@ -28,6 +37,9 @@ class RealisationManager extends EntityManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Realisation::class);
     }
 
+    /**
+     * @param realisation $realisation
+     */
     public function delete(realisation $realisation)
     {
         $query = "DELETE FROM realisation WHERE id=:id";
@@ -36,6 +48,10 @@ class RealisationManager extends EntityManager
         $statement->execute();
     }
 
+    /**
+     * @param int $id
+     * @return realisation
+     */
     public function find(int $id) : realisation
     {
         $query = "SELECT * FROM realisation WHERE id=:id";
@@ -46,6 +62,9 @@ class RealisationManager extends EntityManager
         return $realisation[0];
     }
 
+    /**
+     * @param Realisation $realisation
+     */
     public function insert(Realisation $realisation)
     {
         $query = "INSERT INTO realisation (titre, image, texte, section) 

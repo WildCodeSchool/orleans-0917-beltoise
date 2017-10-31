@@ -14,8 +14,10 @@ use Beltoise\Service\UploadImageManager;
 
 class RealisationController extends Controller
 {
-
-    public function showAdminPlatrerie()
+    /**
+     * @return string
+     */
+    public function showAdminPlatrerieAction()
     {
         $platrerie = new Realisation();
         $uploadErrors = [];
@@ -47,7 +49,10 @@ class RealisationController extends Controller
         ]);
     }
 
-    public function showAdminRealEco()
+    /**
+     * @return string
+     */
+    public function showAdminRealEcoAction()
     {
         $realEcol = new Realisation();
         $uploadErrors = [];
@@ -79,6 +84,7 @@ class RealisationController extends Controller
         ]);
     }
 
+
     public function deletePlatrerieAction()
     {
         if (!empty($_POST['id'])) {
@@ -91,6 +97,7 @@ class RealisationController extends Controller
             header('Location: index.php?route=adminPlatrerie');
         }
     }
+
 
     public function deleteRealEcoAction()
     {

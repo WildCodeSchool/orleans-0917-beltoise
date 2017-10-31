@@ -8,9 +8,15 @@
 
 namespace Beltoise\Model;
 
-
+/**
+ * Class RenovationManager
+ * @package Beltoise\Model
+ */
 class RenovationManager extends EntityManager
 {
+    /**
+     * @return array
+     */
     public function findAll()
     {
         $query = "SELECT * FROM renovation";
@@ -18,6 +24,10 @@ class RenovationManager extends EntityManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Renovation::class);
     }
 
+    /**
+     * @param int $id
+     * @return Renovation
+     */
     public function find(int $id): Renovation
     {
         $query = "SELECT * FROM renovation WHERE id=:id";
@@ -28,6 +38,9 @@ class RenovationManager extends EntityManager
         return $renovations[0];
     }
 
+    /**
+     * @param Renovation $renovation
+     */
     public function insert(Renovation $renovation)
     {
         $query = "INSERT INTO renovation
@@ -41,8 +54,9 @@ class RenovationManager extends EntityManager
         $statement->execute();
     }
 
-
-
+    /**
+     * @param Renovation $renovation
+     */
     public function delete(Renovation $renovation)
     {
         $query = "DELETE FROM renovation WHERE id=:id";

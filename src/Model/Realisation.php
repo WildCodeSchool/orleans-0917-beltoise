@@ -8,6 +8,10 @@
 
 namespace Beltoise\Model;
 
+/**
+ * Class Realisation
+ * @package Beltoise\Model
+ */
 class Realisation
 {
     private $id;
