@@ -42,11 +42,11 @@ class SlideCertificationManager extends EntityManager
     public function insert(SlideCertification $slideCertification)
     {
         $query = "INSERT INTO slide_certification 
-                  (role, uri) 
-                  VALUES (:role, :uri)";
+                  (role, name) 
+                  VALUES (:role, :name)";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('role', $slideCertification->getRole(), \PDO::PARAM_STR);
-        $statement->bindValue('uri', $slideCertification->getUri(), \PDO::PARAM_STR);
+        $statement->bindValue('name', $slideCertification->getName(), \PDO::PARAM_STR);
         $statement->execute();
     }
 }

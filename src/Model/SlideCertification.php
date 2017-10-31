@@ -15,7 +15,7 @@ class SlideCertification
 
     private $role;
 
-    private $uri;
+    private $name;
 
     /**
      * @return mixed
@@ -52,16 +52,16 @@ class SlideCertification
     /**
      * @return mixed
      */
-    public function getUri()
+    public function getName()
     {
-        return $this->uri;
+        return $this->name;
     }
 
     /**
-     * @param mixed $uri
+     * @param mixed $name
      */
-    public function setUri($uri)
+    public function setName($name)
     {
-        $this->uri = $uri;
+        $this->name = $name;
     }
 }

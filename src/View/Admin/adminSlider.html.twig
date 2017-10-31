@@ -24,7 +24,7 @@
         {% for slide in slides %}
             <div class="col-md-2">
                 <figure class="thumbnail center-block">
-                    <img src="assets/uploads/{{ slide.uri }}" class="img-responsive">
+                    <img src="assets/uploads/{{ slide.name }}" class="img-responsive">
                 </figure>
                 <form action="?route=deleteSlide" method="post">
                     <input type="hidden" name="id" value="{{ slide.id }}"/>
@@ -33,9 +33,6 @@
             </div>
         {% endfor %}
     </div>
-    <br/>
-    <br/>
-    <a href="index.php?route=admin" class="btn btn-primary">Retour vers l'admin</a>
 </section>
 
 {% include 'Admin/adminFooter.html.twig' %}

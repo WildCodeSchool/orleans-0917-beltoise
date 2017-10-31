@@ -8,7 +8,7 @@
 }
 
 .anchor {
-    padding-top: 65px;
+    padding-top: 75px;
 }
 
 @media (max-width: 768px) {
@@ -29,30 +29,29 @@
 
 .separationImg {
     height: 300px;
+    line-height: 280px;
+    width: 100%;
     background: url("../uploads/chantiergodat.jpg") no-repeat fixed;
-    position: relative;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.center-title {
-    position: absolute;
-    bottom: 38%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    margin: auto;
-}
-
 h2 {
     text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
     color: white;
-    border-bottom: solid 5px #004741;
-    padding-bottom: 5px;
-    font-weight: bold;
-    font-size: 300%;
+    font-size: 7em;
     text-transform: uppercase;
+    font-family: 'Gidugu', sans-serif;
+    text-shadow: 5px 5px black;
+}
+
+p, figcaption, ul {
+    font-family: 'Dosis', sans-serif;
 }
 
 figure img {
@@ -74,8 +73,9 @@ figure img {
 }
 
 .navbar {
-    margin-bottom: 0;
     border-radius: 0;
+    position: fixed;
+    width: 100%;
 }
 
 .navbar-default {
@@ -84,10 +84,14 @@ figure img {
     z-index: 1;
 }
 
+.navbar-header {
+    padding: 0px 15px;
+}
+
 .nav > li > a {
     padding: 10px 0px;
     margin-left: 15px;
-    font-size: large;
+    font-size: x-large;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -99,13 +103,13 @@ figure img {
 }
 
 .navbar-right {
-    padding: 20px;
+    padding: 25px;
 }
 
 .navbar-button .btn-success {
     background-color: #00857c;
     border-color: #00857c;
-    padding: 10px 16px;
+    padding: 10px 16px 13px 16px;
     outline: none;
 }
 
@@ -114,20 +118,17 @@ figure img {
     border-color: #009a91;
 }
 
-/*top fixed navbar*/
-#navbar.navbar-fixed-top {
-    position: fixed;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
 .logo {
-    width: 250px;
     padding: 10px 10px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 100%;
+    width: auto;
 }
 
-/* Forces the burger menu to be displayed in sm (default is xs only) */
-@media (min-width: 768px) and (max-width: 991px) {
+/* Forces the burger menu to be displayed sooner (default is xs only) */
+@media (min-width: 768px) and (max-width: 1085px) {
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -160,6 +161,7 @@ figure img {
 
     .navbar-header {
         float: none;
+        padding: 0;
     }
 
     .navbar-toggle {
@@ -205,6 +207,13 @@ figure img {
     }
 }
 
+/*Forces the drop down menu to hide in sync with the burger menu*/
+@media (min-width: 1085px) {
+    .navbar-smartphone {
+        display: none;
+    }
+}
+
 .navbar-toggle:hover, .navbar-toggle:focus {
     background-color: #00857c !important;
 }
@@ -214,14 +223,10 @@ figure img {
 }
 
 /* Style specific to xs and sm */
-@media (max-width: 991px) {
+@media (max-width: 1085px) {
 
     .nav li {
         text-align: center;
-    }
-
-    .navbar-default {
-        padding-right: 15px;
     }
 
     .navbar-collapse .btn-success {
@@ -237,10 +242,10 @@ figure img {
 /* START PRESENTATION */
 
 .presentation-title {
+    position: static;
     color: black;
-    border-bottom: none;
     margin: 0;
-    padding: 0;
+    text-shadow: none;
 }
 
 .presentation-text {
@@ -273,13 +278,14 @@ figure img {
 /* END PRESENTATION */
 
 section h3 {
-    font-size: x-large;
+    font-size: 5em;
     text-align: center;
     color: #004741;
+    font-family: 'Gidugu', sans-serif;
 }
 
 section p, section ul {
-    font-size: large;
+    font-size: x-large;
 }
 
 .thumbnail img {
@@ -315,13 +321,14 @@ section .thumbnail {
 .contact-title {
     position: static;
     color: black;
-    border: none;
+    text-shadow: none;
 }
 
 .button-contact .btn-success, .button-contact .btn-success:visited {
     background-color: #004741;
     border-color: #004741;
     outline: none;
+    font-family: 'Dosis', sans-serif;
 }
 
 .button-contact .btn-success:hover {
@@ -352,7 +359,8 @@ hr.separator {
 .footer {
     padding-top: 10px;
     padding-bottom: 20px;
-    background-color: #004741;
+    background-color: white;
+    font-family: 'Dosis', sans-serif;
 }
 
 .logo-certif-mini {

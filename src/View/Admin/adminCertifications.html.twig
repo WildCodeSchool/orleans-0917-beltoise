@@ -24,7 +24,7 @@
         {% for certification in certifications %}
             <div class="col-md-2">
                 <figure class="thumbnail center-block">
-                    <img src="assets/uploads/{{ certification.uri }}" class="img-responsive">
+                    <img src="assets/uploads/{{ certification.name }}" class="img-responsive">
                 </figure>
                 <form action="?route=deleteCertification" method="post">
                     <input type="hidden" name="id" value="{{ certification.id }}"/>
