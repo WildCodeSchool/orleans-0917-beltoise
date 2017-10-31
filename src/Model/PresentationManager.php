@@ -35,12 +35,29 @@ class PresentationManager extends EntityManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);
     }
 
-    public function findAllRnovation()
+    public function findAllRenovation()
     {
         $query = "SELECT * FROM presentation WHERE section = 'RENOVATION'";
 
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);
+    }
+
+    public function findAllMaconnerie()
+    {
+        $query = "SELECT * FROM presentation WHERE section = 'MACONNERIE'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);
+    }
+
+    public function update(Presentation $presentation)
+    {
+        $query = "UPDATE presentation SET texte=:texte WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('texte', $presentation->getTexte(), \PDO::PARAM_STR);
+        $statement->bindValue('id', $presentation->getId(), \PDO::PARAM_INT);
+        $statement->execute();
     }
 
 }

@@ -58,5 +58,4 @@ class RealisationManager extends EntityManager
         $statement->execute();
     }
 
-
 }

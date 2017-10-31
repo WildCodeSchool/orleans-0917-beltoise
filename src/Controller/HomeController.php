@@ -37,7 +37,10 @@ class HomeController extends Controller
         $presentationRealEcos = $presentationRealEcoManager->findAllRealEco();
 
         $presentationRenovationManager = new PresentationManager();
-        $presentationRenovations = $presentationRenovationManager->findAllRealEco();
+        $presentationRenovations = $presentationRenovationManager->findAllRenovation();
+
+        $presentationMaconnerieManager = new PresentationManager();
+        $presentationMaconneries = $presentationMaconnerieManager->findAllMaconnerie();
 
         return $this->twig->render('Home/home.html.twig', [
             'logos' => $logos,
@@ -49,6 +52,7 @@ class HomeController extends Controller
             'presentationPlatreries' => $presentationPlatreries,
             'presentationRealEcos' => $presentationRealEcos,
             'presentationRenovations' => $presentationRenovations,
+            'presentationMaconneries' => $presentationMaconneries,
         ]);
     }
 }
