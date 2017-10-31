@@ -19,55 +19,6 @@ class RenovationController extends Controller
     public function showAdminRenovation()
     {
         $renovation = new Renovation();
-
-
-        if (!empty($_POST)) {
-            $renovation->setTitle($_POST['title']);
-            $renovation->setText($_POST['text']);
-
-            $imageName = uploadFile::upload($_FILES);
-
-            $renovation->setImageBefore($imageName);
-            $renovation->setImageAfter($imageName);
-
-            if (empty($errors)) {
-
-                $renovationManager = new RenovationManager();
-                $renovationManager->insert($renovation);
-
-                header('Location: index.php?route=adminRenovations');
-                exit;
-            }
-
-        }
-
-        $renovationManager = new RenovationManager();
-        $renovations = $renovationManager->findAllRenovations();
-
-        return $this->twig->render('Admin/adminRenovations.html.twig', [
-            'renovations' => $renovations,
-        ]);
-    }
-
-    public function deleteRenovationAction()
-    {
-        if (!empty($_POST['id'])) {
-            $renovationManager = new RenovationManager();
-            $renovation = $renovationManager->find($_POST['id']);
-            if (file_exists('assets/uploads/' . $renovation->getImageBefore())
-                and 'assets/uploads/' . $renovation->getImageAfter()) {
-                $renovationManager->delete($renovation);
-                unlink('assets/uploads/' . $renovation->getImageBefore());
-                unlink('assets/uploads/' . $renovation->getImageAfter());
-            }
-            header('Location: index.php?route=adminRenovations');
-        }
-    }
-
-
-    public function addRenovationAction()
-    {
-        $renovation = new Renovation();
         $uploadErrors = [];
 
         if (!empty($_FILES['imageBefore']) AND !empty($_FILES['imageAfter'])) {
@@ -105,5 +56,19 @@ class RenovationController extends Controller
             'uploadErrors' => $uploadErrors,
         ]);
 
+    }
+    public function deleteRenovationAction()
+    {
+        if (!empty($_POST['id'])) {
+            $renovationManager = new RenovationManager();
+            $renovation = $renovationManager->find($_POST['id']);
+            if (file_exists('assets/uploads/' . $renovation->getImageBefore())
+                and 'assets/uploads/' . $renovation->getImageAfter()) {
+                $renovationManager->delete($renovation);
+                /*unlink('assets/uploads/' . $renovation->getImageBefore());
+                unlink('assets/uploads/' . $renovation->getImageAfter());*/
+            }
+            header('Location: index.php?route=adminRenovations');
+        }
     }
 }
