@@ -82,7 +82,7 @@ class UploadImageManager extends EntityManager
         }
 
         // Récuếration de l'erreur PHP si elle existe
-        if ($imageFile['error']){
+        if ($imageFile['error']) {
             $uploadErrors[] = $fileUploadErrors[$imageFile['error']];
         }
 
@@ -129,7 +129,7 @@ class UploadImageManager extends EntityManager
         }
 
         // Récuếration de l'erreur PHP si elle existe
-        if ($imageFile['error']){
+        if ($imageFile['error']) {
             $uploadErrors[] = $fileUploadErrors[$imageFile['error']];
         }
 

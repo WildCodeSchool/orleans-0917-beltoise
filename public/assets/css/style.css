@@ -422,4 +422,9 @@ hr.separator {
     overflow-y: auto;
 }
 
+.image-modal {
+    height: 900px;
+    width:900px;
+}
+
 /*End footer CSS*/
