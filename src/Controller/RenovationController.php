@@ -23,7 +23,7 @@ class RenovationController extends Controller
     /**
      * @return string
      */
-    public function showAdminRenovation()
+    public function showAdminRenovationAction()
     {
         $renovation = new Renovation();
         $uploadErrors = [];

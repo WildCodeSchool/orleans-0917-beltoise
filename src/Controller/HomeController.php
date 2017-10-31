@@ -16,6 +16,9 @@ use Beltoise\Model\SlideCertificationManager;
 
 class HomeController extends Controller
 {
+    /**
+     * @return string
+     */
     public function showAllAction()
     {
         $slideCertificationManager = new SlideCertificationManager();

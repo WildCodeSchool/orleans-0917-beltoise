@@ -32,7 +32,7 @@ if ($route == 'home') {
     echo $controller->deleteSlideAction();
 } elseif ($route == 'adminRenovations') {
     $controller = new RenovationController();
-    echo $controller->showAdminRenovation();
+    echo $controller->showAdminRenovationAction();
 } elseif ($route == 'deleteRenovation') {
     $controller = new RenovationController();
     echo $controller->deleteRenovationAction();
