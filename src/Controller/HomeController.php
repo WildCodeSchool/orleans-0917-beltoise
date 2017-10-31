@@ -27,8 +27,17 @@ class HomeController extends Controller
         $platreries = $realisationManager->findAllPlatrerie();
         $realEcos = $realisationManager->findAllRealEco();
 
-        $presentationManager = new PresentationManager();
-        $presentations = $presentationManager->findAllPresentation();
+        $presentationAccueilManager = new PresentationManager();
+        $presentationAccueils = $presentationAccueilManager->findAllAccueil();
+
+        $presentationPlatrerieManager = new PresentationManager();
+        $presentationPlatreries = $presentationPlatrerieManager->findAllPlatrerie();
+
+        $presentationRealEcoManager = new PresentationManager();
+        $presentationRealEcos = $presentationRealEcoManager->findAllRealEco();
+
+        $presentationRenovationManager = new PresentationManager();
+        $presentationRenovations = $presentationRenovationManager->findAllRealEco();
 
         return $this->twig->render('Home/home.html.twig', [
             'logos' => $logos,
@@ -36,7 +45,10 @@ class HomeController extends Controller
             'renovations' => $renovations,
             'platreries' => $platreries,
             'realEcos' => $realEcos,
-            'presentations' => $presentations,
+            'presentationAccueils' => $presentationAccueils,
+            'presentationPlatreries' => $presentationPlatreries,
+            'presentationRealEcos' => $presentationRealEcos,
+            'presentationRenovations' => $presentationRenovations,
         ]);
     }
 }

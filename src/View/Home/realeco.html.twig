@@ -7,6 +7,13 @@
 <section>
     <div class="section-content">
         <div class="row">
+            <p class="text-center">
+                {% for presentationRealEco in presentationRealEcos %}
+                    {{ presentationRealEco.texte }}
+                {% endfor %}
+            </p>
+        </div>
+        <div class="row">
             {% for realEco in realEcos %}
                 <div class="col-md-6 col-xs-12 ">
                     <figure class="thumbnail center-block">

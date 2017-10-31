@@ -13,6 +13,23 @@ class Presentation
 {
     private $id;
     private $texte;
+    private $section;
+
+    /**
+     * @return mixed
+     */
+    public function getSection()
+    {
+        return $this->section;
+    }
+
+    /**
+     * @param mixed $section
+     */
+    public function setSection($section)
+    {
+        $this->section = $section;
+    }
 
     /**
      * @return mixed

@@ -11,6 +11,7 @@ namespace Beltoise\Controller;
 use Beltoise\Model\RealisationManager;
 use Beltoise\Model\Realisation;
 use Beltoise\Service\UploadImageManager;
+use Beltoise\Model\PresentationManager;
 
 class RealisationController extends Controller
 {
@@ -41,9 +42,12 @@ class RealisationController extends Controller
 
         $realisationManager = new RealisationManager();
         $platreries = $realisationManager->findAllPlatrerie();
+        $presentationPlatrerieManager = new PresentationManager();
+        $presentationPlatreries = $presentationPlatrerieManager->findAllPlatrerie();
         return $this->twig->render('Admin/adminPlatrerie.html.twig', [
             'platreries' => $platreries,
             'uploadErrors' => $uploadErrors,
+            'presentationPlatreries' => $presentationPlatreries,
         ]);
     }
 
