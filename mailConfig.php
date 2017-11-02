@@ -24,7 +24,7 @@ if (empty($formErrors)) {
     $messageAccusingReception = (new \Swift_Message($header))
         ->setFrom($setTo)
         ->setTo([$setFrom => $firstName])
-        ->setBody('Nous avons bien reçu votre message, et vous répondrons dans les meilleurs délais.' . "\r\n" . 'Bonne journée à vous.' . "\r\n\r\n" . 'Beltoise & Fils' . "\r\n\r\n" . 'Message envoyé : ' . "\r\n" . $formMessage . "\r\n\r\n"  . 'Ce mail a été généré automatiquement, merci de ne pas y répondre.');
+        ->setBody('Nous avons bien reçu votre message, et vous répondrons dans les meilleurs délais.' . "\r\n" . 'Bonne journée à vous.' . "\r\n" . 'Beltoise & Fils' . "\r\n\r\n" . 'sarl.beltoise.fils@orange.fr' . "\r\n\r\n" . 'Message envoyé : ' . "\r\n" . $formMessage . "\r\n\r\n"  . 'Ce mail a été généré automatiquement, merci de ne pas y répondre.');
 
     $mailer->send($messageAccusingReception);
 }

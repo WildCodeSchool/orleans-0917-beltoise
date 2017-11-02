@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wilder2
- * Date: 13/10/17
- * Time: 09:39
- */
 
 namespace Beltoise\Controller;
 
@@ -55,9 +49,9 @@ class HomeController extends Controller
                 $firstName = ucfirst($_POST['formFirstName']);
                 $lastName = ucfirst($_POST['formLastName']);
                 $formMessage = $_POST['formMessage'];
-                $header = "Envoi de message sur Beltoise.com"; // TODO : changer le nom de domaine si nécessaire
+                $header = "Envoi de message sur beltoise.com"; // TODO : changer le nom de domaine si nécessaire
 
-                $messageSent = $firstName . ' ' . $lastName . ' vous a envoyé un message sur Beltoise.com :'
+                $messageSent = $firstName . ' ' . $lastName . ' vous a envoyé un message sur beltoise.com :'
                     . "\r\n\r\n" . $formMessage . "\r\n\r\n" . 'E-mail : ' . $setFrom;
 
                 require '../mailConfig.php';
@@ -74,7 +68,6 @@ class HomeController extends Controller
             'platreries' => $platreries,
             'realEcos' => $realEcos,
             'formErrors' => $formErrors,
-            'post' => $_POST,
         ]);
     }
 }

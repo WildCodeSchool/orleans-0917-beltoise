@@ -17,27 +17,23 @@
             <form name="" method="POST" action="">
                 <div class="form-group">
                     <label for="formLastName" class="control-label">Nom : </label>
-                    <input type="text" id="formLastName" class="form-control" name="formLastName"
-                           value="{{ post.formLastName ? post.formLastName }}" required>
+                    <input type="text" id="formLastName" class="form-control" name="formLastName" required>
                     <p class="errorForm">{{ formErrors['formLastName'] ? formErrors['formLastName'] }}</p>
                 </div>
                 <div class="form-group">
                     <label for="firstNameForm" class="control-label">Prénom : </label>
-                    <input type="text" id="formFirstName" class="form-control" name="formFirstName"
-                           value="{{ post.formFirstName ? post.formFirstName }}" required>
+                    <input type="text" id="formFirstName" class="form-control" name="formFirstName" required>
                     <p class="errorForm">{{ formErrors['formFirstName'] ? formErrors['formFirstName'] }}</p>
                 </div>
                 <div class="form-group">
                     <label for="formMail">Email :</label>
                     <input type="email" pattern="[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$" id="formMail"
-                           class="form-control"
-                           name="formMail" value="{{ post.formMail ? post.formMail }}" required>
+                           class="form-control" name="formMail" required>
                     <p class="errorForm">{{ formErrors['formMail'] ? formErrors['formMail'] }}</p>
                 </div>
                 <div class="form-group">
                     <label for="formMessage">Message :</label>
-                    <textarea id="formMessage" class="form-control" name="formMessage"
-                              required>{{ post.formMessage ? post.formMessage : (post.modelName ? "À propos du modèle " ~ post.modelName ~ " :") }}</textarea>
+                    <textarea id="formMessage" class="form-control" name="formMessage" required></textarea>
                     <p class="errorForm">{{ formErrors['formMessage'] ? formErrors['formMessage'] }}</p>
                 </div>
                 <div class="button-contact">
