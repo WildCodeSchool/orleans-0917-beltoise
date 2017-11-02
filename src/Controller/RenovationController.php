@@ -13,6 +13,8 @@ use Beltoise\Model\Renovation;
 use Beltoise\Model\RenovationManager;
 use Beltoise\Service\UploadFile;
 use Beltoise\Service\UploadImageManager;
+use Beltoise\Model\PresentationManager;
+use Beltoise\Model\Presentation;
 
 /**
  * Class RenovationController
@@ -57,10 +59,12 @@ class RenovationController extends Controller
 
         $renovationManager = new RenovationManager();
         $renovations = $renovationManager->findAllRenovations();
-
+        $presentationRenovationManager = new PresentationManager();
+        $presentationRenovations = $presentationRenovationManager->findAllRenovation();
         return $this->twig->render('Admin/adminRenovations.html.twig', [
             'renovations' => $renovations,
             'uploadErrors' => $uploadErrors,
+            'presentationRenovations' => $presentationRenovations,
         ]);
 
     }

@@ -45,9 +45,12 @@ class RealisationController extends Controller
 
         $realisationManager = new RealisationManager();
         $platreries = $realisationManager->findAllPlatrerie();
+        $presentationPlatrerieManager = new PresentationManager();
+        $presentationPlatreries = $presentationPlatrerieManager->findAllPlatrerie();
         return $this->twig->render('Admin/adminPlatrerie.html.twig', [
             'platreries' => $platreries,
             'uploadErrors' => $uploadErrors,
+            'presentationPlatreries' => $presentationPlatreries,
         ]);
     }
 
@@ -80,9 +83,12 @@ class RealisationController extends Controller
 
         $realisationManager = new RealisationManager();
         $realEcos = $realisationManager->findAllRealEco();
+        $presentationRealEcoManager = new PresentationManager();
+        $presentationRealEcos = $presentationRealEcoManager->findAllRealEco();
         return $this->twig->render('Admin/adminRealeco.html.twig', [
             'realEcos' => $realEcos,
             'uploadErrors' => $uploadErrors,
+            'presentationRealEcos' => $presentationRealEcos,
         ]);
     }
 

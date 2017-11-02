@@ -10,6 +10,19 @@
         </ul>
     {% endif %}
     <div class="row">
+        <form action="?route=presentationRenovation" method="post">
+            <fieldset>
+                <legend>Modifier le texte de présentation:</legend>
+                <textarea id="summernote" name="texte">
+                     {% for presentationRenovation in presentationRenovations %}
+                         {{ presentationRenovation.texte }}
+                     {% endfor %}
+                </textarea>
+                <input type="submit" value="Modifier" name="submit">
+            </fieldset>
+        </form>
+    </div>
+    <div class="row">
         <form action="?route=adminRenovations" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
