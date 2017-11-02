@@ -10,6 +10,8 @@ $(document).ready(function () {
         }
     });
 // fin partie menu burger
+// deactivate Modal in XS
+    $('modal').find('a').removeAttr('data-toggle');
 
 // fin partie navbar
 });
