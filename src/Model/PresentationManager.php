@@ -60,4 +60,14 @@ class PresentationManager extends EntityManager
         $statement->execute();
     }
 
+    public function add(Presentation $presentation)
+    {
+        $query = "INSERT INTO presentation (texte, section) 
+                  VALUES (:texte, :section)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('texte', $presentation->getTexte(), \PDO::PARAM_STR);
+        $statement->bindValue('section', $presentation->getSection(), \PDO::PARAM_STR);
+        $statement->execute();
+    }
+
 }
