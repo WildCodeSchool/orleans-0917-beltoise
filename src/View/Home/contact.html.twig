@@ -36,12 +36,13 @@
                     <textarea id="formMessage" class="form-control" name="formMessage" required></textarea>
                     <p class="errorForm">{{ formErrors['formMessage'] ? formErrors['formMessage'] }}</p>
                 </div>
+                <div class="form-bottom">
                 <div class="button-contact">
                     <input class="btn btn-success btn-lg" type="submit" name="submitForm" value="Envoyer">
                 </div>
-                <p class="successForm">{{ formSuccess ? formSuccess }}</p>
+                    <p class="successForm">{{ formSuccess ? formSuccess }}</p>
+                </div>
             </form>
         </div>
     </div>
 </section>
-

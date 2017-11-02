@@ -27,6 +27,11 @@ class HomeController extends Controller
 
         $formErrors = [];
         $formSuccess = '';
+
+        if (!empty($_GET['formSuccess'])) {
+            $formSuccess = 'Message envoyé';
+        }
+
         $regexMail = "/^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,4}$/";
 
         if (!empty($_POST['submitForm'])) {
@@ -46,7 +51,6 @@ class HomeController extends Controller
 
             if (empty($formErrors)) {
 
-                $formSuccess = 'succés';
                 $setFrom = $_POST['formMail'];
                 $firstName = ucfirst($_POST['formFirstName']);
                 $lastName = ucfirst($_POST['formLastName']);
@@ -58,7 +62,7 @@ class HomeController extends Controller
 
                 require '../mailConfig.php';
 
-                header('Location: index.php?route=home&#anchorContact');
+                header('Location: index.php?route=home&formSuccess=1&#anchorContact');
                 exit();
             }
         }
