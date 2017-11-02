@@ -99,7 +99,7 @@ class UploadImageManager extends EntityManager
 
             $allowedMimes = ['image/jpeg', 'image/png'];
             if (!in_array(mime_content_type($imageFile['tmp_name']), $allowedMimes)) {
-                $uploadErrors[] = "Seuls les formats jpg et png sont autorisés.";
+                $uploadErrors[] = "Image avant : seuls les formats jpg et png sont autorisés.";
             }
 
             if (empty($uploadErrors)) {
@@ -110,7 +110,7 @@ class UploadImageManager extends EntityManager
 
         // Récuếration de l'erreur PHP si elle existe
         if ($imageFile['error']) {
-            $uploadErrors[] = self::PHPERRORTAB[$imageFile['error']];
+            $uploadErrors[] = 'erreur image avant :' . self::PHPERRORTAB[$imageFile['error']];
         }
 
         if (empty($imageFile['name'])) {
@@ -128,12 +128,12 @@ class UploadImageManager extends EntityManager
             $extension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
 
             if ($imageFile['size'] > EntityManager::UPLOAD_SIZELIMIT) {
-                $uploadErrors[] = "L'image est trop lourde.";
+                $uploadErrors[] = "L'image après est trop lourde.";
             }
 
             $allowedMimes = ['image/jpeg', 'image/png'];
             if (!in_array(mime_content_type($imageFile['tmp_name']), $allowedMimes)) {
-                $uploadErrors[] = "Seuls les formats jpg et png sont autorisés.";
+                $uploadErrors[] = "images après : seuls les formats jpg et png sont autorisés.";
             }
 
             if (empty($uploadErrors)) {
@@ -144,7 +144,7 @@ class UploadImageManager extends EntityManager
 
         // Récuếration de l'erreur PHP si elle existe
         if ($imageFile['error']) {
-            $uploadErrors[] = self::PHPERRORTAB[$imageFile['error']];
+            $uploadErrors[] = 'erreur image après : '  . self::PHPERRORTAB[$imageFile['error']];
         }
 
         if (empty($imageFile['name'])) {
