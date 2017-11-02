@@ -29,8 +29,7 @@ class HomeController extends Controller
         $realEcos = $realEcoPlatrerieManager->findAllRealEco();
 
         $formErrors = [];
-        $formSuccessMessage = '';
-        $regexMail= "/^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,4}$/";
+        $regexMail = "/^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,4}$/";
 
         if (!empty($_POST['submitForm'])) {
 
@@ -40,7 +39,7 @@ class HomeController extends Controller
             if (empty($_POST['formLastName'])) {
                 $formErrors['formFirstName'] = "Merci de renseigner votre prénom";
             }
-            if (empty($_POST['formMail']) or !preg_match($regexMail, ($_POST['formMail']))) {
+            if (empty($_POST['formMail']) or !preg_match($regexMail, $_POST['formMail'])) {
                 $formErrors['formMail'] = "Merci de renseigner votre email";
             }
             if (empty($_POST['formMessage'])) {
@@ -55,16 +54,13 @@ class HomeController extends Controller
                 $formMessage = $_POST['formMessage'];
                 $header = "Envoi de message sur Beltoise.com"; // TODO : changer le nom de domaine si nécessaire
 
-                $messageSent = $firstName . ' ' . $lastName . ' vous a envoyé un message sur Beltoise.com :' . "\r\n\r\n" . $formMessage . "\r\n\r\n" .
-                    'E-mail : ' . $setFrom;
+                $messageSent = $firstName . ' ' . $lastName . ' vous a envoyé un message sur Beltoise.com :'
+                    . "\r\n\r\n" . $formMessage . "\r\n\r\n" . 'E-mail : ' . $setFrom;
 
                 require '../mailConfig.php';
 
-                if (empty($formErrors)) {
-
-                    header('Location: index.php?route=home#anchorContact');
-                    exit();
-                }
+                header('Location: index.php?route=home#anchorContact');
+                exit();
             }
         }
 
@@ -76,7 +72,6 @@ class HomeController extends Controller
             'realEcos' => $realEcos,
             'formErrors' => $formErrors,
             'post' => $_POST,
-            'formSuccessMessage' => $formSuccessMessage,
         ]);
     }
 }
