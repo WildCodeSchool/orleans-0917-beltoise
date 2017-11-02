@@ -8,6 +8,7 @@
 
 namespace Beltoise\Model;
 
+
 /**
  * Class RenovationManager
  * @package Beltoise\Model
@@ -16,8 +17,9 @@ class RenovationManager extends EntityManager
 {
     /**
      * @return array
+     *
      */
-    public function findAll()
+    public function findAllRenovations()
     {
         $query = "SELECT * FROM renovation";
         $statement = $this->pdo->query($query);
@@ -26,9 +28,9 @@ class RenovationManager extends EntityManager
 
     /**
      * @param int $id
-     * @return Renovation
+     * @return mixed
      */
-    public function find(int $id): Renovation
+    public function find(int $id)
     {
         $query = "SELECT * FROM renovation WHERE id=:id";
         $statement = $this->pdo->prepare($query);
@@ -50,7 +52,7 @@ class RenovationManager extends EntityManager
         $statement->bindValue('image_before', $renovation->getImageBefore(), \PDO::PARAM_STR);
         $statement->bindValue('image_after', $renovation->getImageAfter(), \PDO::PARAM_STR);
         $statement->bindValue('text', $renovation->getText(), \PDO::PARAM_STR);
-        $statement->bindValue('title', $renovation->getText(), \PDO::PARAM_STR);
+        $statement->bindValue('title', $renovation->getTitle(), \PDO::PARAM_STR);
         $statement->execute();
     }
 
@@ -64,7 +66,4 @@ class RenovationManager extends EntityManager
         $statement->bindValue('id', $renovation->getId(), \PDO::PARAM_INT);
         $statement->execute();
     }
-
-
-
 }

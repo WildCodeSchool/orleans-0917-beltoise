@@ -2,8 +2,7 @@
 
 namespace Beltoise\Controller;
 
-use Beltoise\Model\RenovationManager;
-use Beltoise\Model\RealisationManager;
+
 
 class AdminController extends Controller
 {
@@ -12,3 +11,4 @@ class AdminController extends Controller
         return $this->twig->render('Admin/admin.html.twig');
     }
 }
+

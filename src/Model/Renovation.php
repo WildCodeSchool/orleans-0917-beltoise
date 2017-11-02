@@ -8,6 +8,7 @@
 
 namespace Beltoise\Model;
 
+
 /**
  * Class Renovation
  * @package Beltoise\Model

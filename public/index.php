@@ -7,6 +7,7 @@ require '../connect.php';
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
 use Beltoise\Controller\SlideCertificationController;
+use Beltoise\Controller\RenovationController;
 use Beltoise\Controller\ImageAccueilController;
 use Beltoise\Controller\LogoEntrepriseController;
 use Beltoise\Controller\RealisationController;
@@ -36,6 +37,12 @@ if ($route == 'home') {
 } elseif ($route == 'deleteSlide') {
     $controller = new SlideCertificationController();
     echo $controller->deleteSlideAction();
+} elseif ($route == 'adminRenovations') {
+    $controller = new RenovationController();
+    echo $controller->showAdminRenovationAction();
+} elseif ($route == 'deleteRenovation') {
+    $controller = new RenovationController();
+    echo $controller->deleteRenovationAction();
 } elseif ($route == 'adminPlatrerie') {
     $controller = new RealisationController();
     echo $controller->showAdminPlatrerieAction();

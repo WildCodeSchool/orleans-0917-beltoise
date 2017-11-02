@@ -1,0 +1,60 @@
+{% include 'Admin/adminHeader.html.twig' %}
+
+<section>
+    <h2>Rénovation</h2>
+    {% if uploadErrors %}
+        <ul class="alert alert-danger">
+            {% for uploadError in uploadErrors %}
+                <li>{{ uploadError }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="row">
+        <form action="?route=adminRenovations" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="name">Titre</label>
+                <input type="text" class="form-control" name="title" id="title">
+            </div>
+
+            <div class="form-group">
+                <label for="description">description des images</label>
+                <textarea class="form-control" name="text" id="text"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="start">Selectionner l'image avant</label>
+                <input type="file" name="imageBefore" id="imageBefore">
+            </div>
+
+            <div class="form-group">
+                <label for="start">Selectionner l'image représentant l'après</label>
+                <input type="file" name="imageAfter" id="imageAfter">
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+        <hr>
+        <div class="row">
+            {% for renovation in renovations %}
+                <div class="col-md-6">
+                    <figure class="thumbnail center-block">
+                        <h3>{{ renovation.title }}</h3>
+                        <div class="col-md-6">
+                            <img src="assets/uploads/{{ renovation.imageBefore }}">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="assets/uploads/{{ renovation.imageAfter }}">
+                        </div>
+                        <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                    </figure>
+                    <form action="?route=deleteRenovation" method="post">
+                        <input type="hidden" name="id" value="{{ renovation.id }}"/>
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include 'Admin/adminFooter.html.twig' %}
