@@ -11,6 +11,8 @@ namespace Beltoise\Controller;
 use Beltoise\Model\RealisationManager;
 use Beltoise\Model\Realisation;
 use Beltoise\Service\UploadImageManager;
+use Beltoise\Model\PresentationManager;
+use Beltoise\Model\Presentation;
 
 class RealisationController extends Controller
 {
@@ -110,6 +112,16 @@ class RealisationController extends Controller
             }
             header('Location: index.php?route=adminRealEco');
         }
+    }
+
+    public function presentationPlatrerieAction()
+    {
+        $presentationManager = new PresentationManager();
+        $presentation = $presentationManager->findAllPlatrerie();
+        $presentation = $presentation[0];
+        $presentation->setTexte($_POST['texte']);
+        $presentationManager->update($presentation);
+        header('Location: index.php?route=adminPlatrerie');
     }
 
 }

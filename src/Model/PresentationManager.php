@@ -8,7 +8,10 @@
 
 namespace Beltoise\Model;
 
-
+/**
+ * Class PresentationManager
+ * @package Beltoise\Model
+ */
 class PresentationManager extends EntityManager
 {
 
