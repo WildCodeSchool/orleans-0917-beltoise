@@ -14,7 +14,9 @@
             {% for platrerie in platreries %}
                 <div class="col-md-6 col-xs-12">
                     <figure class="thumbnail center-block">
-                        <h3>{{ platrerie.titre }}</h3>
+                        <div class="titreSeparation">
+                            <h3>{{ platrerie.titre }}</h3>
+                        </div>
                         {%  include 'Home/modal_platrerie.html.twig' %}
                         <figcaption>{{ platrerie.texte }}</figcaption>
                     </figure>

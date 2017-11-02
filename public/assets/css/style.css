@@ -299,6 +299,11 @@ section .thumbnail {
     border: none;
 }
 
+.titreSeparation {
+    height: 50px;
+    line-height: 100px;
+}
+
 /* section maçonnerie */
 
 .myCarousel {
