@@ -17,6 +17,7 @@ class RenovationManager extends EntityManager
 {
     /**
      * @return array
+     *
      */
     public function findAllRenovations()
     {
@@ -55,7 +56,6 @@ class RenovationManager extends EntityManager
         $statement->execute();
     }
 
-
     /**
      * @param Renovation $renovation
      */
@@ -66,7 +66,4 @@ class RenovationManager extends EntityManager
         $statement->bindValue('id', $renovation->getId(), \PDO::PARAM_INT);
         $statement->execute();
     }
-
-
-
 }
