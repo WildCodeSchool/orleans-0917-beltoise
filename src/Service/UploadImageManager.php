@@ -6,6 +6,7 @@ use Beltoise\Model\EntityManager;
 
 class UploadImageManager extends EntityManager
 {
+
     private $imageName;
     private $image;
 
@@ -41,6 +42,7 @@ class UploadImageManager extends EntityManager
         $this->image = $image;
     }
 
+
     /**
      * @param array $imageFile
      * @return array
@@ -49,18 +51,6 @@ class UploadImageManager extends EntityManager
     {
         $imageFile = current($imageFile);
         $uploadErrors = [];
-
-        // Tableau d'erreurs PHP
-        $fileUploadErrors = [
-            0 => "Aucune erreur détectée.",
-            1 => "L'image est trop lourde.",
-            2 => "L'image est trop lourde.",
-            3 => "Le fichier n'a été que partiellement téléchargé.",
-            4 => "Aucun fichier n'a été téléchargé.",
-            6 => "Un dossier temporaire est manquant, contactez l'administrateur du site.",
-            7 => "Échec de l'écriture du fichier sur le disque, contactez l'administrateur du site.",
-            8 => "Erreur inconnue, contactez l'administrateur du site.",
-        ];
 
         if (!empty($imageFile) && !$imageFile['error']) {
             $imageName = "image" . uniqid();
@@ -81,9 +71,110 @@ class UploadImageManager extends EntityManager
             }
         }
 
+        // Récupếration de l'erreur PHP si elle existe
+        if ($imageFile['error']) {
+            $uploadErrors[] = self::PHPERRORTAB[$imageFile['error']];
+        }
+
+        if (empty($imageFile['name'])) {
+            $uploadErrors[] = "Vous devez envoyer une image.";
+        }
+
+        return $uploadErrors;
+    }
+
+    public function imageUploadBefore(array $imageFile)
+    {
+        $uploadErrors = [];
+
+        if (!empty($imageFile) && !$imageFile['error']) {
+            $imageName = "image" . uniqid();
+            $extension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
+
+            if ($imageFile['size'] > EntityManager::UPLOAD_SIZELIMIT) {
+                $uploadErrors[] = "L'image avant est trop lourde.";
+            }
+
+            $allowedMimes = ['image/jpeg', 'image/png'];
+            if (!in_array(mime_content_type($imageFile['tmp_name']), $allowedMimes)) {
+                $uploadErrors[] = "Image avant : seuls les formats jpg et png sont autorisés.";
+            }
+
+            if (empty($uploadErrors)) {
+                $this->setImageName($imageName . '.' . $extension);
+                move_uploaded_file($imageFile['tmp_name'], EntityManager::UPLOAD_DIR . $imageName . '.' . $extension);
+            }
+        }
+
         // Récuếration de l'erreur PHP si elle existe
+        if ($imageFile['error']) {
+            $uploadErrors[] = 'erreur image avant :' . self::PHPERRORTAB[$imageFile['error']];
+        }
+
+        if (empty($imageFile['name'])) {
+            $uploadErrors[] = "Vous devez envoyer une image.";
+        }
+
+        return $uploadErrors;
+    }
+    public function imageUploadAfter(array $imageFile)
+    {
+        $uploadErrors = [];
+
+        if (!empty($imageFile) && !$imageFile['error']) {
+            $imageName = "image" . uniqid();
+            $extension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
+
+            if ($imageFile['size'] > EntityManager::UPLOAD_SIZELIMIT) {
+                $uploadErrors[] = "L'image après est trop lourde.";
+            }
+
+            $allowedMimes = ['image/jpeg', 'image/png'];
+            if (!in_array(mime_content_type($imageFile['tmp_name']), $allowedMimes)) {
+                $uploadErrors[] = "images après : seuls les formats jpg et png sont autorisés.";
+            }
+
+            if (empty($uploadErrors)) {
+                $this->setImageName($imageName . '.' . $extension);
+                move_uploaded_file($imageFile['tmp_name'], EntityManager::UPLOAD_DIR . $imageName . '.' . $extension);
+            }
+        }
+
+        // Récuếration de l'erreur PHP si elle existe
+        if ($imageFile['error']) {
+            $uploadErrors[] = 'erreur image après : '  . self::PHPERRORTAB[$imageFile['error']];
+        }
+      
+        if (empty($imageFile['name'])) {
+            $uploadErrors[] = "Vous devez envoyer une image.";
+        }
+      
+        return $uploadErrors;
+    }
+    public function imageReplace(array $imageFile, string $imageName)
+    {
+        $imageFile = current($imageFile);
+        $uploadErrors = [];
+        
+        if (!empty($imageFile) && !$imageFile['error']) {
+            if ($imageFile['size'] > EntityManager::UPLOAD_SIZELIMIT) {
+                $uploadErrors[] = "L'image est trop lourde.";
+            }
+
+            $allowedMimes = ['image/jpeg'];
+            if (!in_array(mime_content_type($imageFile['tmp_name']), $allowedMimes)) {
+                $uploadErrors[] = "Seul le format jpg est autorisé.";
+            }
+
+            if (empty($uploadErrors)) {
+                move_uploaded_file($imageFile['tmp_name'], EntityManager::UPLOAD_DIR . $imageName);
+            }
+        }
+
+        // Récupếration de l'erreur PHP si elle existe
         if ($imageFile['error']){
-            $uploadErrors[] = $fileUploadErrors[$imageFile['error']];
+            $uploadErrors[] = self::PHPERRORTAB[$imageFile['error']];
+
         }
 
         if (empty($imageFile['name'])) {

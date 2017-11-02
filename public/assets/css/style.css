@@ -64,7 +64,7 @@ figure img {
 
 .separationImgAccueil {
     height: 100vh;
-    background: url("../uploads/chantiergodat.jpg") no-repeat fixed;
+    background: url("../uploads/imageAccueil.jpg") no-repeat fixed;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -397,10 +397,6 @@ hr.separator {
 .legal-logo-wcs {
     height: 30px;
     margin-left: -35px;
-}
-
-.logoWCS {
-
 }
 
 .logoWCS a {

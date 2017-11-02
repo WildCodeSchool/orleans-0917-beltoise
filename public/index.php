@@ -8,7 +8,11 @@ use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
 use Beltoise\Controller\SlideCertificationController;
 use Beltoise\Controller\FormController;
+use Beltoise\Controller\RenovationController;
+use Beltoise\Controller\ImageAccueilController;
+use Beltoise\Controller\LogoEntrepriseController;
 use Beltoise\Controller\RealisationController;
+
 
 
 $route = $_GET['route'];
@@ -25,12 +29,21 @@ if ($route == 'home') {
 } elseif ($route == 'adminSlider') {
     $controller = new SlideCertificationController();
     echo $controller->showAdminSliderAction();
+} elseif ($route == 'adminImageAccueil') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageAccueilAction();
 } elseif ($route == 'deleteCertification') {
     $controller = new SlideCertificationController();
     echo $controller->deleteCertificationAction();
 } elseif ($route == 'deleteSlide') {
     $controller = new SlideCertificationController();
     echo $controller->deleteSlideAction();
+} elseif ($route == 'adminRenovations') {
+    $controller = new RenovationController();
+    echo $controller->showAdminRenovationAction();
+} elseif ($route == 'deleteRenovation') {
+    $controller = new RenovationController();
+    echo $controller->deleteRenovationAction();
 } elseif ($route == 'adminPlatrerie') {
     $controller = new RealisationController();
     echo $controller->showAdminPlatrerieAction();

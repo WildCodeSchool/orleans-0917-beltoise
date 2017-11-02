@@ -15,6 +15,9 @@ use Beltoise\Model\SlideCertificationManager;
 
 class HomeController extends Controller
 {
+    /**
+     * @return string
+     */
     public function showAllAction()
     {
         $slideCertificationManager = new SlideCertificationManager();
@@ -22,7 +25,7 @@ class HomeController extends Controller
         $slides = $slideCertificationManager->findAllSlides();
 
         $renovationmanager = new RenovationManager();
-        $renovations = $renovationmanager->findAll();
+        $renovations = $renovationmanager->findAllRenovations();
 
         $realEcoPlatrerieManager = new RealisationManager();
         $platreries = $realEcoPlatrerieManager->findAllPlatrerie();
