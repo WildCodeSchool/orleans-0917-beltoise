@@ -7,7 +7,10 @@ require '../connect.php';
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
 use Beltoise\Controller\SlideCertificationController;
+use Beltoise\Controller\ImageAccueilController;
+use Beltoise\Controller\LogoEntrepriseController;
 use Beltoise\Controller\RealisationController;
+
 
 
 $route = $_GET['route'];
@@ -24,6 +27,9 @@ if ($route == 'home') {
 } elseif ($route == 'adminSlider') {
     $controller = new SlideCertificationController();
     echo $controller->showAdminSliderAction();
+} elseif ($route == 'adminImageAccueil') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageAccueilAction();
 } elseif ($route == 'deleteCertification') {
     $controller = new SlideCertificationController();
     echo $controller->deleteCertificationAction();
