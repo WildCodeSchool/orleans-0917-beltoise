@@ -43,7 +43,7 @@ class SlideCertificationController extends Controller
         return $this->twig->render('Admin/adminCertifications.html.twig', [
             'certifications' => $certifications,
             'uploadErrors' => $uploadErrors,
-            '$presentationAccueils' => $presentationAccueils,
+            'presentationAccueils' => $presentationAccueils,
         ]);
     }
 
@@ -76,10 +76,13 @@ class SlideCertificationController extends Controller
         $slides = $slideCertificationManager->findAllSlides();
         $presentationMaconnerieManager = new PresentationManager();
         $presentationMaconneries = $presentationMaconnerieManager->findAllMaconnerie();
+        $presentationPrestationManager = new PresentationManager();
+        $presentationPrestations = $presentationPrestationManager->findAllPrestation();
         return $this->twig->render('Admin/adminSlider.html.twig', [
             'slides' => $slides,
             'uploadErrors' => $uploadErrors,
             'presentationMaconneries' => $presentationMaconneries,
+            'presentationPrestations' => $presentationPrestations,
         ]);
     }
 

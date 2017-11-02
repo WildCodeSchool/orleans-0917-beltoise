@@ -46,6 +46,9 @@ class HomeController extends Controller
         $presentationMaconnerieManager = new PresentationManager();
         $presentationMaconneries = $presentationMaconnerieManager->findAllMaconnerie();
 
+        $presentationPrestationsManager = new PresentationManager();
+        $presentationPrestations = $presentationPrestationsManager->findAllPrestation();
+
         return $this->twig->render('Home/home.html.twig', [
             'logos' => $logos,
             'slides' => $slides,
@@ -57,6 +60,7 @@ class HomeController extends Controller
             'presentationRealEcos' => $presentationRealEcos,
             'presentationRenovations' => $presentationRenovations,
             'presentationMaconneries' => $presentationMaconneries,
+            'presentationPrestations' => $presentationPrestations,
         ]);
     }
 }

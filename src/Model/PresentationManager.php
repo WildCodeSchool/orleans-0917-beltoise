@@ -70,6 +70,14 @@ class PresentationManager extends EntityManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);
     }
 
+    public function findAllPrestation()
+    {
+        $query = "SELECT * FROM presentation WHERE section = 'PRESTATION'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);
+    }
+
     /**
      * @param Presentation $presentation
      */

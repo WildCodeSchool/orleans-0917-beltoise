@@ -120,14 +120,4 @@ class RealisationController extends Controller
         }
     }
 
-    public function presentationPlatrerieAction()
-    {
-        $presentationManager = new PresentationManager();
-        $presentation = $presentationManager->findAllPlatrerie();
-        $presentation = $presentation[0];
-        $presentation->setTexte($_POST['texte']);
-        $presentationManager->update($presentation);
-        header('Location: index.php?route=adminPlatrerie');
-    }
-
 }
