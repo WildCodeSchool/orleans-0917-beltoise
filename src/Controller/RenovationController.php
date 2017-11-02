@@ -76,8 +76,8 @@ class RenovationController extends Controller
             if (file_exists('assets/uploads/' . $renovation->getImageBefore())
                 and 'assets/uploads/' . $renovation->getImageAfter()) {
                 $renovationManager->delete($renovation);
-                /*unlink('assets/uploads/' . $renovation->getImageBefore());
-                unlink('assets/uploads/' . $renovation->getImageAfter());*/
+                unlink('assets/uploads/' . $renovation->getImageBefore());
+                unlink('assets/uploads/' . $renovation->getImageAfter());
             }
             header('Location: index.php?route=adminRenovations');
         }

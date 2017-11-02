@@ -6,6 +6,7 @@ use Beltoise\Model\EntityManager;
 
 class UploadImageManager extends EntityManager
 {
+
     private $imageName;
     private $image;
 
@@ -41,6 +42,7 @@ class UploadImageManager extends EntityManager
         $this->image = $image;
     }
 
+
     /**
      * @param array $imageFile
      * @return array
@@ -49,18 +51,6 @@ class UploadImageManager extends EntityManager
     {
         $imageFile = current($imageFile);
         $uploadErrors = [];
-
-        // Tableau d'erreurs PHP
-        $fileUploadErrors = [
-            0 => "Aucune erreur détectée.",
-            1 => "L'image est trop lourde.",
-            2 => "L'image est trop lourde.",
-            3 => "Le fichier n'a été que partiellement téléchargé.",
-            4 => "Aucun fichier n'a été téléchargé.",
-            6 => "Un dossier temporaire est manquant, contactez l'administrateur du site.",
-            7 => "Échec de l'écriture du fichier sur le disque, contactez l'administrateur du site.",
-            8 => "Erreur inconnue, contactez l'administrateur du site.",
-        ];
 
         if (!empty($imageFile) && !$imageFile['error']) {
             $imageName = "image" . uniqid();
@@ -83,7 +73,7 @@ class UploadImageManager extends EntityManager
 
         // Récuếration de l'erreur PHP si elle existe
         if ($imageFile['error']) {
-            $uploadErrors[] = $fileUploadErrors[$imageFile['error']];
+            $uploadErrors[] = self::PHPERRORTAB[$imageFile['error']];
         }
 
         if (empty($imageFile['name'])) {
@@ -97,17 +87,7 @@ class UploadImageManager extends EntityManager
     {
         $uploadErrors = [];
 
-        // Tableau d'erreurs PHP
-        $fileUploadErrors = [
-            0 => "Aucune erreur détectée.",
-            1 => "L'image avant est trop lourde.(2MO max)",
-            2 => "L'image avant est trop lourde.(2MO max)",
-            3 => "Le fichier avant n'a été que partiellement téléchargé.",
-            4 => "l'image n'a pas été téléchargé.",
-            6 => "Un dossier temporaire est manquant, contactez l'administrateur du site.",
-            7 => "Échec de l'écriture  du fichier sur le disque, contactez l'administrateur du site.",
-            8 => "Erreur inconnue, contactez l'administrateur du site.",
-        ];
+
 
         if (!empty($imageFile) && !$imageFile['error']) {
             $imageName = "image" . uniqid();
@@ -130,7 +110,7 @@ class UploadImageManager extends EntityManager
 
         // Récuếration de l'erreur PHP si elle existe
         if ($imageFile['error']) {
-            $uploadErrors[] = $fileUploadErrors[$imageFile['error']];
+            $uploadErrors[] = self::PHPERRORTAB[$imageFile['error']];
         }
 
         if (empty($imageFile['name'])) {
@@ -142,18 +122,6 @@ class UploadImageManager extends EntityManager
     public function imageUploadAfter(array $imageFile)
     {
         $uploadErrors = [];
-
-        // Tableau d'erreurs PHP
-        $fileUploadErrors = [
-            0 => "Aucune erreur détectée.",
-            1 => "L'image après est trop lourde.(2MO max)",
-            2 => "L'image après est trop lourde.(2MO max)",
-            3 => "L'image après n'a été que partiellement téléchargé.",
-            4 => "l'image après n'a pas été téléchargé.",
-            6 => "Un dossier temporaire est manquant, contactez l'administrateur du site.",
-            7 => "Échec de l'écriture du fichier sur le disque, contactez l'administrateur du site.",
-            8 => "Erreur inconnue, contactez l'administrateur du site.",
-        ];
 
         if (!empty($imageFile) && !$imageFile['error']) {
             $imageName = "image" . uniqid();
@@ -176,7 +144,7 @@ class UploadImageManager extends EntityManager
 
         // Récuếration de l'erreur PHP si elle existe
         if ($imageFile['error']) {
-            $uploadErrors[] = $fileUploadErrors[$imageFile['error']];
+            $uploadErrors[] = self::PHPERRORTAB[$imageFile['error']];
         }
 
         if (empty($imageFile['name'])) {
