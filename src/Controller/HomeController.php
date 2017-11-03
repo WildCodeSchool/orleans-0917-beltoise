@@ -2,8 +2,8 @@
 
 namespace Beltoise\Controller;
 
-
 use Beltoise\Model\RealisationManager;
+use Beltoise\Model\PresentationManager;
 use Beltoise\Model\RenovationManager;
 use Beltoise\Model\SlideCertificationManager;
 
@@ -24,6 +24,21 @@ class HomeController extends Controller
         $realEcoPlatrerieManager = new RealisationManager();
         $platreries = $realEcoPlatrerieManager->findAllPlatrerie();
         $realEcos = $realEcoPlatrerieManager->findAllRealEco();
+
+        $presentationAccueilManager = new PresentationManager();
+        $presentationAccueils = $presentationAccueilManager->findAllAccueil();
+
+        $presentationPlatrerieManager = new PresentationManager();
+        $presentationPlatreries = $presentationPlatrerieManager->findAllPlatrerie();
+
+        $presentationRealEcoManager = new PresentationManager();
+        $presentationRealEcos = $presentationRealEcoManager->findAllRealEco();
+
+        $presentationRenovationManager = new PresentationManager();
+        $presentationRenovations = $presentationRenovationManager->findAllRenovation();
+
+        $presentationMaconnerieManager = new PresentationManager();
+        $presentationMaconneries = $presentationMaconnerieManager->findAllMaconnerie();
 
         $formErrors = [];
         $formSuccess = '';
@@ -67,12 +82,18 @@ class HomeController extends Controller
             }
         }
 
+
         return $this->twig->render('Home/home.html.twig', [
             'logos' => $logos,
             'slides' => $slides,
             'renovations' => $renovations,
             'platreries' => $platreries,
             'realEcos' => $realEcos,
+            'presentationAccueils' => $presentationAccueils,
+            'presentationPlatreries' => $presentationPlatreries,
+            'presentationRealEcos' => $presentationRealEcos,
+            'presentationRenovations' => $presentationRenovations,
+            'presentationMaconneries' => $presentationMaconneries,
             'formErrors' => $formErrors,
             'formSuccess' => $formSuccess,
         ]);

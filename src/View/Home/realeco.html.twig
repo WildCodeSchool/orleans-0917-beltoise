@@ -7,8 +7,11 @@
 <section>
     <div class="section-content">
         <div class="row">
-            <p class="text-center">Vbi curarum abiectis ponderibus aliis tamquam nodum et codicem difficillimum Caesarem convellere nisu
-                valido cogitabat, eique deliberanti cum proximis </p>
+            <p class="text-center">
+                {% for presentationRenovation in presentationRenovations %}
+                    {{ presentationRenovation.texte }}
+                {% endfor %}
+            </p>
         </div>
         <div class="row">
             {% for realEco in realEcos %}
