@@ -54,10 +54,10 @@ p, figcaption, ul {
     font-family: 'Dosis', sans-serif;
 }
 
-figure img {
+.img-renovation {
     width: 100%;
-    height: 400px;
-    max-height: 400px;
+    min-height: 200px;
+    max-height: 200px;
 }
 
 /* Start Navbar CSS */
@@ -297,6 +297,11 @@ section p, section ul {
 section .thumbnail {
     width: 80%;
     border: none;
+}
+
+.titreSeparation {
+    height: 50px;
+    line-height: 100px;
 }
 
 /* section maçonnerie */
