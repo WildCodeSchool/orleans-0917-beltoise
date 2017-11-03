@@ -261,15 +261,16 @@ p, figcaption, ul {
     font-weight: bold;
 }
 
-.logo-certif {
+.row-logo-certif {
     display: flex;
+    flex-direction: row;
 }
 
-.logo-certif p + p {
-    padding-left: 20px;
+.logo-certif  {
+    padding-left: 40px;
 }
 
-.presentation img {
+.logo-certif img {
     width: 100px;
     height: 100px;
 }
