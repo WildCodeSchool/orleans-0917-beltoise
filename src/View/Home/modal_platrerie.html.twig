@@ -1,0 +1,25 @@
+<div class="row linkModal">
+    <a href="#" data-toggle="modal" data-target="#platrerie{{ platrerie.id }}">
+        <img src="assets/uploads/{{ platrerie.image }}" class="img-responsive">
+    </a>
+</div>
+
+<div class="modal modal-wide fade" id="platrerie{{ platrerie.id }}" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>{{ platrerie.titre }}</h3>
+            </div>
+            <div class="modal-body infolegale">
+
+                <img src="assets/uploads/{{ platrerie.image }}" >
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>

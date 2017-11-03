@@ -17,8 +17,10 @@
             {% for realEco in realEcos %}
                 <div class="col-md-6 col-xs-12 ">
                     <figure class="thumbnail center-block">
-                        <h3>{{ realEco.titre }}</h3>
-                        <img src="assets/uploads/{{ realEco.image }}" class="img-responsive">
+                        <div class="titreSeparation">
+                            <h3>{{ realEco.titre }}</h3>
+                        </div>
+                        {% include 'Home/modal_realeco.html.twig' %}
                         <figcaption>{{ realEco.texte }}</figcaption>
                     </figure>
                 </div>
