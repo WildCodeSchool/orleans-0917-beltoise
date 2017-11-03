@@ -55,6 +55,18 @@ if ($route == 'home') {
 } elseif ($route == 'deleteRealEco') {
     $controller = new RealisationController();
     echo $controller->deleteRealEcoAction();
+} elseif ($route == 'adminImageFondMaconnerie') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageFondMaconnerieAction();
+} elseif ($route == 'adminImageFondPlatrerie') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageFondPlatrerieAction();
+} elseif ($route == 'adminImageFondRealisation') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageFondRealisationAction();
+} elseif ($route == 'adminImageFondRenovation') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageFondRenovationAction();
 } else {
     echo 'La page n\'existe pas';
 }
