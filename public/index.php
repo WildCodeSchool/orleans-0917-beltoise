@@ -1,27 +1,64 @@
 <?php
 
-require '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 require '../connect.php';
+
 
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
+use Beltoise\Controller\SlideCertificationController;
+use Beltoise\Controller\FormController;
+use Beltoise\Controller\RenovationController;
+use Beltoise\Controller\ImageAccueilController;
+use Beltoise\Controller\LogoEntrepriseController;
+use Beltoise\Controller\RealisationController;
 
-// Routeur basique, necessite une url index.php?route=xxx
+
+
 $route = $_GET['route'];
-// On appelle une methode d'un controlleur en fonction de la route saisie en URL
-if ($route == 'admin') {
-    $controller = new AdminController();
-    echo $controller->showAllAction();
-} elseif ($route == 'home') {
+
+if ($route == 'home') {
     $controller = new HomeController();
     echo $controller->showAllAction();
+} elseif ($route == 'admin') {
+    $controller = new AdminController();
+    echo $controller->showAllAction();
+} elseif ($route == 'adminCertifications') {
+    $controller = new SlideCertificationController();
+    echo $controller->showAdminCertificationsAction();
+} elseif ($route == 'adminSlider') {
+    $controller = new SlideCertificationController();
+    echo $controller->showAdminSliderAction();
+} elseif ($route == 'adminImageAccueil') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageAccueilAction();
+} elseif ($route == 'deleteCertification') {
+    $controller = new SlideCertificationController();
+    echo $controller->deleteCertificationAction();
+} elseif ($route == 'deleteSlide') {
+    $controller = new SlideCertificationController();
+    echo $controller->deleteSlideAction();
+} elseif ($route == 'adminRenovations') {
+    $controller = new RenovationController();
+    echo $controller->showAdminRenovationAction();
 } elseif ($route == 'deleteRenovation') {
-    $controller = new AdminController();
+    $controller = new RenovationController();
     echo $controller->deleteRenovationAction();
-} elseif ($route == 'deleteEcoPlatrerie') {
-    $controller = new AdminController();
-    echo $controller->deleteRealisationAction();
+} elseif ($route == 'adminPlatrerie') {
+    $controller = new RealisationController();
+    echo $controller->showAdminPlatrerieAction();
+} elseif ($route == 'adminRealEco') {
+    $controller = new RealisationController();
+    echo $controller->showAdminRealEcoAction();
+} elseif ($route == 'deletePlatrerie') {
+    $controller = new RealisationController();
+    echo $controller->deletePlatrerieAction();
+} elseif ($route == 'deleteRealEco') {
+    $controller = new RealisationController();
+    echo $controller->deleteRealEcoAction();
+} elseif ($route == 'adminForm') {
+    $controller = new FormController();
+    echo $controller->showAll();
 } else {
     echo 'La page n\'existe pas';
 }
-

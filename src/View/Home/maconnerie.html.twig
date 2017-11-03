@@ -9,8 +9,12 @@
     <div class="section-content">
         <div class="row">
             <div class="col-md-5 col-md-offset-1 col-xs-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. </p>
+                <p class="text-center">
+                    {% for presentationMaconnerie in presentationMaconneries %}
+                        {{ presentationMaconnerie.texte }}
+                    {% endfor %}
+                </p>
+
                 <h3>Nos prestations</h3>
                 <ul>
                     <li>Prestation 1</li>
@@ -36,7 +40,7 @@
                     <div class="carousel-inner">
                         {% for slide in slides %}
                             <div class="item {{  loop.index0 == 0 ? 'active' }}">
-                                <img class="img-responsive" src="assets/uploads/{{ slide.uri }}" alt="image">
+                                <img class="img-responsive" src="assets/uploads/{{ slide.name }}" alt="image">
                             </div>
                         {% endfor %}
                     </div>

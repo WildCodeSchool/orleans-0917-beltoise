@@ -1,5 +1,33 @@
+{% include 'Admin/adminHeader.html.twig' %}
 <section>
     <h2>Platrerie</h2>
+
+    {% if uploadErrors %}
+        <ul class="alert alert-danger">
+            {% for uploadError in uploadErrors %}
+                <li>{{ uploadError }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <form action="?route=adminPlatrerie" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Ajouter une réalisation:</legend>
+                    <label for="titre">Titre :</label>
+                    <input type="text" name="titre" id="titre" placeholder="Entrez le titre" value=""
+                           class="form-control"/>
+                    <label for="texte">Texte :</label>
+                    <textarea name="texte" id="texte" class="form-control"></textarea>
+                    Select image to upload:
+                    <input type="file" name="upload">
+                    <input type="submit" value="Envoyer" name="submit">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
     <div class="row">
         {% for platrerie in platreries %}
             <div class="col-md-2">
@@ -8,7 +36,7 @@
                     <img src="assets/uploads/{{ platrerie.image }}" class="img-responsive">
                     <figcaption>{{ platrerie.texte }}</figcaption>
                 </figure>
-                <form action="?route=deleteEcoPlatrerie" method="post">
+                <form action="?route=deletePlatrerie" method="post">
                     <input type="hidden" name="id" value="{{ platrerie.id }}"/>
                     <button type="submit" class="btn btn-danger">Supprimer</button>
                 </form>
