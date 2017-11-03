@@ -6,6 +6,8 @@ namespace Beltoise\Controller;
 use Beltoise\Model\SlideCertification;
 use Beltoise\Model\SlideCertificationManager;
 use Beltoise\Service\UploadImageManager;
+use Beltoise\Model\PresentationManager;
+use Beltoise\Model\Presentation;
 
 class SlideCertificationController extends Controller
 {
@@ -36,10 +38,12 @@ class SlideCertificationController extends Controller
 
         $slideCertificationManager = new SlideCertificationManager();
         $certifications = $slideCertificationManager->findAllCertifications();
-
+        $presentationAccueilManager = new PresentationManager();
+        $presentationAccueils = $presentationAccueilManager->findAllAccueil();
         return $this->twig->render('Admin/adminCertifications.html.twig', [
             'certifications' => $certifications,
             'uploadErrors' => $uploadErrors,
+            'presentationAccueils' => $presentationAccueils,
         ]);
     }
 
@@ -70,10 +74,15 @@ class SlideCertificationController extends Controller
 
         $slideCertificationManager = new SlideCertificationManager();
         $slides = $slideCertificationManager->findAllSlides();
-
+        $presentationMaconnerieManager = new PresentationManager();
+        $presentationMaconneries = $presentationMaconnerieManager->findAllMaconnerie();
+        $presentationPrestationManager = new PresentationManager();
+        $presentationPrestations = $presentationPrestationManager->findAllPrestation();
         return $this->twig->render('Admin/adminSlider.html.twig', [
             'slides' => $slides,
             'uploadErrors' => $uploadErrors,
+            'presentationMaconneries' => $presentationMaconneries,
+            'presentationPrestations' => $presentationPrestations,
         ]);
     }
 

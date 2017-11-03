@@ -40,6 +40,10 @@ class HomeController extends Controller
         $presentationMaconnerieManager = new PresentationManager();
         $presentationMaconneries = $presentationMaconnerieManager->findAllMaconnerie();
 
+
+        $presentationPrestationsManager = new PresentationManager();
+        $presentationPrestations = $presentationPrestationsManager->findAllPrestation();
+
         $formErrors = [];
         $formSuccess = '';
 
@@ -94,6 +98,7 @@ class HomeController extends Controller
             'presentationRealEcos' => $presentationRealEcos,
             'presentationRenovations' => $presentationRenovations,
             'presentationMaconneries' => $presentationMaconneries,
+            'presentationPrestations' => $presentationPrestations,
             'formErrors' => $formErrors,
             'formSuccess' => $formSuccess,
         ]);

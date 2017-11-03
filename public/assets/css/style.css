@@ -256,7 +256,7 @@ p, figcaption, ul {
     font-size: x-large;
 }
 
-.green-bold {
+.green-bold b {
     color: #004741;
     font-weight: bold;
 }

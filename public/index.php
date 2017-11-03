@@ -12,7 +12,7 @@ use Beltoise\Controller\RenovationController;
 use Beltoise\Controller\ImageAccueilController;
 use Beltoise\Controller\LogoEntrepriseController;
 use Beltoise\Controller\RealisationController;
-
+use Beltoise\Controller\PresentationController;
 
 
 $route = $_GET['route'];
@@ -56,6 +56,24 @@ if ($route == 'home') {
 } elseif ($route == 'deleteRealEco') {
     $controller = new RealisationController();
     echo $controller->deleteRealEcoAction();
+} elseif ($route == 'presentationPlatrerie') {
+    $controller = new PresentationController();
+    echo $controller->presentationPlatrerieAction();
+} elseif ($route == 'presentationRealEco') {
+    $controller = new PresentationController();
+    echo $controller->presentationRealEcoAction();
+} elseif ($route == 'presentationRenovation') {
+    $controller = new PresentationController();
+    echo $controller->presentationRenovationAction();
+} elseif ($route == 'presentationMaconnerie') {
+    $controller = new PresentationController();
+    echo $controller->presentationMaconnerieAction();
+}  elseif ($route == 'presentationAccueil') {
+    $controller = new PresentationController();
+    echo $controller->presentationAccueilAction();
+} elseif ($route == 'presentationPrestation') {
+    $controller = new PresentationController();
+    echo $controller->presentationPrestationAction();
 } elseif ($route == 'adminForm') {
     $controller = new FormController();
     echo $controller->showAll();

@@ -9,7 +9,7 @@
         <div class="row">
             <p class="text-center">
                 {% for presentationPlatrerie in presentationPlatreries %}
-                    {{ presentationPlatrerie.texte }}
+                    {{ presentationPlatrerie.texte | raw }}
                 {% endfor %}
             </p>
         </div>
