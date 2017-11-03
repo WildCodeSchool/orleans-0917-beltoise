@@ -1,12 +1,13 @@
 <?php
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 require '../connect.php';
 
 
 use Beltoise\Controller\HomeController;
 use Beltoise\Controller\AdminController;
 use Beltoise\Controller\SlideCertificationController;
+use Beltoise\Controller\FormController;
 use Beltoise\Controller\RenovationController;
 use Beltoise\Controller\ImageAccueilController;
 use Beltoise\Controller\LogoEntrepriseController;
@@ -67,6 +68,9 @@ if ($route == 'home') {
 } elseif ($route == 'adminImageFondRenovation') {
     $controller = new ImageAccueilController();
     echo $controller->showAdminImageFondRenovationAction();
+} elseif ($route == 'adminForm') {
+    $controller = new FormController();
+    echo $controller->showAll();
 } else {
     echo 'La page n\'existe pas';
 }

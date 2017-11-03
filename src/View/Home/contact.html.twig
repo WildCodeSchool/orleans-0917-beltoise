@@ -11,32 +11,38 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71902.90756203495!2d1.9835680139264589!3d47.953639669723636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5010edc6b7f5b%3A0x49bc580d9c5a7fbc!2sBeltoise+Christian!5e0!3m2!1sfr!2sfr!4v1509445803054" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
         <div class="col-md-6 col-sm-12">
-            <p><span class="glyphicon glyphicon-earphone"></span> Tel: 00 00 00 00 00</p>
+            <p><span class="glyphicon glyphicon-earphone"></span> Tel: 02 38 58 27 44</p>
             <p>Pour toute demande de devis, de conseil ou autre, vous pouvez nous joindre par téléphone ou via le
-                formulaire ci-joint.</p>
+                formulaire ci-dessous.</p>
             <form name="" method="POST" action="">
                 <div class="form-group">
-                    <label for="nomContact">Nom :</label>
-                    <input class="form-control" type="text" name="nomContact"/>
+                    <label for="formLastName" class="control-label">Nom : </label>
+                    <input type="text" id="formLastName" class="form-control" name="formLastName" required>
+                    <p class="errorForm">{{ formErrors['formLastName'] ? formErrors['formLastName'] }}</p>
                 </div>
                 <div class="form-group">
-                    <label for="prenomContact">Prénom :</label>
-                    <input class="form-control" type="text" name="prenomContact"/>
+                    <label for="firstNameForm" class="control-label">Prénom : </label>
+                    <input type="text" id="formFirstName" class="form-control" name="formFirstName" required>
+                    <p class="errorForm">{{ formErrors['formFirstName'] ? formErrors['formFirstName'] }}</p>
                 </div>
                 <div class="form-group">
-                    <label for="emailContact">Email :</label>
-                    <input class="form-control" type="email" name="emailContact"/>
+                    <label for="formMail">Email :</label>
+                    <input type="email" pattern="[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$" id="formMail"
+                           class="form-control" name="formMail" required>
+                    <p class="errorForm">{{ formErrors['formMail'] ? formErrors['formMail'] }}</p>
                 </div>
                 <div class="form-group">
-                    <label for="messageContact">Message :</label>
-                    <textarea required="required" class="form-control"
-                              name="messageContact"></textarea>
+                    <label for="formMessage">Message :</label>
+                    <textarea id="formMessage" class="form-control" name="formMessage" required></textarea>
+                    <p class="errorForm">{{ formErrors['formMessage'] ? formErrors['formMessage'] }}</p>
                 </div>
+                <div class="form-bottom">
                 <div class="button-contact">
-                    <input class="btn btn-success btn-lg" type="submit" name="add" value="Envoyer">
+                    <input class="btn btn-success btn-lg" type="submit" name="submitForm" value="Envoyer">
+                </div>
+                    <p class="successForm">{{ formSuccess ? formSuccess }}</p>
                 </div>
             </form>
         </div>
     </div>
 </section>
-
