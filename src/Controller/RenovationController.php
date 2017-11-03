@@ -35,8 +35,6 @@ class RenovationController extends Controller
 
             $renovation->setTitle($_POST['title']);
             $renovation->setText($_POST['text']);
-            $renovation->setImageBefore($_FILES['imageBefore']['name']);
-            $renovation->setImageAfter($_FILES['imageAfter']['name']);
 
             $uploadImageBeforeManager = new UploadImageManager();
             $uploadErrors = $uploadImageBeforeManager->imageUploadBefore($_FILES['imageBefore']);
@@ -45,8 +43,8 @@ class RenovationController extends Controller
 
             if (empty($uploadErrors)) {
 
-                $renovation->setImageBefore($_FILES['imageBefore']['name']);
-                $renovation->setImageAfter($_FILES['imageAfter']['name']);
+                $renovation->setImageBefore($uploadImageBeforeManager->getImageName());
+                $renovation->setImageAfter($uploadImageAfterManager->getImageName());
 
                 $renovationManager = new RenovationManager();
                 $renovationManager->insert($renovation);
