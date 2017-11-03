@@ -7,15 +7,20 @@
 <section>
     <div class="section-content">
         <div class="row">
-            <p class="text-center">Vbi curarum abiectis ponderibus aliis tamquam nodum et codicem difficillimum Caesarem convellere nisu
-                valido cogitabat, eique deliberanti cum proximis </p>
+            <p class="text-center">
+                {% for presentationPlatrerie in presentationPlatreries %}
+                    {{ presentationPlatrerie.texte }}
+                {% endfor %}
+            </p>
         </div>
         <div class="row">
             {% for platrerie in platreries %}
                 <div class="col-md-6 col-xs-12">
                     <figure class="thumbnail center-block">
-                        <h3>{{ platrerie.titre }}</h3>
-                        <img src="assets/uploads/{{ platrerie.image }}" class="img-responsive">
+                        <div class="titreSeparation">
+                            <h3>{{ platrerie.titre }}</h3>
+                        </div>
+                        {%  include 'Home/modal_platrerie.html.twig' %}
                         <figcaption>{{ platrerie.texte }}</figcaption>
                     </figure>
                 </div>

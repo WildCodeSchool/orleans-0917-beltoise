@@ -9,8 +9,12 @@
     <div class="section-content">
         <div class="row">
             <div class="col-md-5 col-md-offset-1 col-xs-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. </p>
+                <p class="text-center">
+                    {% for presentationMaconnerie in presentationMaconneries %}
+                        {{ presentationMaconnerie.texte }}
+                    {% endfor %}
+                </p>
+
                 <h3>Nos prestations</h3>
                 <ul>
                     <li>Prestation 1</li>
