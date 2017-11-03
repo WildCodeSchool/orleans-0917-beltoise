@@ -11,12 +11,16 @@
                 </p>
             </div>
         </div>
-        <div class="row-logo-certif">
-            {% for logo in logos %}
-                <div class="logo-certif">
-                    <p><img src="assets/uploads/{{ logo.name }}" alt="Certification"></p>
-                </div>
-            {% endfor %}
+        <div class="row">
+            <div class="col-md-6 col-md-8 col-xs-12">
+            <ul class="image-list">
+                {% for logo in logos %}
+                    <div class="logo-certif col-sm-3 col-xs-4">
+                        <li><img class="img-responsive" src="assets/uploads/{{ logo.name }}" alt="Certification"></li>
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
         </div>
     </div>
 </section>

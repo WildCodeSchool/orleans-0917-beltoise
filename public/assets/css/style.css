@@ -261,18 +261,15 @@ p, figcaption, ul {
     font-weight: bold;
 }
 
-.row-logo-certif {
-    display: flex;
-    flex-direction: row;
+.image-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-.logo-certif  {
-    padding-left: 40px;
-}
-
-.logo-certif img {
-    width: 100px;
-    height: 100px;
+.logo-certif {
+    height: 150px;
+    width: 150px;
 }
 
 /* END PRESENTATION */
