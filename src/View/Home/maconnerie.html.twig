@@ -11,18 +11,14 @@
             <div class="col-md-5 col-md-offset-1 col-xs-12">
                 <p class="text-center">
                     {% for presentationMaconnerie in presentationMaconneries %}
-                        {{ presentationMaconnerie.texte }}
+                        {{ presentationMaconnerie.texte | raw}}
                     {% endfor %}
                 </p>
 
                 <h3>Nos prestations</h3>
-                <ul>
-                    <li>Prestation 1</li>
-                    <li>Prestation 2</li>
-                    <li>Prestation 3</li>
-                    <li>Prestation 4</li>
-                    <li>Prestation 5</li>
-                </ul>
+                {% for presentationPrestation in presentationPrestations %}
+                    {{ presentationPrestation.texte | raw}}
+                {% endfor %}
             </div>
             <!-- carrousel -->
             <div class="col-md-5 col-xs-12 hidden-xs">
