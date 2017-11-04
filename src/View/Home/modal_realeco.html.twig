@@ -1,8 +1,11 @@
 <div class="row linkModal">
-    <a href="#" data-toggle="modal" data-target="#realEco{{ realEco.id }}">
+    <a class="hidden-xs" href="#" data-toggle="modal" data-target="#realEco{{ realEco.id }}">
         <img src="assets/uploads/{{ realEco.image }}" class="img-responsive">
     </a>
 </div>
+<a  class="visible-xs" data-target="#realEco{{ realEco.id }}">
+    <img src="assets/uploads/{{ realEco.image }}" class="img-responsive">
+</a>
 
 <div class="modal modal-wide fade" id="realEco{{ realEco.id }}" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
