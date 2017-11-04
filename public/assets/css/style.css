@@ -126,20 +126,21 @@ p, figcaption, ul {
 .logo {
     padding: 10px 10px;
     position: absolute;
-    top: 50%;
+    top: 45px;
     transform: translate(0, -50%);
     height: 100%;
     width: auto;
 }
 
-@media (max-width: 1085px) {
+@media (max-width: 1185px) {
     .logo {
+        top: 25px;
         height: 60px;
     }
 }
 
 /* Forces the burger menu to be displayed sooner (default is xs only) */
-@media (min-width: 768px) and (max-width: 1085px) {
+@media (min-width: 768px) and (max-width: 1185px) {
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -219,7 +220,7 @@ p, figcaption, ul {
 }
 
 /*Forces the drop down menu to hide in sync with the burger menu*/
-@media (min-width: 1085px) {
+@media (min-width: 1185px) {
     .navbar-smartphone {
         display: none;
     }
@@ -234,7 +235,7 @@ p, figcaption, ul {
 }
 
 /* Style specific to xs and sm */
-@media (max-width: 1085px) {
+@media (max-width: 1185px) {
 
     .nav li {
         text-align: center;
