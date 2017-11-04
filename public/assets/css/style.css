@@ -50,6 +50,12 @@ h2 {
     text-shadow: 5px 5px black;
 }
 
+@media (max-width: 445px) {
+    h2 {
+        font-size: 5em;
+    }
+}
+
 p, figcaption, ul {
     font-family: 'Dosis', sans-serif;
 }
