@@ -126,6 +126,12 @@ p, figcaption, ul {
     width: auto;
 }
 
+@media (max-width: 1085px) {
+    .logo {
+        height: 60px;
+    }
+}
+
 /* Forces the burger menu to be displayed sooner (default is xs only) */
 @media (min-width: 768px) and (max-width: 1085px) {
     .navbar-nav .open .dropdown-menu {
