@@ -383,13 +383,19 @@ hr.separator {
     font-family: 'Dosis', sans-serif;
 }
 
+.image-list {
+    padding: 0;
+    list-style: none;
+}
+
 .logo-certif-mini {
-    padding: 40px 0 10px 0;
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
 }
 
 .logo-certif-mini img {
-    width: 50px;
-    height: 50px;
+    display: inline-block;
 }
 
 .footer-logo-beltoise {
