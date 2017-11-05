@@ -184,3 +184,11 @@ figure img {
 }
 
 /* END Administration d'une section */
+
+/*START Hotfix rénovation*/
+
+.titreSeparation {
+    height: 300px;
+
+}
+/*END Hotfix rénovation*/

@@ -55,14 +55,16 @@
             {% for renovation in renovations %}
                 <div class="col-md-6">
                     <figure class="thumbnail center-block">
-                        <h3>{{ renovation.title }}</h3>
+                        <h3 class="text-center">{{ renovation.title }}</h3>
                         <div class="col-md-6">
-                            <img src="assets/uploads/{{ renovation.imageBefore }}">
+                            <img src="assets/uploads/{{ renovation.imageBefore }}" class="thumbnail">
                         </div>
                         <div class="col-md-6">
-                            <img src="assets/uploads/{{ renovation.imageAfter }}">
+                            <img src="assets/uploads/{{ renovation.imageAfter }}" class="thumbnail">
                         </div>
+                        <div class="titreSeparation">
                         <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                        </div>
                         <form class="delete-form" action="?route=deleteRenovation" method="post">
                             <input type="hidden" name="id" value="{{ renovation.id }}"/>
                             <button type="submit" class="btn btn-block btn-danger">Supprimer</button>

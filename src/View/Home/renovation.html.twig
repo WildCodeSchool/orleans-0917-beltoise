@@ -9,7 +9,7 @@
         <div class="row">
             <p class="text-center">
                 {% for presentationRenovation in presentationRenovations %}
-                    {{ presentationRenovation.texte | raw}}
+                    {{ presentationRenovation.texte | raw }}
                 {% endfor %}
             </p>
         </div>
@@ -18,7 +18,7 @@
                 <div class="col-md-6">
                     <figure class="thumbnail center-block">
                         <div class="titreSeparation">
-                        <h3>{{ renovation.title }}</h3>
+                            <h3>{{ renovation.title }}</h3>
                         </div>
                         <div class="col-md-6">
                             {% include 'Home/modal_renovation_avant.html.twig' %}
@@ -26,7 +26,9 @@
                         <div class="col-md-6">
                             {% include 'Home/modal_renovation_apres.html.twig' %}
                         </div>
-                        <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                        <div class="titreSeparation">
+                            <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                        </div>
                     </figure>
                 </div>
             {% endfor %}

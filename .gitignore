@@ -4,3 +4,4 @@ vendor/
 summernote/
 composer.json
 public/assets/uploads/*
+.htpasswd
