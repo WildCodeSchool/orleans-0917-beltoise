@@ -45,7 +45,11 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
-                <input type="file" name="upload">
+                <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..." disabled="disabled" />
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="uploadBtn" type="file" class="upload" name="upload" />
+                </div>
                 <input type="submit" class="btn btn-success" value="Ajouter" name="submit">
             </fieldset>
         </form>
