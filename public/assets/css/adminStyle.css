@@ -1,5 +1,67 @@
+/* START Global */
+
+body {
+    background-color: whitesmoke;
+}
+
+/* END Global */
+
+/* START Accueil */
+
+h1 {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 3em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.section-accueil {
+    border: solid 1px #dbdbdb;
+    border-radius: 5px;
+    height: 80vh;
+    position: relative;
+}
+
+.buttons-group {
+    position: absolute;
+    transform: translate(0, 15vh);
+}
+
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+li+li {
+    padding-top: 15px;
+}
+
+.buttons-return a {
+    position: absolute;
+    bottom: 20px;
+}
+
+.buttons-return a:last-child {
+    right:15px;
+}
+
+/* END Accueil */
+
+
+/* START Administration d'une section */
+
 figure img {
     width: 100%;
     min-height: 200px;
     max-height: 200px;
 }
+
+/* END Administration d'une section */
