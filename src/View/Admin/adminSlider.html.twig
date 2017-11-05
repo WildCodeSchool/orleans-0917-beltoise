@@ -1,5 +1,8 @@
 {% include 'Admin/adminHeader.html.twig' %}
-
+<div class="admin-navigation">
+    <a href="index.php?route=admin" class="btn btn-primary" title="Accueil de l'administration"><span class="glyphicon glyphicon-home"></span></a>
+    <a href="index.php?route=home" target="_blank" class="btn btn-info" title="Ouvrir le site dans un nouvel onglet"><span class="glyphicon glyphicon-globe"></span></a>
+</div>
 <section>
     <h1>Maçonnerie</h1>
     <div class="admin-box text-forms-group">
@@ -60,8 +63,6 @@
             {% endfor %}
         </div>
     </div>
-    <a href="index.php?route=home"
-       target="_blank" class=" btn btn-success">Ouvrir le site dans un nouvel onglet</a>
 </section>
 
 {% include 'Admin/adminFooter.html.twig' %}

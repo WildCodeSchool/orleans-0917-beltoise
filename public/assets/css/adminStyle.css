@@ -4,6 +4,10 @@ body {
     background-color: white;
 }
 
+.container-fluid{
+    padding: 0;
+}
+
 h1 {
     text-align: center;
     padding-bottom: 10px;
@@ -67,8 +71,26 @@ li + li {
 
 /* START Administration d'une section */
 
-.alert-danger {
-    width: 30%;
+.admin-navigation {
+    width: 8%;
+    margin: 20px 10px 0 0;
+    padding: 10px;
+    border: solid 1px #dbdbdb;
+    border-radius: 0 5px 5px 0;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-navigation a {
+    padding: 15px;
+    font-size: 100%;
+}
+
+.admin-navigation a+a {
+    margin-top: 5px;
 }
 
 .text-forms-group {
@@ -99,6 +121,10 @@ textarea {
 .image-uploader {
     width: 80vw;
     margin: 30px auto;
+}
+
+.alert-danger {
+    width: 30%;
 }
 
 .uploaded-images {
