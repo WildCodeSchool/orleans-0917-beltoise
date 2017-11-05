@@ -2,14 +2,6 @@
 
 <section>
     <h1>Maçonnerie</h1>
-
-    {% if uploadErrors %}
-        <ul class="alert alert-danger">
-            {% for uploadError in uploadErrors %}
-                <li>{{ uploadError }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
     <div class="admin-box text-forms-group">
         <form action="?route=presentationMaconnerie" method="post">
             <div class="center-form">
@@ -39,9 +31,17 @@
         </form>
     </div>
     <div class="admin-box image-uploader">
+        <span id="anchorUpload" class="anchor"></span>
         <form action="?route=adminSlider" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Ajouter une image:</legend>
+                {% if uploadErrors %}
+                    <ul class="alert alert-danger">
+                        {% for uploadError in uploadErrors %}
+                            <li>{{ uploadError }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 <input type="file" name="upload">
                 <input type="submit" class="btn btn-success" value="Ajouter" name="submit">
             </fieldset>
@@ -60,6 +60,8 @@
             {% endfor %}
         </div>
     </div>
+    <a href="index.php?route=home"
+       target="_blank" class=" btn btn-success">Ouvrir le site dans un nouvel onglet</a>
 </section>
 
 {% include 'Admin/adminFooter.html.twig' %}

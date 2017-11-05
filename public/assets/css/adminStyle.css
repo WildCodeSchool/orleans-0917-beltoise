@@ -61,6 +61,10 @@ li + li {
 
 /* START Administration d'une section */
 
+.alert-danger {
+    width: 30%;
+}
+
 .text-forms-group {
     width: 80vw;
     margin: auto;
@@ -84,10 +88,6 @@ textarea {
     resize: vertical;
     width: 100%;
     margin: auto;
-}
-
-form .btn-success {
-    margin-top: 15px;
 }
 
 .image-uploader {
