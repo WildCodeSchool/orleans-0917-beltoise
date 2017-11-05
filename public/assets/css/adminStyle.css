@@ -1,12 +1,8 @@
 /* START Global */
 
 body {
-    background-color: whitesmoke;
+    background-color: white;
 }
-
-/* END Global */
-
-/* START Accueil */
 
 h1 {
     text-align: center;
@@ -19,9 +15,18 @@ h2 {
     font-size: 2.5em;
 }
 
-.section-accueil {
+.admin-box {
     border: solid 1px #dbdbdb;
     border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* END Global */
+
+/* START Accueil */
+
+.section-accueil {
     height: 80vh;
     position: relative;
 }
@@ -31,7 +36,6 @@ h2 {
     transform: translate(0, 15vh);
 }
 
-
 ul {
     padding: 0;
 }
@@ -40,7 +44,7 @@ li {
     list-style: none;
 }
 
-li+li {
+li + li {
     padding-top: 15px;
 }
 
@@ -50,18 +54,64 @@ li+li {
 }
 
 .buttons-return a:last-child {
-    right:15px;
+    right: 15px;
 }
 
 /* END Accueil */
 
-
 /* START Administration d'une section */
+
+.text-forms-group {
+    width: 80vw;
+    margin: auto;
+    overflow: auto;
+}
+
+form {
+    padding: 15px;
+}
+
+legend {
+    border: none;
+}
+
+.center-form {
+    width: 80%;
+    margin: auto;
+}
+
+textarea {
+    resize: vertical;
+    width: 100%;
+    margin: auto;
+}
+
+form .btn-success {
+    margin-top: 15px;
+}
+
+.image-uploader {
+    width: 80vw;
+    margin: 30px auto;
+}
+
+.uploaded-images {
+    padding: 15px;
+}
+
+.thumbnail {
+    margin-bottom: 10px;
+}
 
 figure img {
     width: 100%;
     min-height: 200px;
     max-height: 200px;
+}
+
+.delete-form {
+    padding: 0;
+    margin: 10px 0 5px 0;
 }
 
 /* END Administration d'une section */

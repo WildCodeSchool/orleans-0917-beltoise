@@ -1,7 +1,7 @@
 {% include 'Admin/adminHeader.html.twig' %}
 
 <section>
-    <h2>Diaporama maçonnerie</h2>
+    <h1>Maçonnerie</h1>
 
     {% if uploadErrors %}
         <ul class="alert alert-danger">
@@ -10,54 +10,55 @@
             {% endfor %}
         </ul>
     {% endif %}
-
-    <div class="row">
+    <div class="admin-box text-forms-group">
         <form action="?route=presentationMaconnerie" method="post">
-            <fieldset>
-                <legend>Modifier le texte de présentation:</legend>
-                <textarea id="summernote" name="texte">
+            <div class="center-form">
+                <fieldset>
+                    <legend>Modifier le texte de présentation :</legend>
+                    <textarea id="summernote" name="texte">
                      {% for presentationMaconnerie in presentationMaconneries %}
                          {{ presentationMaconnerie.texte }}
                      {% endfor %}
                 </textarea>
-                <input type="submit" value="Modifier" name="submit">
-            </fieldset>
+                </fieldset>
+                <input type="submit" class="btn btn-success" value="Modifier" name="submit">
+            </div>
         </form>
-    </div>
-    <div class="row">
         <form action="?route=presentationPrestation" method="post">
-            <fieldset>
-                <legend>Modifier les prestations :</legend>
-                <textarea id="prestation" name="texte">
+            <div class="center-form">
+                <fieldset>
+                    <legend>Modifier la liste des prestations :</legend>
+                    <textarea id="prestation" name="texte">
                      {% for presentationPrestation in presentationPrestations %}
-                         {{ presentationPrestation.texte | raw}}
+                         {{ presentationPrestation.texte | raw }}
                      {% endfor %}
                 </textarea>
-                <input type="submit" value="Modifier" name="submit">
-            </fieldset>
+                </fieldset>
+                <input type="submit" class="btn btn-success" value="Modifier" name="submit">
+            </div>
         </form>
     </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <form action="?route=adminSlider" method="post" enctype="multipart/form-data">
-                Select image to upload:
+    <div class="admin-box image-uploader">
+        <form action="?route=adminSlider" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Ajouter une image:</legend>
                 <input type="file" name="upload">
-                <input type="submit" value="Envoyer" name="submit">
-            </form>
+                <input type="submit" class="btn btn-success" value="Ajouter" name="submit">
+            </fieldset>
+        </form>
+        <div class="row uploaded-images">
+            {% for slide in slides %}
+                <div class="col-md-2">
+                    <figure class="thumbnail center-block">
+                        <img src="assets/uploads/{{ slide.name }}" class="img-responsive">
+                        <form class="delete-form" action="?route=deleteSlide" method="post">
+                            <input type="hidden" name="id" value="{{ slide.id }}"/>
+                            <button type="submit" class="btn btn-block btn-danger">Supprimer</button>
+                        </form>
+                    </figure>
+                </div>
+            {% endfor %}
         </div>
-    </div>
-    <div class="row">
-        {% for slide in slides %}
-            <div class="col-md-2">
-                <figure class="thumbnail center-block">
-                    <img src="assets/uploads/{{ slide.name }}" class="img-responsive">
-                </figure>
-                <form action="?route=deleteSlide" method="post">
-                    <input type="hidden" name="id" value="{{ slide.id }}"/>
-                    <button type="submit" class="btn btn-danger">Supprimer</button>
-                </form>
-            </div>
-        {% endfor %}
     </div>
 </section>
 
