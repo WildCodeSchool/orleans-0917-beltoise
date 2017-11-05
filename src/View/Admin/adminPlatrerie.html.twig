@@ -1,23 +1,23 @@
 {% include 'Admin/adminHeader.html.twig' %}
-<div class="admin-navigation">
+<nav class="admin-navigation">
     <a href="index.php?route=admin" class="btn btn-primary" title="Accueil de l'administration"><span
                 class="glyphicon glyphicon-home"></span></a>
     <a href="index.php?route=home" target="_blank" class="btn btn-info"
        title="Ouvrir le site dans un nouvel onglet"><span class="glyphicon glyphicon-globe"></span></a>
-</div>
+</nav>
 <section>
     <h2>Plâtrerie</h2>
     <div class="admin-box text-forms-group">
         <form action="?route=presentationPlatrerie" method="post">
-                <fieldset>
-                    <legend>Modifier le texte de présentation :</legend>
-                    <textarea id="summernote" name="texte">
+            <fieldset>
+                <legend>Modifier le texte de présentation :</legend>
+                <textarea id="summernote" name="texte">
                      {% for presentationPlatrerie in presentationPlatreries %}
                          {{ presentationPlatrerie.texte }}
                      {% endfor %}
                 </textarea>
-                </fieldset>
                 <input type="submit" class="btn btn-success" value="Modifier" name="submit">
+            </fieldset>
         </form>
     </div>
     <div class="admin-box image-uploader">
@@ -30,7 +30,6 @@
                        class="form-control"/>
                 <label for="texte">Texte :</label>
                 <textarea name="texte" id="texte" class="form-control"></textarea>
-                <label>Image :</label>
                 {% if uploadErrors %}
                     <ul class="alert alert-danger">
                         {% for uploadError in uploadErrors %}

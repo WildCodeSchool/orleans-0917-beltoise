@@ -1,32 +1,34 @@
 {% include 'Admin/adminHeader.html.twig' %}
-<div class="admin-navigation">
-    <a href="index.php?route=admin" class="btn btn-primary" title="Accueil de l'administration"><span class="glyphicon glyphicon-home"></span></a>
-    <a href="index.php?route=home" target="_blank" class="btn btn-info" title="Ouvrir le site dans un nouvel onglet"><span class="glyphicon glyphicon-globe"></span></a>
-</div>
+<nav class="admin-navigation">
+    <a href="index.php?route=admin" class="btn btn-primary" title="Accueil de l'administration"><span
+                class="glyphicon glyphicon-home"></span></a>
+    <a href="index.php?route=home" target="_blank" class="btn btn-info"
+       title="Ouvrir le site dans un nouvel onglet"><span class="glyphicon glyphicon-globe"></span></a>
+</nav>
 <section>
     <h1>Maçonnerie</h1>
     <div class="admin-box text-forms-group">
         <form action="?route=presentationMaconnerie" method="post">
-                <fieldset>
-                    <legend>Modifier le texte de présentation :</legend>
-                    <textarea id="summernote" name="texte">
+            <fieldset>
+                <legend>Modifier le texte de présentation :</legend>
+                <textarea id="summernote" name="texte">
                      {% for presentationMaconnerie in presentationMaconneries %}
                          {{ presentationMaconnerie.texte }}
                      {% endfor %}
                 </textarea>
-                </fieldset>
                 <input type="submit" class="btn btn-success" value="Modifier" name="submit">
+            </fieldset>
         </form>
         <form action="?route=presentationPrestation" method="post">
-                <fieldset>
-                    <legend>Modifier la liste des prestations :</legend>
-                    <textarea id="prestation" name="texte">
+            <fieldset>
+                <legend>Modifier la liste des prestations :</legend>
+                <textarea id="prestation" name="texte">
                      {% for presentationPrestation in presentationPrestations %}
                          {{ presentationPrestation.texte | raw }}
                      {% endfor %}
                 </textarea>
-                </fieldset>
                 <input type="submit" class="btn btn-success" value="Modifier" name="submit">
+            </fieldset>
         </form>
     </div>
     <div class="admin-box image-uploader">
@@ -41,10 +43,11 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
-                <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..." disabled="disabled" />
+                <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..."
+                       disabled="disabled"/>
                 <div class="fileUpload btn btn-default">
                     <span>Parcourir</span>
-                    <input id="uploadBtn" type="file" class="upload" name="upload" />
+                    <input id="uploadBtn" type="file" class="upload" name="upload"/>
                 </div>
                 <input type="submit" class="btn btn-success" value="Ajouter" name="submit">
             </fieldset>
