@@ -18,20 +18,34 @@ class PresentationController extends Controller
     {
         $presentationManager = new PresentationManager();
         $presentation = $presentationManager->findAllPlatrerie();
-        $presentation = $presentation[0];
-        $presentation->setTexte($_POST['texte']);
-        $presentationManager->update($presentation);
-        header('Location: index.php?route=adminPlatrerie');
+        if (!empty($presentation)) {
+            $presentation = $presentation[0];
+            $presentation->setTexte($_POST['texte']);
+            $presentationManager->update($presentation);
+            header('Location: index.php?route=adminPlatrerie');
+        } else {
+            $presentation = new Presentation();
+            $presentation->setTexte($_POST['texte']);
+            $presentation->setSection($_POST['section']);
+            $presentationManager->add($presentation);
+        }
     }
 
     public function presentationRealEcoAction()
     {
         $presentationManager = new PresentationManager();
         $presentation = $presentationManager->findAllRealEco();
-        $presentation = $presentation[0];
-        $presentation->setTexte($_POST['texte']);
-        $presentationManager->update($presentation);
-        header('Location: index.php?route=adminRealEco');
+        if (!empty($presentation)) {
+            $presentation = $presentation[0];
+            $presentation->setTexte($_POST['texte']);
+            $presentationManager->update($presentation);
+            header('Location: index.php?route=adminRealEco');
+        } else {
+            $presentation = new Presentation();
+            $presentation->setTexte($_POST['texte']);
+            $presentation->setSection($_POST['section']);
+            $presentationManager->add($presentation);
+        }
     }
 
     public function presentationRenovationAction()
