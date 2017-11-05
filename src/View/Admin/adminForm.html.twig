@@ -1,13 +1,18 @@
 {% include 'Admin/adminHeader.html.twig' %}
+<nav class="admin-navigation">
+    <a href="index.php?route=admin" class="btn btn-primary" title="Accueil de l'administration"><span
+                class="glyphicon glyphicon-home"></span></a>
+    <a href="index.php?route=home" target="_blank" class="btn btn-info"
+       title="Ouvrir le site dans un nouvel onglet"><span class="glyphicon glyphicon-globe"></span></a>
+</nav>
 <section>
     <h1>Administration du formulaire</h1>
-    <p>Vous recevez actuellement vos mails à l'adresse <span
-                class="mailReceptionAddress">{{ formReceptionAddress.receptionAddress }}</span>
-    </p>
-    <form action="index.php?route=adminForm" method="POST">
-        <label for="formReceptionAddress">Veuillez saisir votre nouvelle adresse de réception des messages du
-            formulaire</label>
-        <input type="email" id="formReceptionAddress" name="formReceptionAddress" class="form-control" required>
-        <button type="submit" class="btn btn-success button-mail-address">Valider</button>
-    </form>
+    <div class="admin-box text-forms-group">
+        <form action="index.php?route=adminForm" method="POST">
+            <label for="formReceptionAddress">Vous recevrez vos mails à l'adresse suivante :</label>
+            <input type="email" id="formReceptionAddress" name="formReceptionAddress" class="form-control"
+                   value="{{ formReceptionAddress.receptionAddress }}">
+            <button type="submit" class="btn btn-success btn-mail">Modifier</button>
+        </form>
+    </div>
 </section>

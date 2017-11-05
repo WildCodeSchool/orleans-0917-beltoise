@@ -118,6 +118,10 @@ textarea.form-control{
     margin-bottom: 10px;
 }
 
+.btn-mail {
+    margin-top: 10px;
+}
+
 .image-uploader {
     width: 80vw;
     margin: 30px auto;
