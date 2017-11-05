@@ -1,53 +1,62 @@
 {% include 'Admin/adminHeader.html.twig' %}
-
+<nav class="admin-navigation">
+    <a href="index.php?route=admin" class="btn btn-primary" title="Accueil de l'administration"><span
+                class="glyphicon glyphicon-home"></span></a>
+    <a href="index.php?route=home" target="_blank" class="btn btn-info"
+       title="Ouvrir le site dans un nouvel onglet"><span class="glyphicon glyphicon-globe"></span></a>
+</nav>
 <section>
-    <h2>Rénovation</h2>
-    {% if uploadErrors %}
-        <ul class="alert alert-danger">
-            {% for uploadError in uploadErrors %}
-                <li>{{ uploadError }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    <div class="row">
+    <h2>Rénovation et restauration</h2>
+    <div class="admin-box text-forms-group">
         <form action="?route=presentationRenovation" method="post">
             <fieldset>
-                <legend>Modifier le texte de présentation:</legend>
+                <legend>Modifier le texte de présentation :</legend>
                 <textarea id="summernote" name="texte">
                      {% for presentationRenovation in presentationRenovations %}
                          {{ presentationRenovation.texte }}
                      {% endfor %}
                 </textarea>
-                <input type="submit" value="Modifier" name="submit">
+                <input type="submit" class="btn btn-success" value="Modifier" name="submit">
             </fieldset>
         </form>
     </div>
-    <div class="row">
+    <div class="admin-box image-uploader">
+        <span id="anchorUpload" class="anchor"></span>
         <form action="?route=adminRenovations" method="post" enctype="multipart/form-data">
-
-            <div class="form-group">
-                <label for="name">Titre</label>
+            <fieldset>
+                <legend>Ajouter une réalisation :</legend>
+                <label for="name">Titre :</label>
                 <input type="text" class="form-control" name="title" id="title">
-            </div>
 
-            <div class="form-group">
-                <label for="description">description des images</label>
+                <label for="description">Texte :</label>
                 <textarea class="form-control" name="text" id="text"></textarea>
-            </div>
+                {% if uploadErrors %}
+                    <ul class="alert alert-danger">
+                        {% for uploadError in uploadErrors %}
+                            <li>{{ uploadError }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <input id="uploadFile" class="uploaded-file-name"
+                       placeholder='Choisissez l&apos;image "avant"'
+                       disabled="disabled"/>
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="uploadBtn" type="file" class="upload" name="imageBefore"/>
+                </div>
 
-            <div class="form-group">
-                <label for="start">Selectionner l'image avant</label>
-                <input type="file" name="imageBefore" id="imageBefore">
-            </div>
-
-            <div class="form-group">
-                <label for="start">Selectionner l'image représentant l'après</label>
-                <input type="file" name="imageAfter" id="imageAfter">
-            </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+                <input id="uploadFileImageAfter" class="uploaded-file-name"
+                       placeholder='Choisissez l&apos;image "après"'
+                       disabled="disabled"/>
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="imageAfter" type="file" class="upload" name="imageAfter"/>
+                </div>
+                <input type="submit" class="btn btn-success" value="Ajouter" name="submit">
+            </fieldset>
         </form>
         <hr>
-        <div class="row">
+        <div class="row uploaded-images">
             {% for renovation in renovations %}
                 <div class="col-md-6">
                     <figure class="thumbnail center-block">
@@ -59,11 +68,11 @@
                             <img src="assets/uploads/{{ renovation.imageAfter }}">
                         </div>
                         <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                        <form class="delete-form" action="?route=deleteRenovation" method="post">
+                            <input type="hidden" name="id" value="{{ renovation.id }}"/>
+                            <button type="submit" class="btn btn-block btn-danger">Supprimer</button>
+                        </form>
                     </figure>
-                    <form action="?route=deleteRenovation" method="post">
-                        <input type="hidden" name="id" value="{{ renovation.id }}"/>
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
                 </div>
             {% endfor %}
         </div>
