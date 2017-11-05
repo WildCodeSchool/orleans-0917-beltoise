@@ -38,7 +38,7 @@ class RealisationController extends Controller
                 $realisationManager = new RealisationManager();
                 $realisationManager->insert($platrerie);
 
-                header('Location: index.php?route=adminPlatrerie');
+                header('Location: index.php?route=adminPlatrerie&#anchorUpload');
                 exit;
             }
         }

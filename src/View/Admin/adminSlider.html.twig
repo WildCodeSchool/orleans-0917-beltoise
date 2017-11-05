@@ -7,7 +7,6 @@
     <h1>Maçonnerie</h1>
     <div class="admin-box text-forms-group">
         <form action="?route=presentationMaconnerie" method="post">
-            <div class="center-form">
                 <fieldset>
                     <legend>Modifier le texte de présentation :</legend>
                     <textarea id="summernote" name="texte">
@@ -17,10 +16,8 @@
                 </textarea>
                 </fieldset>
                 <input type="submit" class="btn btn-success" value="Modifier" name="submit">
-            </div>
         </form>
         <form action="?route=presentationPrestation" method="post">
-            <div class="center-form">
                 <fieldset>
                     <legend>Modifier la liste des prestations :</legend>
                     <textarea id="prestation" name="texte">
@@ -30,14 +27,13 @@
                 </textarea>
                 </fieldset>
                 <input type="submit" class="btn btn-success" value="Modifier" name="submit">
-            </div>
         </form>
     </div>
     <div class="admin-box image-uploader">
         <span id="anchorUpload" class="anchor"></span>
         <form action="?route=adminSlider" method="post" enctype="multipart/form-data">
             <fieldset>
-                <legend>Ajouter une image:</legend>
+                <legend>Ajouter une image :</legend>
                 {% if uploadErrors %}
                     <ul class="alert alert-danger">
                         {% for uploadError in uploadErrors %}

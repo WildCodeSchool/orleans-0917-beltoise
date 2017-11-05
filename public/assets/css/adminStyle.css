@@ -32,14 +32,10 @@ h2 {
 
 .section-accueil {
     height: 80vh;
-    /*position: relative;*/
 }
 
 .buttons-group {
     margin-top: 10vh;
-    /*position: absolute;*/
-    /*top: 25%;*/
-    /*left:35%;*/
 }
 
 a.btn-lg.btn.btn-primary {
@@ -95,21 +91,21 @@ li + li {
 
 .text-forms-group {
     width: 80vw;
-    margin: auto;
+    margin: 30px auto;
     overflow: auto;
 }
 
 form {
-    padding: 15px;
+    padding: 0 15px 15px 15px;
 }
 
 legend {
     border: none;
+    margin-top: 15px;
 }
 
-.center-form {
-    width: 80%;
-    margin: auto;
+label {
+    margin-top: 10px;
 }
 
 textarea {
