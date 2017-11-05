@@ -28,12 +28,18 @@ h2 {
 
 .section-accueil {
     height: 80vh;
-    position: relative;
+    /*position: relative;*/
 }
 
 .buttons-group {
-    position: absolute;
-    transform: translate(0, 15vh);
+    margin-top: 10vh;
+    /*position: absolute;*/
+    /*top: 25%;*/
+    /*left:35%;*/
+}
+
+a.btn-lg.btn.btn-primary {
+    width: 100%;
 }
 
 ul {
