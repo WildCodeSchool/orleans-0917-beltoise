@@ -30,6 +30,7 @@
                          {{ presentationMaconnerie.texte }}
                      {% endfor %}
                 </textarea>
+                <input type="hidden" name="section" value="MACONNERIE" />
                 <input type="submit" value="Modifier" name="submit">
             </fieldset>
         </form>
@@ -43,6 +44,7 @@
                          {{ presentationPrestation.texte | raw}}
                      {% endfor %}
                 </textarea>
+                <input type="hidden" name="section" value="PRESTATION" />
                 <input type="submit" value="Modifier" name="submit">
             </fieldset>
         </form>

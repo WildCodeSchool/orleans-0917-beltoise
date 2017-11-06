@@ -4,3 +4,4 @@ vendor/
 composer.json
 public/assets/uploads/*
 .htpasswd
+
