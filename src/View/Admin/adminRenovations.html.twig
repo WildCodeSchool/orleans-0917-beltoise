@@ -1,7 +1,33 @@
 {% include 'Admin/adminHeader.html.twig' %}
 {% include 'Admin/adminNav.html.twig' %}
 <section>
-    <h2>Rénovation et restauration</h2>
+    <h1>Rénovation et restauration</h1>
+    <div class="admin-box image-uploader">
+        <span id="anchorUpload" class="anchor"></span>
+        <form action="?route=adminImageFondRenovation" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Image de fond :</legend>
+                {% if backgroundUploadErrors %}
+                    <ul class="alert alert-danger">
+                        {% for backgroundUploadError in backgroundUploadErrors %}
+                            <li>{{ backgroundUploadError }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..."
+                       disabled="disabled"/>
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="uploadBtn" type="file" class="upload" name="upload"/>
+                </div>
+                <input type="submit" class="btn btn-success" value="Remplacer" name="submit">
+            </fieldset>
+        </form>
+        <div class="uploaded-images">
+            <img class="thumbnail center-block image-accueil" src="assets/uploads/imageFondRenovation.jpg"
+                 alt="Actuelle image de fond Rénovation et restauration">
+        </div>
+    </div>
     <div class="admin-box text-forms-group">
         <form action="?route=presentationRenovation" method="post">
             <fieldset>
@@ -63,7 +89,7 @@
                             <img src="assets/uploads/{{ renovation.imageAfter }}" class="thumbnail">
                         </div>
                         <div class="titreSeparation">
-                        <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                            <figcaption class="text-center">{{ renovation.text }}</figcaption>
                         </div>
                         <form class="delete-form" action="?route=deleteRenovation" method="post">
                             <input type="hidden" name="id" value="{{ renovation.id }}"/>

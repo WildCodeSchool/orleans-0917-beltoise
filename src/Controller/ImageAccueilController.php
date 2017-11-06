@@ -32,4 +32,93 @@ class ImageAccueilController extends Controller
             'uploadErrors' => $uploadErrors,
         ]);
     }
+
+    /**
+     * @return string
+     */
+    public function showAdminImageFondMaconnerieAction()
+    {
+        $backgroundUploadErrors = [];
+
+        if (!empty($_POST)) {
+            $uploadImageManager = new UploadImageManager();
+            $backgroundUploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondMaconnerie.jpg');
+
+            if (empty($backgroundUploadErrors)) {
+                header('Location: index.php?route=adminSlider');
+                exit;
+            }
+        }
+
+        return $this->twig->render('Admin/adminSlider.html.twig', [
+            'backgroundUploadErrors' => $backgroundUploadErrors,
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function showAdminImageFondPlatrerieAction()
+    {
+        $backgroundUploadErrors = [];
+
+        if (!empty($_POST)) {
+            $uploadImageManager = new UploadImageManager();
+            $backgroundUploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondPlatrerie.jpg');
+
+            if (empty($backgroundUploadErrors)) {
+                header('Location: index.php?route=adminPlatrerie');
+                exit;
+            }
+        }
+
+        return $this->twig->render('Admin/adminPlatrerie.html.twig', [
+            'backgroundUploadErrors' => $backgroundUploadErrors,
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function showAdminImageFondRealisationAction()
+    {
+        $backgroundUploadErrors = [];
+
+        if (!empty($_POST)) {
+            $uploadImageManager = new UploadImageManager();
+            $backgroundUploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRealisation.jpg');
+
+            if (empty($backgroundUploadErrors)) {
+                header('Location: index.php?route=adminRealEco');
+                exit;
+            }
+        }
+
+        return $this->twig->render('Admin/adminRealeco.html.twig', [
+            'backgroundUploadErrors' => $backgroundUploadErrors,
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function showAdminImageFondRenovationAction()
+    {
+        $backgroundUploadErrors = [];
+
+        if (!empty($_POST)) {
+            $uploadImageManager = new UploadImageManager();
+            $backgroundUploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRenovation.jpg');
+
+            if (empty($backgroundUploadErrors)) {
+                header('Location: index.php?route=adminRenovations');
+                exit;
+            }
+        }
+
+        return $this->twig->render('Admin/adminRenovations.html.twig', [
+            'backgroundUploadErrors' => $backgroundUploadErrors,
+        ]);
+    }
+
 }

@@ -128,7 +128,7 @@ textarea.form-control {
 }
 
 .alert-danger {
-    width: 30%;
+    width: 25%;
 }
 
 .fileUpload {
@@ -190,4 +190,5 @@ figure img {
     height: 300px;
 
 }
+
 /*END Hotfix rénovation*/

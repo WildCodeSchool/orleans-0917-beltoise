@@ -1,7 +1,33 @@
 {% include 'Admin/adminHeader.html.twig' %}
 {% include 'Admin/adminNav.html.twig' %}
 <section>
-    <h2>Plâtrerie</h2>
+    <h1>Plâtrerie</h1>
+    <div class="admin-box image-uploader">
+        <span id="anchorUpload" class="anchor"></span>
+        <form action="?route=adminImageFondPlatrerie" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Image de fond :</legend>
+                {% if backgroundUploadErrors %}
+                    <ul class="alert alert-danger">
+                        {% for backgroundUploadError in backgroundUploadErrors %}
+                            <li>{{ backgroundUploadError }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..."
+                       disabled="disabled"/>
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="uploadBtn" type="file" class="upload" name="upload"/>
+                </div>
+                <input type="submit" class="btn btn-success" value="Remplacer" name="submit">
+            </fieldset>
+        </form>
+        <div class="uploaded-images">
+            <img class="thumbnail center-block image-accueil" src="assets/uploads/imageFondPlatrerie.jpg"
+                 alt="Actuelle image de fond Plâtrerie">
+        </div>
+    </div>
     <div class="admin-box text-forms-group">
         <form action="?route=presentationPlatrerie" method="post">
             <fieldset>
