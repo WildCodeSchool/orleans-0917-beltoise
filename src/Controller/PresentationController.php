@@ -21,7 +21,7 @@ class PresentationController extends Controller
         $presentation = $presentation[0];
         $presentation->setTexte($_POST['texte']);
         $presentationManager->update($presentation);
-        header('Location: index.php?route=adminPlatrerie');
+        header('Location: admin.php?route=adminPlatrerie');
     }
 
     public function presentationRealEcoAction()
@@ -31,7 +31,7 @@ class PresentationController extends Controller
         $presentation = $presentation[0];
         $presentation->setTexte($_POST['texte']);
         $presentationManager->update($presentation);
-        header('Location: index.php?route=adminRealEco');
+        header('Location: admin.php?route=adminRealEco');
     }
 
     public function presentationRenovationAction()
@@ -41,7 +41,7 @@ class PresentationController extends Controller
         $presentation = $presentation[0];
         $presentation->setTexte($_POST['texte']);
         $presentationManager->update($presentation);
-        header('Location: index.php?route=adminRenovations');
+        header('Location: admin.php?route=adminRenovations');
     }
 
     public function presentationMaconnerieAction()
@@ -51,7 +51,7 @@ class PresentationController extends Controller
         $presentation = $presentation[0];
         $presentation->setTexte($_POST['texte']);
         $presentationManager->update($presentation);
-        header('Location: index.php?route=adminSlider');
+        header('Location: admin.php?route=adminSlider');
     }
 
     public function presentationAccueilAction()
@@ -61,7 +61,7 @@ class PresentationController extends Controller
         $presentation = $presentation[0];
         $presentation->setTexte($_POST['texte']);
         $presentationManager->update($presentation);
-        header('Location: index.php?route=adminCertifications');
+        header('Location: admin.php?route=adminCertifications');
     }
 
     public function presentationPrestationAction()
@@ -71,7 +71,7 @@ class PresentationController extends Controller
         $presentation = $presentation[0];
         $presentation->setTexte($_POST['texte']);
         $presentationManager->update($presentation);
-        header('Location: index.php?route=adminSlider');
+        header('Location: admin.php?route=adminSlider');
     }
 
 

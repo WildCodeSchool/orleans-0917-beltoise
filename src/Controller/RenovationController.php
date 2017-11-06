@@ -50,7 +50,7 @@ class RenovationController extends Controller
                 $renovationManager->insert($renovation);
 
 
-                header('Location: index.php?route=adminRenovations');
+                header('Location: admin.php?route=adminRenovations');
                 exit;
             }
         }
@@ -81,7 +81,7 @@ class RenovationController extends Controller
                 unlink('assets/uploads/' . $renovation->getImageBefore());
                 unlink('assets/uploads/' . $renovation->getImageAfter());
             }
-            header('Location: index.php?route=adminRenovations');
+            header('Location: admin.php?route=adminRenovations');
         }
     }
 }

@@ -23,7 +23,7 @@ class ImageAccueilController extends Controller
             $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageAccueil.jpg');
 
             if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminImageAccueil');
+                header('Location: admin.php?route=adminImageAccueil');
                 exit;
             }
         }
@@ -45,7 +45,7 @@ class ImageAccueilController extends Controller
             $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondMaconnerie.jpg');
 
             if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminSlider');
+                header('Location: admin.php?route=adminSlider');
                 exit;
             }
         }
@@ -67,7 +67,7 @@ class ImageAccueilController extends Controller
             $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondPlatrerie.jpg');
 
             if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminPlatrerie');
+                header('Location: admin.php?route=adminPlatrerie');
                 exit;
             }
         }
@@ -89,7 +89,7 @@ class ImageAccueilController extends Controller
             $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRealisation.jpg');
 
             if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminRealEco');
+                header('Location: admin.php?route=adminRealEco');
                 exit;
             }
         }
@@ -111,7 +111,7 @@ class ImageAccueilController extends Controller
             $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRenovation.jpg');
 
             if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminRenovations');
+                header('Location: admin.php?route=adminRenovations');
                 exit;
             }
         }
