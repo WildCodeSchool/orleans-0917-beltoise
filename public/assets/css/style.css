@@ -27,11 +27,45 @@
     margin-left: 0;
 }
 
-.separationImg {
+
+.separationImgMaconnerie {
     height: 300px;
     line-height: 280px;
     width: 100%;
-    background: url("../uploads/chantiergodat.jpg") no-repeat fixed;
+    background: url("../uploads/imageFondMaconnerie.jpg") no-repeat fixed;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.separationImgPlatrerie {
+    height: 300px;
+    line-height: 280px;
+    width: 100%;
+    background: url("../uploads/imageFondPlatrerie.jpg") no-repeat fixed;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.separationImgRealEco {
+    height: 300px;
+    line-height: 280px;
+    width: 100%;
+    background: url("../uploads/imageFondRealisation.jpg") no-repeat fixed;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.separationImgRenovation {
+    height: 300px;
+    line-height: 280px;
+    width: 100%;
+    background: url("../uploads/imageFondRenovation.jpg") no-repeat fixed;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
