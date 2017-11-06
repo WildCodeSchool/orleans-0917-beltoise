@@ -28,7 +28,8 @@ class RenovationController extends Controller
     public function showAdminRenovationAction()
     {
         $renovation = new Renovation();
-        $uploadErrors = [];
+        $uploadErrorsBefore = [];
+        $uploadErrorsAfter = [];
 
         if (!empty($_FILES['imageBefore']) AND !empty($_FILES['imageAfter'])) {
 
@@ -37,11 +38,11 @@ class RenovationController extends Controller
             $renovation->setText($_POST['text']);
 
             $uploadImageBeforeManager = new UploadImageManager();
-            $uploadErrors = $uploadImageBeforeManager->imageUploadBefore($_FILES['imageBefore']);
+            $uploadErrorsBefore = $uploadImageBeforeManager->imageUploadBefore($_FILES['imageBefore']);
             $uploadImageAfterManager = new UploadImageManager();
-            $uploadErrors = $uploadImageAfterManager->imageUploadAfter($_FILES['imageAfter']);
+            $uploadErrorsAfter = $uploadImageAfterManager->imageUploadAfter($_FILES['imageAfter']);
 
-            if (empty($uploadErrors)) {
+            if (empty($uploadErrorsBefore) and empty($uploadErrorsAfter) ) {
 
                 $renovation->setImageBefore($uploadImageBeforeManager->getImageName());
                 $renovation->setImageAfter($uploadImageAfterManager->getImageName());
@@ -61,10 +62,10 @@ class RenovationController extends Controller
         $presentationRenovations = $presentationRenovationManager->findAllRenovation();
         return $this->twig->render('Admin/adminRenovations.html.twig', [
             'renovations' => $renovations,
-            'uploadErrors' => $uploadErrors,
+            'uploadErrorsBefores' => $uploadErrorsBefore,
+            'uploadErrorsAfters' => $uploadErrorsAfter,
             'presentationRenovations' => $presentationRenovations,
         ]);
-
     }
 
     /**

@@ -92,12 +92,12 @@ class UploadImageManager extends EntityManager
             $extension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
 
             if ($imageFile['size'] > EntityManager::UPLOAD_SIZELIMIT) {
-                $uploadErrors[] = "L'image avant est trop lourde.";
+                $uploadErrors[] = 'Erreur image "avant" : L\'image est trop lourde.';
             }
 
             $allowedMimes = ['image/jpeg', 'image/png'];
             if (!in_array(mime_content_type($imageFile['tmp_name']), $allowedMimes)) {
-                $uploadErrors[] = "Image avant : seuls les formats jpg et png sont autorisés.";
+                $uploadErrors[] = 'Erreur image "avant" : Seuls les formats jpg et png sont autorisés.';
             }
 
             if (empty($uploadErrors)) {
@@ -108,7 +108,7 @@ class UploadImageManager extends EntityManager
 
         // Récuếration de l'erreur PHP si elle existe
         if ($imageFile['error']) {
-            $uploadErrors[] = 'erreur image avant :' . self::PHPERRORTAB[$imageFile['error']];
+            $uploadErrors[] = 'Erreur image "avant" : '  . self::PHPERRORTAB[$imageFile['error']];
         }
 
         if (empty($imageFile['name'])) {
@@ -126,12 +126,12 @@ class UploadImageManager extends EntityManager
             $extension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
 
             if ($imageFile['size'] > EntityManager::UPLOAD_SIZELIMIT) {
-                $uploadErrors[] = "L'image après est trop lourde.";
+                $uploadErrors[] = 'Erreur image "après" : L\'image est trop lourde.';
             }
 
             $allowedMimes = ['image/jpeg', 'image/png'];
             if (!in_array(mime_content_type($imageFile['tmp_name']), $allowedMimes)) {
-                $uploadErrors[] = "images après : seuls les formats jpg et png sont autorisés.";
+                $uploadErrors[] = 'Erreur image "après" : Seuls les formats jpg et png sont autorisés.';
             }
 
             if (empty($uploadErrors)) {
@@ -142,7 +142,7 @@ class UploadImageManager extends EntityManager
 
         // Récuếration de l'erreur PHP si elle existe
         if ($imageFile['error']) {
-            $uploadErrors[] = 'erreur image après : '  . self::PHPERRORTAB[$imageFile['error']];
+            $uploadErrors[] = 'Erreur image "après" : '  . self::PHPERRORTAB[$imageFile['error']];
         }
       
         if (empty($imageFile['name'])) {

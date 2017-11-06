@@ -51,10 +51,13 @@
 
                 <label for="description">Texte :</label>
                 <textarea class="form-control" name="text" id="text"></textarea>
-                {% if uploadErrors %}
+                {% if uploadErrorsBefores or uploadErrorsAfters %}
                     <ul class="alert alert-danger">
-                        {% for uploadError in uploadErrors %}
-                            <li>{{ uploadError }}</li>
+                        {% for uploadErrorsBefore in uploadErrorsBefores %}
+                            <li>{{ uploadErrorsBefore }}</li>
+                        {% endfor %}
+                        {% for uploadErrorsAfter in uploadErrorsAfters %}
+                            <li>{{ uploadErrorsAfter }}</li>
                         {% endfor %}
                     </ul>
                 {% endif %}
