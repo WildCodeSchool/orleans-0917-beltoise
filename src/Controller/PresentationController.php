@@ -111,16 +111,13 @@ class PresentationController extends Controller
             $presentation = $presentation[0];
             $presentation->setTexte($_POST['texte']);
             $presentationManager->update($presentation);
-            header('Location: index.php?route=adminSlider');
+            header('Location: admin.php?route=adminSlider');
         } else {
             $presentation = new Presentation();
             $presentation->setTexte($_POST['texte']);
             $presentation->setSection($_POST['section']);
             $presentationManager->add($presentation);
-            header('Location: index.php?route=adminSlider');
+            header('Location: admin.php?route=adminSlider');
         }
-
     }
-
-
 }

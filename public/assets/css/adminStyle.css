@@ -42,15 +42,15 @@ a.btn-lg.btn.btn-primary {
     width: 100%;
 }
 
-ul {
+.section-accueil ul {
     padding: 0;
 }
 
-li {
+.section-accueil li {
     list-style: none;
 }
 
-li + li {
+.section-accueil li + li {
     padding-top: 15px;
 }
 
