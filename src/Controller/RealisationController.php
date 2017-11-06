@@ -10,15 +10,13 @@ namespace Beltoise\Controller;
 
 use Beltoise\Model\RealisationManager;
 use Beltoise\Model\Realisation;
+use Beltoise\Model\Presentation;
 use Beltoise\Service\UploadImageManager;
 use Beltoise\Model\PresentationManager;
-use Beltoise\Model\Presentation;
 
 class RealisationController extends Controller
 {
-    /**
-     * @return string
-     */
+
     public function showAdminPlatrerieAction()
     {
         $platrerie = new Realisation();
@@ -54,9 +52,6 @@ class RealisationController extends Controller
         ]);
     }
 
-    /**
-     * @return string
-     */
     public function showAdminRealEcoAction()
     {
         $realEcol = new Realisation();
@@ -83,15 +78,11 @@ class RealisationController extends Controller
 
         $realisationManager = new RealisationManager();
         $realEcos = $realisationManager->findAllRealEco();
-        $presentationRealEcoManager = new PresentationManager();
-        $presentationRealEcos = $presentationRealEcoManager->findAllRealEco();
         return $this->twig->render('Admin/adminRealeco.html.twig', [
             'realEcos' => $realEcos,
             'uploadErrors' => $uploadErrors,
-            'presentationRealEcos' => $presentationRealEcos,
         ]);
     }
-
 
     public function deletePlatrerieAction()
     {
@@ -106,7 +97,6 @@ class RealisationController extends Controller
         }
     }
 
-
     public function deleteRealEcoAction()
     {
         if (!empty($_POST['id'])) {
@@ -119,5 +109,6 @@ class RealisationController extends Controller
             header('Location: admin.php?route=adminRealEco');
         }
     }
+
 
 }
