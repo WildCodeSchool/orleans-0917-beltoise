@@ -1,10 +1,47 @@
 {% include 'Admin/adminHeader.html.twig' %}
-<a href="index.php?route=adminCertifications">Administrer les certifications</a>
-<a href="index.php?route=adminSlider">Administrer le diaporama Maçonnerie</a>
-<a href="index.php?route=adminImageAccueil">Administrer l'image d'accueil</a>
-<a href="index.php?route=adminPlatrerie">Administrer la section platrerie</a>
-<a href="index.php?route=adminRealEco">Administrer la section réalisation écologique</a>
-<a href="index.php?route=adminForm">Changer l'adresse mail de contact</a>
-<a href="index.php?route=adminRenovations" class="btn btn-primary">Administrer la partie rénovation</a>
-<a href="index.php?route=home" class="btn btn-default">Retour vers la page principale</a>
+<h1>Administration du site Beltoise & Fils</h1>
+<div class="row">
+    <div class="col-xs-6 row">
+        <section class="admin-box col-xs-offset-1 col-xs-11 section-accueil">
+            <h2>Administration générale</h2>
+            <div class="buttons-group">
+                <ul>
+                    <li><a href="?route=adminImageAccueil" class="btn-lg btn btn-primary">Image
+                            d'accueil</a>
+                    </li>
+                    <li><a href="?route=adminCertifications" class="btn-lg btn btn-primary">Présentation
+                            entreprise et certifications</a>
+                    </li>
+                    <li><a href="?route=adminForm" class="btn-lg btn btn-primary">Mail de
+                            contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="buttons-return">
+                <a href="index.php?route=home" class="btn-lg btn btn-warning">Retourner vers le site</a>
+                <a href="index.php?route=home" target="_blank" class="btn-lg btn btn-info">
+                    Ouvrir le site dans un nouvel onglet</a>
+            </div>
+        </section>
+    </div>
+    <div class="col-xs-6 row">
+        <section class="admin-box col-xs-offset-1 col-xs-11 section-accueil">
+            <h2>Administration des sections</h2>
+            <div class="buttons-group">
+                <ul>
+                    <li><a href="?route=adminSlider" class="btn-lg btn btn-primary">Maçonnerie</a>
+                    </li>
+                    <li><a href="?route=adminPlatrerie" class="btn-lg btn btn-primary">Plâtrerie</a>
+                    </li>
+                    <li><a href="?route=adminRealEco" class="btn-lg btn btn-primary">Réalisations
+                            écologiques</a>
+                    </li>
+                    <li><a href="?route=adminRenovations" class="btn-lg btn btn-primary">Rénovation et
+                            restauration</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
 {% include 'Admin/adminFooter.html.twig' %}

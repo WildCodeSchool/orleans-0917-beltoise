@@ -1,82 +1,105 @@
 {% include 'Admin/adminHeader.html.twig' %}
+{% include 'Admin/adminNav.html.twig' %}
 <section>
-    <h2>Image de fond Rénovation</h2>
-    {% if uploadErrors %}
-        <ul class="alert alert-danger">
-            {% for uploadError in uploadErrors %}
-                <li>{{ uploadError }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    <div class="row">
-
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <form action="?route=adminImageFondRenovation" method="post" enctype="multipart/form-data">
-                <label name="upload">Photo à modifier :</label>
-                <input type="file" name="upload" id="upload">
-                <input type="submit" value="Envoyer" name="submit">
-            </form>
+    <h1>Rénovation et restauration</h1>
+    <div class="admin-box image-uploader">
+        <span id="anchorUpload" class="anchor"></span>
+        <form action="?route=adminImageFondRenovation" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Image de fond :</legend>
+                {% if backgroundUploadErrors %}
+                    <ul class="alert alert-danger">
+                        {% for backgroundUploadError in backgroundUploadErrors %}
+                            <li>{{ backgroundUploadError }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..."
+                       disabled="disabled"/>
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="uploadBtn" type="file" class="upload" name="upload"/>
+                </div>
+                <input type="submit" class="btn btn-success" value="Remplacer" name="submit">
+            </fieldset>
+        </form>
+        <div class="uploaded-images">
+            <img class="thumbnail center-block image-accueil" src="assets/uploads/imageFondRenovation.jpg"
+                 alt="Actuelle image de fond Rénovation et restauration">
         </div>
     </div>
-    <img src="assets/uploads/imageFondRenovation.jpg" alt="Actuelle image de fond Rénovation">
-</section>
-<section>
-    <h2>Rénovation</h2>
+    <div class="admin-box text-forms-group">
         <form action="?route=presentationRenovation" method="post">
             <fieldset>
-                <legend>Modifier le texte de présentation:</legend>
+                <legend>Modifier le texte de présentation :</legend>
                 <textarea id="summernote" name="texte">
                      {% for presentationRenovation in presentationRenovations %}
                          {{ presentationRenovation.texte }}
                      {% endfor %}
                 </textarea>
-
+                <input type="hidden" name="section" value="RENOVATION" />
                 <input type="submit" value="Modifier" name="submit">
             </fieldset>
         </form>
     </div>
-    <div class="row">
+    <div class="admin-box image-uploader">
+        <span id="anchorUpload" class="anchor"></span>
         <form action="?route=adminRenovations" method="post" enctype="multipart/form-data">
-
-            <div class="form-group">
-                <label for="name">Titre</label>
+            <fieldset>
+                <legend>Ajouter une réalisation :</legend>
+                <label for="name">Titre :</label>
                 <input type="text" class="form-control" name="title" id="title">
-            </div>
 
-            <div class="form-group">
-                <label for="description">description des images</label>
+                <label for="description">Texte :</label>
                 <textarea class="form-control" name="text" id="text"></textarea>
-            </div>
+                {% if uploadErrorsBefores or uploadErrorsAfters %}
+                    <ul class="alert alert-danger">
+                        {% for uploadErrorsBefore in uploadErrorsBefores %}
+                            <li>{{ uploadErrorsBefore }}</li>
+                        {% endfor %}
+                        {% for uploadErrorsAfter in uploadErrorsAfters %}
+                            <li>{{ uploadErrorsAfter }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <input id="uploadFile2" class="uploaded-file-name"
+                       placeholder='Choisissez l&apos;image "avant"'
+                       disabled="disabled"/>
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="uploadBtn2" type="file" class="upload" name="imageBefore"/>
+                </div>
 
-            <div class="form-group">
-                <label for="start">Selectionner l'image avant</label>
-                <input type="file" name="imageBefore" id="imageBefore">
-            </div>
-
-            <div class="form-group">
-                <label for="start">Selectionner l'image représentant l'après</label>
-                <input type="file" name="imageAfter" id="imageAfter">
-            </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+                <input id="uploadFile3" class="uploaded-file-name"
+                       placeholder='Choisissez l&apos;image "après"'
+                       disabled="disabled"/>
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="uploadBtn3" type="file" class="upload" name="imageAfter"/>
+                </div>
+                <input type="submit" class="btn btn-success" value="Ajouter" name="submit">
+            </fieldset>
         </form>
         <hr>
-        <div class="row">
+        <div class="row uploaded-images">
             {% for renovation in renovations %}
                 <div class="col-md-6">
                     <figure class="thumbnail center-block">
-                        <h3>{{ renovation.title }}</h3>
+                        <h3 class="text-center">{{ renovation.title }}</h3>
                         <div class="col-md-6">
-                            <img src="assets/uploads/{{ renovation.imageBefore }}">
+                            <img src="assets/uploads/{{ renovation.imageBefore }}" class="thumbnail">
                         </div>
                         <div class="col-md-6">
-                            <img src="assets/uploads/{{ renovation.imageAfter }}">
+                            <img src="assets/uploads/{{ renovation.imageAfter }}" class="thumbnail">
                         </div>
-                        <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                        <div class="titreSeparation">
+                            <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                        </div>
+                        <form class="delete-form" action="?route=deleteRenovation" method="post">
+                            <input type="hidden" name="id" value="{{ renovation.id }}"/>
+                            <button type="submit" class="btn btn-block btn-danger">Supprimer</button>
+                        </form>
                     </figure>
-                    <form action="?route=deleteRenovation" method="post">
-                        <input type="hidden" name="id" value="{{ renovation.id }}"/>
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
                 </div>
             {% endfor %}
         </div>

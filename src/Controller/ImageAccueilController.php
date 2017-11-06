@@ -23,7 +23,7 @@ class ImageAccueilController extends Controller
             $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageAccueil.jpg');
 
             if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminImageAccueil');
+                header('Location: admin.php?route=adminImageAccueil');
                 exit;
             }
         }
@@ -38,20 +38,20 @@ class ImageAccueilController extends Controller
      */
     public function showAdminImageFondMaconnerieAction()
     {
-        $uploadErrors = [];
+        $backgroundUploadErrors = [];
 
         if (!empty($_POST)) {
             $uploadImageManager = new UploadImageManager();
-            $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondMaconnerie.jpg');
+            $backgroundUploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondMaconnerie.jpg');
 
-            if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminSlider');
+            if (empty($backgroundUploadErrors)) {
+                header('Location: admin.php?route=adminSlider');
                 exit;
             }
         }
 
         return $this->twig->render('Admin/adminSlider.html.twig', [
-            'uploadErrors' => $uploadErrors,
+            'backgroundUploadErrors' => $backgroundUploadErrors,
         ]);
     }
 
@@ -60,20 +60,20 @@ class ImageAccueilController extends Controller
      */
     public function showAdminImageFondPlatrerieAction()
     {
-        $uploadErrors = [];
+        $backgroundUploadErrors = [];
 
         if (!empty($_POST)) {
             $uploadImageManager = new UploadImageManager();
-            $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondPlatrerie.jpg');
+            $backgroundUploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondPlatrerie.jpg');
 
-            if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminPlatrerie');
+            if (empty($backgroundUploadErrors)) {
+                header('Location: admin.php?route=adminPlatrerie');
                 exit;
             }
         }
 
         return $this->twig->render('Admin/adminPlatrerie.html.twig', [
-            'uploadErrors' => $uploadErrors,
+            'backgroundUploadErrors' => $backgroundUploadErrors,
         ]);
     }
 
@@ -82,20 +82,20 @@ class ImageAccueilController extends Controller
      */
     public function showAdminImageFondRealisationAction()
     {
-        $uploadErrors = [];
+        $backgroundUploadErrors = [];
 
         if (!empty($_POST)) {
             $uploadImageManager = new UploadImageManager();
-            $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRealisation.jpg');
+            $backgroundUploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRealisation.jpg');
 
-            if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminRealEco');
+            if (empty($backgroundUploadErrors)) {
+                header('Location: admin.php?route=adminRealEco');
                 exit;
             }
         }
 
-        return $this->twig->render('Admin/adminRealEco.html.twig', [
-            'uploadErrors' => $uploadErrors,
+        return $this->twig->render('Admin/adminRealeco.html.twig', [
+            'backgroundUploadErrors' => $backgroundUploadErrors,
         ]);
     }
 
@@ -104,20 +104,20 @@ class ImageAccueilController extends Controller
      */
     public function showAdminImageFondRenovationAction()
     {
-        $uploadErrors = [];
+        $backgroundUploadErrors = [];
 
         if (!empty($_POST)) {
             $uploadImageManager = new UploadImageManager();
-            $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRenovation.jpg');
+            $backgroundUploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRenovation.jpg');
 
-            if (empty($uploadErrors)) {
-                header('Location: index.php?route=adminRenovations');
+            if (empty($backgroundUploadErrors)) {
+                header('Location: admin.php?route=adminRenovations');
                 exit;
             }
         }
 
         return $this->twig->render('Admin/adminRenovations.html.twig', [
-            'uploadErrors' => $uploadErrors,
+            'backgroundUploadErrors' => $backgroundUploadErrors,
         ]);
     }
 
