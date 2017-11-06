@@ -3,4 +3,4 @@ connect.php
 vendor/
 composer.json
 public/assets/uploads/*
-public/assets/summernote/
+.htpasswd
