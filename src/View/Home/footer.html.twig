@@ -1,15 +1,15 @@
 <hr class="separator">
-<div class="row footer">
-    <div class="hidden-xs hidden-sm col-md-2 text-center">
+<div class="row footer hidden-xs">
+    <ul class="hidden-xs hidden-sm col-md-2 text-center image-list">
         {% for logo in logos %}
             <div class="logo-certif-mini col-md-3">
                 <p><img src="assets/uploads/{{ logo.name }}" alt="Certification"></p>
             </div>
         {% endfor %}
-    </div>
+    </ul>
     <div class="push-xs-6 col-sm-8 text-center">
         <div class="row logo-beltoise-footer">
-            <img class="footer-logo-beltoise" src="assets/uploads/ENTETE_BELTOISE3.jpg" alt="logo Beltoise">
+            <img class="footer-logo-beltoise" src="assets/images/ENTETE_BELTOISE3.jpg" alt="logo Beltoise">
         </div>
         {% include 'Home/mention_legales.html.twig' %}
         <div class="hidden-xs hidden-sm col-md-2 hidden-lgtext-center logoWCS">

@@ -1,8 +1,11 @@
 <div class="row linkModal">
-    <a href="#" data-toggle="modal" data-target="#imageBefore{{ renovation.id }}">
+    <a  class="hidden-xs" href="#" data-toggle="modal" data-target="#imageBefore{{ renovation.id }}">
         <img src="assets/uploads/{{ renovation.imageBefore }}" class="img-renovation">
     </a>
 </div>
+<a class="visible-xs" data-target="#imageBefore{{ renovation.id }}">
+    <img src="assets/uploads/{{ renovation.imageBefore }}" class="img-renovation">
+</a>
 
 <div class="modal modal-wide fade" id="imageBefore{{ renovation.id }}" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
