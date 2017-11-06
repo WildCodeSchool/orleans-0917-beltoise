@@ -8,7 +8,10 @@
 
 namespace Beltoise\Model;
 
-
+/**
+ * Class PresentationManager
+ * @package Beltoise\Model
+ */
 class PresentationManager extends EntityManager
 {
 
@@ -62,6 +65,14 @@ class PresentationManager extends EntityManager
     public function findAllMaconnerie()
     {
         $query = "SELECT * FROM presentation WHERE section = 'MACONNERIE'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);
+    }
+
+    public function findAllPrestation()
+    {
+        $query = "SELECT * FROM presentation WHERE section = 'PRESTATION'";
 
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);

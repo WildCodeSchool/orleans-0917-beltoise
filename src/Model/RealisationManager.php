@@ -26,6 +26,7 @@ class RealisationManager extends EntityManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Realisation::class);
     }
 
+
     /**
      * @return array
      */
