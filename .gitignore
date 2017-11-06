@@ -3,3 +3,4 @@ connect.php
 vendor/
 composer.json
 public/assets/uploads/*
+.htpasswd
