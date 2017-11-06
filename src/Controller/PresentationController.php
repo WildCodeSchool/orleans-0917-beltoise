@@ -7,6 +7,7 @@
  */
 
 namespace Beltoise\Controller;
+
 use Beltoise\Model\PresentationManager;
 use Beltoise\Model\Presentation;
 use Beltoise\Model\RenovationManager;
@@ -22,7 +23,7 @@ class PresentationController extends Controller
             $presentation = $presentation[0];
             $presentation->setTexte($_POST['texte']);
             $presentationManager->update($presentation);
-            header('Location: index.php?route=adminPlatrerie');
+            header('Location: admin.php?route=adminPlatrerie');
         } else {
             $presentation = new Presentation();
             $presentation->setTexte($_POST['texte']);
@@ -39,7 +40,7 @@ class PresentationController extends Controller
             $presentation = $presentation[0];
             $presentation->setTexte($_POST['texte']);
             $presentationManager->update($presentation);
-            header('Location: index.php?route=adminRealEco');
+            header('Location: admin.php?route=adminRealEco');
         } else {
             $presentation = new Presentation();
             $presentation->setTexte($_POST['texte']);
@@ -52,40 +53,73 @@ class PresentationController extends Controller
     {
         $presentationManager = new PresentationManager();
         $presentation = $presentationManager->findAllRenovation();
-        $presentation = $presentation[0];
-        $presentation->setTexte($_POST['texte']);
-        $presentationManager->update($presentation);
-        header('Location: index.php?route=adminRenovations');
+        if (!empty($presentation)) {
+            $presentation = $presentation[0];
+            $presentation->setTexte($_POST['texte']);
+            $presentationManager->update($presentation);
+            header('Location: admin.php?route=adminRenovations');
+        } else {
+            $presentation = new Presentation();
+            $presentation->setTexte($_POST['texte']);
+            $presentation->setSection($_POST['section']);
+            $presentationManager->add($presentation);
+            header('Location: admin.php?route=adminRenovations');
+        }
     }
 
     public function presentationMaconnerieAction()
     {
         $presentationManager = new PresentationManager();
         $presentation = $presentationManager->findAllMaconnerie();
-        $presentation = $presentation[0];
-        $presentation->setTexte($_POST['texte']);
-        $presentationManager->update($presentation);
-        header('Location: index.php?route=adminSlider');
+        if (!empty($presentation)) {
+            $presentation = $presentation[0];
+            $presentation->setTexte($_POST['texte']);
+            $presentationManager->update($presentation);
+            header('Location: admin.php?route=adminSlider');
+        } else {
+            $presentation = new Presentation();
+            $presentation->setTexte($_POST['texte']);
+            $presentation->setSection($_POST['section']);
+            $presentationManager->add($presentation);
+            header('Location: admin.php?route=adminSlider');
+        }
     }
 
     public function presentationAccueilAction()
     {
         $presentationManager = new PresentationManager();
         $presentation = $presentationManager->findAllAccueil();
-        $presentation = $presentation[0];
-        $presentation->setTexte($_POST['texte']);
-        $presentationManager->update($presentation);
-        header('Location: index.php?route=adminCertifications');
+        if (!empty($presentation)) {
+            $presentation = $presentation[0];
+            $presentation->setTexte($_POST['texte']);
+            $presentationManager->update($presentation);
+            header('Location: admin.php?route=adminCertifications');
+        } else {
+            $presentation = new Presentation();
+            $presentation->setTexte($_POST['texte']);
+            $presentation->setSection($_POST['section']);
+            $presentationManager->add($presentation);
+            header('Location: admin.php?route=adminCertifications');
+        }
     }
 
     public function presentationPrestationAction()
     {
         $presentationManager = new PresentationManager();
         $presentation = $presentationManager->findAllPrestation();
-        $presentation = $presentation[0];
-        $presentation->setTexte($_POST['texte']);
-        $presentationManager->update($presentation);
-        header('Location: index.php?route=adminSlider');
+        if (!empty($presentation)) {
+            $presentation = $presentation[0];
+            $presentation->setTexte($_POST['texte']);
+            $presentationManager->update($presentation);
+            header('Location: index.php?route=adminSlider');
+        } else {
+            $presentation = new Presentation();
+            $presentation->setTexte($_POST['texte']);
+            $presentation->setSection($_POST['section']);
+            $presentationManager->add($presentation);
+            header('Location: index.php?route=adminSlider');
+        }
+
     }
 
 

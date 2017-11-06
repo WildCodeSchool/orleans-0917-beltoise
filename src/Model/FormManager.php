@@ -37,4 +37,7 @@ class FormManager extends EntityManager
         $statement->bindValue('newReceptionAddress', $newReceptionAddress, \PDO::PARAM_STR);
         $statement->execute();
     }
+    public function add(Form $receptionAddress)
+
+        
 }
