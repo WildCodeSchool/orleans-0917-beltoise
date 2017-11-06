@@ -32,4 +32,93 @@ class ImageAccueilController extends Controller
             'uploadErrors' => $uploadErrors,
         ]);
     }
+
+    /**
+     * @return string
+     */
+    public function showAdminImageFondMaconnerieAction()
+    {
+        $uploadErrors = [];
+
+        if (!empty($_POST)) {
+            $uploadImageManager = new UploadImageManager();
+            $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondMaconnerie.jpg');
+
+            if (empty($uploadErrors)) {
+                header('Location: index.php?route=adminSlider');
+                exit;
+            }
+        }
+
+        return $this->twig->render('Admin/adminSlider.html.twig', [
+            'uploadErrors' => $uploadErrors,
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function showAdminImageFondPlatrerieAction()
+    {
+        $uploadErrors = [];
+
+        if (!empty($_POST)) {
+            $uploadImageManager = new UploadImageManager();
+            $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondPlatrerie.jpg');
+
+            if (empty($uploadErrors)) {
+                header('Location: index.php?route=adminPlatrerie');
+                exit;
+            }
+        }
+
+        return $this->twig->render('Admin/adminPlatrerie.html.twig', [
+            'uploadErrors' => $uploadErrors,
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function showAdminImageFondRealisationAction()
+    {
+        $uploadErrors = [];
+
+        if (!empty($_POST)) {
+            $uploadImageManager = new UploadImageManager();
+            $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRealisation.jpg');
+
+            if (empty($uploadErrors)) {
+                header('Location: index.php?route=adminRealEco');
+                exit;
+            }
+        }
+
+        return $this->twig->render('Admin/adminRealEco.html.twig', [
+            'uploadErrors' => $uploadErrors,
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function showAdminImageFondRenovationAction()
+    {
+        $uploadErrors = [];
+
+        if (!empty($_POST)) {
+            $uploadImageManager = new UploadImageManager();
+            $uploadErrors = $uploadImageManager->imageReplace($_FILES, 'imageFondRenovation.jpg');
+
+            if (empty($uploadErrors)) {
+                header('Location: index.php?route=adminRenovations');
+                exit;
+            }
+        }
+
+        return $this->twig->render('Admin/adminRenovations.html.twig', [
+            'uploadErrors' => $uploadErrors,
+        ]);
+    }
+
 }

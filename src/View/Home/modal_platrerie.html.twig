@@ -1,8 +1,11 @@
 <div class="row linkModal">
-    <a href="#" data-toggle="modal" data-target="#platrerie{{ platrerie.id }}">
+    <a  class="hidden-xs" href="#" data-toggle="modal" data-target="#platrerie{{ platrerie.id }}">
         <img src="assets/uploads/{{ platrerie.image }}" class="img-responsive">
     </a>
 </div>
+<a class="visible-xs" data-target="#platrerie{{ platrerie.id }}">
+    <img src="assets/uploads/{{ platrerie.image }}" class="img-responsive">
+</a>
 
 <div class="modal modal-wide fade" id="platrerie{{ platrerie.id }}" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
@@ -14,7 +17,7 @@
             </div>
             <div class="modal-body infolegale">
 
-                <img src="assets/uploads/{{ platrerie.image }}" >
+                <img src="assets/uploads/{{ platrerie.image }}">
 
             </div>
             <div class="modal-footer">
