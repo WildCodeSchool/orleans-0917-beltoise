@@ -50,6 +50,12 @@ h2 {
     text-shadow: 5px 5px black;
 }
 
+@media (max-width: 445px) {
+    h2 {
+        font-size: 5em;
+    }
+}
+
 p, figcaption, ul {
     font-family: 'Dosis', sans-serif;
 }
@@ -80,7 +86,7 @@ p, figcaption, ul {
 .navbar-default {
     background-color: #004741;
     border: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar-header {
@@ -120,14 +126,21 @@ p, figcaption, ul {
 .logo {
     padding: 10px 10px;
     position: absolute;
-    top: 50%;
+    top: 45px;
     transform: translate(0, -50%);
     height: 100%;
     width: auto;
 }
 
+@media (max-width: 1185px) {
+    .logo {
+        top: 25px;
+        height: 60px;
+    }
+}
+
 /* Forces the burger menu to be displayed sooner (default is xs only) */
-@media (min-width: 768px) and (max-width: 1085px) {
+@media (min-width: 768px) and (max-width: 1185px) {
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -207,7 +220,7 @@ p, figcaption, ul {
 }
 
 /*Forces the drop down menu to hide in sync with the burger menu*/
-@media (min-width: 1085px) {
+@media (min-width: 1185px) {
     .navbar-smartphone {
         display: none;
     }
@@ -222,7 +235,7 @@ p, figcaption, ul {
 }
 
 /* Style specific to xs and sm */
-@media (max-width: 1085px) {
+@media (max-width: 1185px) {
 
     .nav li {
         text-align: center;
@@ -261,17 +274,19 @@ p, figcaption, ul {
     font-weight: bold;
 }
 
+.image-list {
+    padding: 0;
+    list-style: none;
+}
+
 .logo-certif {
-    display: flex;
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
 }
 
-.logo-certif p + p {
-    padding-left: 20px;
-}
-
-.presentation img {
-    width: 100px;
-    height: 100px;
+.logo-certif img {
+    display: inline-block;
 }
 
 /* END PRESENTATION */
@@ -308,14 +323,17 @@ section .thumbnail {
 
 .myCarousel {
     width: 100%;
-    height: 400px;
-
+    height: 100%;
 }
 
 .myCarousel img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     max-height: 400px;
+}
+
+.carousel-indicators {
+    z-index: 1;
 }
 
 /* Fin section maçonnerie  */
