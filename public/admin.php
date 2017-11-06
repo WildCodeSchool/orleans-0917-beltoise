@@ -14,6 +14,7 @@ use Beltoise\Controller\LogoEntrepriseController;
 use Beltoise\Controller\RealisationController;
 use Beltoise\Controller\PresentationController;
 
+
 $route = $_GET['route'];
 
 
@@ -26,18 +27,6 @@ if ($route == 'admin') {
 } elseif ($route == 'adminSlider') {
     $controller = new SlideCertificationController();
     echo $controller->showAdminSliderAction();
-} elseif ($route == 'adminImageFondMaconnerie') {
-    $controller = new ImageAccueilController();
-    echo $controller->showAdminImageFondMaconnerieAction();
-} elseif ($route == 'adminImageFondPlatrerie') {
-    $controller = new ImageAccueilController();
-    echo $controller->showAdminImageFondPlatrerieAction();
-} elseif ($route == 'adminImageFondRealisation') {
-    $controller = new ImageAccueilController();
-    echo $controller->showAdminImageFondRealisationAction();
-} elseif ($route == 'adminImageFondRenovation') {
-    $controller = new ImageAccueilController();
-    echo $controller->showAdminImageFondRenovationAction();
 } elseif ($route == 'adminImageAccueil') {
     $controller = new ImageAccueilController();
     echo $controller->showAdminImageAccueilAction();
@@ -65,6 +54,18 @@ if ($route == 'admin') {
 } elseif ($route == 'deleteRealEco') {
     $controller = new RealisationController();
     echo $controller->deleteRealEcoAction();
+} elseif ($route == 'adminImageFondMaconnerie') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageFondMaconnerieAction();
+} elseif ($route == 'adminImageFondPlatrerie') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageFondPlatrerieAction();
+} elseif ($route == 'adminImageFondRealisation') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageFondRealisationAction();
+} elseif ($route == 'adminImageFondRenovation') {
+    $controller = new ImageAccueilController();
+    echo $controller->showAdminImageFondRenovationAction();
 } elseif ($route == 'presentationPlatrerie') {
     $controller = new PresentationController();
     echo $controller->presentationPlatrerieAction();
