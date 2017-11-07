@@ -156,6 +156,10 @@ nav li {
     color: #fff;
 }
 
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+}
+
 .navbar-right {
     padding: 25px;
 }
