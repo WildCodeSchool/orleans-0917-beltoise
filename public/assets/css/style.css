@@ -317,7 +317,7 @@ iframe {
     font-size: x-large;
 }
 
-.green-bold b {
+b {
     color: #004741;
     font-weight: bold;
 }
@@ -372,6 +372,7 @@ section .thumbnail {
     height: 50px;
     line-height: 100px;
 }
+
 
 /* section maçonnerie */
 

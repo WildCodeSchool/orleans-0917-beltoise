@@ -14,12 +14,15 @@ use Beltoise\Controller\LogoEntrepriseController;
 use Beltoise\Controller\RealisationController;
 use Beltoise\Controller\PresentationController;
 
-
-$route = $_GET['route'];
-
+if (!empty($_GET['route'])) {
+    $route = $_GET['route'];
+} else {
+    $route = 'home'; // go to home by default
+}
 if ($route == 'home') {
     $controller = new HomeController();
     echo $controller->showAllAction();
+
 } else {
     echo 'La page n\'existe pas';
 }
