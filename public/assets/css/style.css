@@ -22,6 +22,10 @@
     padding-top: 60px;
 }
 
+.section-content p {
+    text-align: center;
+}
+
 .row {
     margin-right: 0;
     margin-left: 0;
@@ -72,6 +76,10 @@
     background-size: cover;
 }
 
+nav li {
+    text-transform: uppercase;
+}
+
 h2 {
     text-align: center;
     vertical-align: middle;
@@ -92,12 +100,18 @@ h2 {
 
 p, figcaption, ul {
     font-family: 'Dosis', sans-serif;
+    font-size: 2em;
 }
 
 .img-renovation {
     width: 100%;
     min-height: 200px;
     max-height: 200px;
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
 }
 
 /* Start Navbar CSS */
@@ -166,7 +180,7 @@ p, figcaption, ul {
     width: auto;
 }
 
-@media (max-width: 1185px) {
+@media (max-width: 1355px) {
     .logo {
         top: 25px;
         height: 60px;
@@ -174,7 +188,7 @@ p, figcaption, ul {
 }
 
 /* Forces the burger menu to be displayed sooner (default is xs only) */
-@media (min-width: 768px) and (max-width: 1185px) {
+@media (min-width: 768px) and (max-width: 1355px) {
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -254,7 +268,7 @@ p, figcaption, ul {
 }
 
 /*Forces the drop down menu to hide in sync with the burger menu*/
-@media (min-width: 1185px) {
+@media (min-width: 1355px) {
     .navbar-smartphone {
         display: none;
     }
@@ -269,7 +283,7 @@ p, figcaption, ul {
 }
 
 /* Style specific to xs and sm */
-@media (max-width: 1185px) {
+@media (max-width: 1355px) {
 
     .nav li {
         text-align: center;
@@ -303,7 +317,7 @@ p, figcaption, ul {
     font-size: x-large;
 }
 
-.green-bold b {
+b {
     color: #004741;
     font-weight: bold;
 }
@@ -326,7 +340,7 @@ p, figcaption, ul {
 /* END PRESENTATION */
 
 section h3 {
-    font-size: 5em;
+    font-size: 4em;
     text-align: center;
     color: #004741;
     font-family: 'Gidugu', sans-serif;
@@ -334,6 +348,12 @@ section h3 {
 
 section p, section ul {
     font-size: x-large;
+}
+
+.prestations-title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 .thumbnail img {
@@ -352,6 +372,7 @@ section .thumbnail {
     height: 50px;
     line-height: 100px;
 }
+
 
 /* section maçonnerie */
 
@@ -441,13 +462,15 @@ hr.separator {
 }
 
 .logo-certif-mini {
-    height: 150px;
-    width: 150px;
+    max-height: 150px;
+    max-width: 150px;
     line-height: 150px;
 }
 
 .logo-certif-mini img {
     display: inline-block;
+    max-height: 150px;
+    max-width: 150px;
 }
 
 .footer-logo-beltoise {

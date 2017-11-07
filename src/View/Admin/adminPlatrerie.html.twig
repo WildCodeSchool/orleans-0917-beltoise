@@ -48,7 +48,8 @@
             <fieldset>
                 <legend>Ajouter une réalisation:</legend>
                 <label for="titre">Titre :</label>
-                <input type="text" name="titre" id="titre" placeholder="Entrez le titre" value=""
+                <input type="text" name="titre" id="titre" placeholder="Entrez le titre" maxlength="100"
+                       title="100 caractères maximum" required
                        class="form-control"/>
                 <label for="texte">Texte :</label>
                 <textarea name="texte" id="texte" class="form-control"></textarea>
