@@ -78,9 +78,12 @@ class RealisationController extends Controller
 
         $realisationManager = new RealisationManager();
         $realEcos = $realisationManager->findAllRealEco();
+        $presentationRealEcoManager = new PresentationManager();
+        $presentationRealEcos = $presentationRealEcoManager->findAllRealEco();
         return $this->twig->render('Admin/adminRealeco.html.twig', [
             'realEcos' => $realEcos,
             'uploadErrors' => $uploadErrors,
+            'presentationRealEcos'=> $presentationRealEcos,
         ]);
     }
 
