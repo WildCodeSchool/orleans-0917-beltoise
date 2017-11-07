@@ -32,7 +32,8 @@
         </div>
     </div>
     <div class="admin-box text-forms-group">
-        <form action="?route=presentationMaconnerie" method="post">
+        <span id="anchorText" class="anchor"></span>
+        <form action="?route=presentationMaconnerie#anchorText" method="post">
             <fieldset>
                 <legend>Modifier le texte de présentation :</legend>
                 <textarea id="summernote" name="texte">
@@ -44,7 +45,8 @@
                 <input type="submit" class="btn btn-success" value="Modifier" name="submit">
             </fieldset>
         </form>
-        <form action="?route=presentationPrestation" method="post">
+        <span id="anchorText2" class="anchor"></span>
+        <form action="?route=presentationPrestation#anchorText2" method="post">
             <fieldset>
                 <legend>Modifier la liste des prestations :</legend>
                 <textarea id="prestation" name="texte">
