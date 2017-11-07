@@ -8,11 +8,15 @@
             <fieldset>
                 <legend>Image de fond :</legend>
                 {% if backgroundUploadErrors %}
-                    <ul class="alert alert-danger">
-                        {% for backgroundUploadError in backgroundUploadErrors %}
-                            <li>{{ backgroundUploadError }}</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <ul>
+                            {% for backgroundUploadError in backgroundUploadErrors %}
+                                <li>{{ backgroundUploadError }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
                 <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..."
                        disabled="disabled"/>
@@ -38,7 +42,7 @@
                      {% endfor %}
                 </textarea>
                 <input type="hidden" name="section" value="RENOVATION" />
-                <input type="submit" value="Modifier" name="submit">
+                <input type="submit" class="btn btn-success" value="Modifier" name="submit">
             </fieldset>
         </form>
     </div>
@@ -53,14 +57,18 @@
                 <label for="description">Texte :</label>
                 <textarea class="form-control" name="text" id="text"></textarea>
                 {% if uploadErrorsBefores or uploadErrorsAfters %}
-                    <ul class="alert alert-danger">
-                        {% for uploadErrorsBefore in uploadErrorsBefores %}
-                            <li>{{ uploadErrorsBefore }}</li>
-                        {% endfor %}
-                        {% for uploadErrorsAfter in uploadErrorsAfters %}
-                            <li>{{ uploadErrorsAfter }}</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <ul>
+                            {% for uploadErrorsBefore in uploadErrorsBefores %}
+                                <li>{{ uploadErrorsBefore }}</li>
+                            {% endfor %}
+                            {% for uploadErrorsAfter in uploadErrorsAfters %}
+                                <li>{{ uploadErrorsAfter }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
                 <input id="uploadFile2" class="uploaded-file-name"
                        placeholder='Choisissez l&apos;image "avant"'

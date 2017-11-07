@@ -8,11 +8,15 @@
             <fieldset>
                 <legend>Image de fond :</legend>
                 {% if backgroundUploadErrors %}
-                    <ul class="alert alert-danger">
-                        {% for backgroundUploadError in backgroundUploadErrors %}
-                            <li>{{ backgroundUploadError }}</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <ul>
+                            {% for backgroundUploadError in backgroundUploadErrors %}
+                                <li>{{ backgroundUploadError }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
                 <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..."
                        disabled="disabled"/>
@@ -37,8 +41,8 @@
                          {{ presentationMaconnerie.texte }}
                      {% endfor %}
                 </textarea>
-                <input type="hidden" name="section" value="MACONNERIE" />
-                <input type="submit" value="Modifier" name="submit">
+                <input type="hidden" name="section" value="MACONNERIE"/>
+                <input type="submit" class="btn btn-success" value="Modifier" name="submit">
             </fieldset>
         </form>
         <form action="?route=presentationPrestation" method="post">
@@ -49,22 +53,26 @@
                          {{ presentationPrestation.texte | raw }}
                      {% endfor %}
                 </textarea>
-                <input type="hidden" name="section" value="PRESTATION" />
-                <input type="submit" value="Modifier" name="submit">
+                <input type="hidden" name="section" value="PRESTATION"/>
+                <input type="submit" class="btn btn-success" value="Modifier" name="submit">
             </fieldset>
         </form>
     </div>
     <div class="admin-box image-uploader">
         <span id="anchorUpload" class="anchor"></span>
-        <form action="?route=adminSlider" method="post" enctype="multipart/form-data">
+        <form action="?route=adminSlider#anchorUpload" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Modifier le diaporama :</legend>
                 {% if uploadErrors %}
-                    <ul class="alert alert-danger">
-                        {% for uploadError in uploadErrors %}
-                            <li>{{ uploadError }}</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <ul>
+                            {% for uploadError in uploadErrors %}
+                                <li>{{ uploadError }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
                 <input id="uploadFile2" class="uploaded-file-name" placeholder="Choisissez une image..."
                        disabled="disabled"/>
