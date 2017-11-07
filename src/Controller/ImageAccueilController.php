@@ -4,6 +4,9 @@ namespace Beltoise\Controller;
 
 
 use Beltoise\Service\UploadImageManager;
+use Beltoise\Model\SlideCertificationManager;
+use Beltoise\Model\PresentationManager;
+use Beltoise\Model\RealisationManager;
 
 /**
  * Class ImageAccueilController
@@ -50,7 +53,17 @@ class ImageAccueilController extends Controller
             }
         }
 
+        $slideCertificationManager = new SlideCertificationManager();
+        $slides = $slideCertificationManager->findAllSlides();
+        $presentationMaconnerieManager = new PresentationManager();
+        $presentationMaconneries = $presentationMaconnerieManager->findAllMaconnerie();
+        $presentationPrestationManager = new PresentationManager();
+        $presentationPrestations = $presentationPrestationManager->findAllPrestation();
+
         return $this->twig->render('Admin/adminSlider.html.twig', [
+            'slides' => $slides,
+            'presentationMaconneries' => $presentationMaconneries,
+            'presentationPrestations' => $presentationPrestations,
             'backgroundUploadErrors' => $backgroundUploadErrors,
         ]);
     }
@@ -72,8 +85,15 @@ class ImageAccueilController extends Controller
             }
         }
 
+        $realisationManager = new RealisationManager();
+        $platreries = $realisationManager->findAllPlatrerie();
+        $presentationPlatrerieManager = new PresentationManager();
+        $presentationPlatreries = $presentationPlatrerieManager->findAllPlatrerie();
+
         return $this->twig->render('Admin/adminPlatrerie.html.twig', [
             'backgroundUploadErrors' => $backgroundUploadErrors,
+            'platreries' => $platreries,
+            'presentationPlatreries' => $presentationPlatreries,
         ]);
     }
 
@@ -94,8 +114,15 @@ class ImageAccueilController extends Controller
             }
         }
 
+        $realisationManager = new RealisationManager();
+        $realEcos = $realisationManager->findAllRealEco();
+        $presentationRealecoManager = new PresentationManager();
+        $presentationRealEcos = $presentationRealecoManager->findAllRealEco();
+
         return $this->twig->render('Admin/adminRealeco.html.twig', [
+            'realEcos' => $realEcos,
             'backgroundUploadErrors' => $backgroundUploadErrors,
+            'presentationRealEcos' => $presentationRealEcos,
         ]);
     }
 

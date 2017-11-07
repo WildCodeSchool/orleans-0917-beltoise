@@ -3,16 +3,19 @@
 <section>
     <h1>Réalisations écologiques</h1>
     <div class="admin-box image-uploader">
-        <span id="anchorUpload" class="anchor"></span>
         <form action="?route=adminImageFondRealisation" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Image de fond :</legend>
                 {% if backgroundUploadErrors %}
-                    <ul class="alert alert-danger">
-                        {% for backgroundUploadError in backgroundUploadErrors %}
-                            <li>{{ backgroundUploadError }}</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <ul>
+                            {% for backgroundUploadError in backgroundUploadErrors %}
+                                <li>{{ backgroundUploadError }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
                 <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..."
                        disabled="disabled"/>
@@ -29,7 +32,8 @@
         </div>
     </div>
     <div class="admin-box text-forms-group">
-        <form action="?route=presentationRealEco" method="post">
+        <span id="anchorText" class="anchor"></span>
+        <form action="?route=presentationRealEco#anchorText" method="post">
             <fieldset>
                 <legend>Modifier le texte de présentation :</legend>
                 <textarea id="summernote" name="texte">
@@ -38,13 +42,13 @@
                      {% endfor %}
                 </textarea>
                 <input type="hidden" name="section" value="ECOLOGIE" />
-                <input type="submit" value="Modifier" name="submit">
+                <input type="submit" class="btn btn-success" value="Modifier" name="submit">
             </fieldset>
         </form>
     </div>
     <div class="admin-box image-uploader">
         <span id="anchorUpload" class="anchor"></span>
-        <form action="?route=adminRealEco" method="post" enctype="multipart/form-data">
+        <form action="?route=adminRealEco#anchorUpload" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Ajouter une réalisation :</legend>
                 <label for="titre">Titre :</label>
@@ -55,11 +59,15 @@
                 <label for="texte">Texte :</label>
                 <textarea name="texte" id="texte" class="form-control"></textarea>
                 {% if uploadErrors %}
-                    <ul class="alert alert-danger">
-                        {% for uploadError in uploadErrors %}
-                            <li>{{ uploadError }}</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <ul>
+                            {% for uploadError in uploadErrors %}
+                                <li>{{ uploadError }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
                 <input id="uploadFile2" class="uploaded-file-name" placeholder="Choisissez une image..."
                        disabled="disabled"/>
