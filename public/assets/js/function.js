@@ -13,3 +13,15 @@ $(document).ready(function () {
 
 // fin partie navbar
 });
+
+
+$(document).ready(function(){
+    // au clic sur un lien
+    $('a[href^="#"]').on('click', function(evt){
+        evt.preventDefault();
+        var target = $(this).attr('href');
+        $('html, body')
+            .stop()
+            .animate({scrollTop: $(target).offset().top}, 1000 );
+    });
+});
