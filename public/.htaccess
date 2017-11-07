@@ -1,6 +1,6 @@
-<FilesMatch "admin.php">
-AuthName "beltoise"
+<FilesMatch "admin.php?route=admin">
+AuthName "Espace administration"
 AuthType Basic
-AuthUserFile "public/.htpasswd"
+AuthUserFile "/home/ubuntu/beltoise/public/.htpasswd"
 Require valid-user
 </FilesMatch>
