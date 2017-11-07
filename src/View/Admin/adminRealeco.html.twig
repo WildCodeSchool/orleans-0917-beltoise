@@ -3,7 +3,6 @@
 <section>
     <h1>Réalisations écologiques</h1>
     <div class="admin-box image-uploader">
-        <span id="anchorUpload" class="anchor"></span>
         <form action="?route=adminImageFondRealisation" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Image de fond :</legend>
@@ -48,7 +47,7 @@
     </div>
     <div class="admin-box image-uploader">
         <span id="anchorUpload" class="anchor"></span>
-        <form action="?route=adminRealEco" method="post" enctype="multipart/form-data">
+        <form action="?route=adminRealEco#anchorUpload" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Ajouter une réalisation :</legend>
                 <label for="titre">Titre :</label>

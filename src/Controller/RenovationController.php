@@ -82,7 +82,7 @@ class RenovationController extends Controller
                 unlink('assets/uploads/' . $renovation->getImageBefore());
                 unlink('assets/uploads/' . $renovation->getImageAfter());
             }
-            header('Location: admin.php?route=adminRenovations');
+            header('Location: admin.php?route=adminRenovations&#anchorUpload');
         }
     }
 }
