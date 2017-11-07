@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 $(document).ready(function(){
     // au clic sur un lien
-    $('a[href^="#"]').on('click', function(evt){
+    $('a[href^="#a"]').on('click', function(evt){
         evt.preventDefault();
         var target = $(this).attr('href');
         $('html, body')
