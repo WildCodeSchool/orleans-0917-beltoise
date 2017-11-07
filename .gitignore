@@ -1,6 +1,7 @@
 .idea
 connect.php
 vendor/
+summernote/
 composer.json
 public/assets/uploads/*
 .htpasswd

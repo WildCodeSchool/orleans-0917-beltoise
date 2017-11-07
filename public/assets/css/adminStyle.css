@@ -1,5 +1,194 @@
+/* START Global */
+
+body {
+    background-color: white;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 3em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.admin-box {
+    border: solid 1px #dbdbdb;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* END Global */
+
+/* START Accueil */
+
+.section-accueil {
+    height: 80vh;
+}
+
+.buttons-group {
+    margin-top: 10vh;
+}
+
+a.btn-lg.btn.btn-primary {
+    width: 100%;
+}
+
+.section-accueil ul {
+    padding: 0;
+}
+
+.section-accueil li {
+    list-style: none;
+}
+
+.section-accueil li + li {
+    padding-top: 15px;
+}
+
+.buttons-return a {
+    position: absolute;
+    bottom: 20px;
+}
+
+.buttons-return a:last-child {
+    right: 15px;
+}
+
+/* END Accueil */
+
+/* START Administration d'une section */
+
+.admin-navigation {
+    width: 8%;
+    margin: 20px 10px 0 0;
+    padding: 10px;
+    border: solid 1px #dbdbdb;
+    border-radius: 0 5px 5px 0;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-navigation a {
+    padding: 15px;
+    font-size: 100%;
+}
+
+.admin-navigation a + a {
+    margin-top: 5px;
+}
+
+.text-forms-group {
+    width: 80vw;
+    margin: 30px auto;
+    overflow: auto;
+}
+
+form {
+    padding: 0 15px 15px 15px;
+}
+
+legend {
+    border: none;
+    margin-top: 15px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+textarea {
+    resize: vertical;
+    width: 100%;
+    margin: auto;
+}
+
+textarea.form-control {
+    margin-bottom: 10px;
+}
+
+.btn-mail {
+    margin-top: 10px;
+}
+
+.image-uploader {
+    width: 80vw;
+    margin: 30px auto;
+}
+
+.alert-danger {
+    width: 25%;
+}
+
+.fileUpload {
+    position: relative;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+div.fileUpload.btn.btn-default {
+    margin-top: -2px;
+}
+
+input.btn.btn-success {
+    margin-top: -2px;
+}
+
+.uploaded-file-name {
+    width: 250px;
+}
+
+.uploaded-images {
+    padding: 15px;
+}
+
+.thumbnail {
+    margin-bottom: 10px;
+}
+
+.image-accueil {
+    min-height: 600px;
+    max-height: 600px;
+}
+
 figure img {
     width: 100%;
     min-height: 200px;
     max-height: 200px;
 }
+
+.delete-form {
+    padding: 0;
+    margin: 10px 0 5px 0;
+}
+
+/* END Administration d'une section */
+
+/*START Hotfix rénovation*/
+
+.titreSeparation {
+    height: 300px;
+
+}
+
+/*END Hotfix rénovation*/

@@ -31,7 +31,7 @@ class SlideCertificationController extends Controller
                 $slideCertificationManager = new SlideCertificationManager();
                 $slideCertificationManager->insert($certification);
 
-                header('Location: index.php?route=adminCertifications');
+                header('Location: admin.php?route=adminCertifications');
                 exit;
             }
         }
@@ -67,7 +67,7 @@ class SlideCertificationController extends Controller
                 $slideCertificationManager = new SlideCertificationManager();
                 $slideCertificationManager->insert($slide);
 
-                header('Location: index.php?route=adminSlider');
+                header('Location: admin.php?route=adminSlider');
                 exit;
             }
         }
@@ -95,7 +95,7 @@ class SlideCertificationController extends Controller
                 $slideCertificationManager->delete($slide);
                 unlink('assets/uploads/' . $slide->getName());
             }
-            header('Location: index.php?route=adminSlider');
+            header('Location: admin.php?route=adminSlider');
         }
     }
 
@@ -108,7 +108,7 @@ class SlideCertificationController extends Controller
                 $slideCertificationManager->delete($certification);
                 unlink('assets/uploads/' . $certification->getName());
             }
-            header('Location: index.php?route=adminCertifications');
+            header('Location: admin.php?route=adminCertifications');
         }
     }
 }

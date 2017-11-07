@@ -10,15 +10,13 @@ namespace Beltoise\Controller;
 
 use Beltoise\Model\RealisationManager;
 use Beltoise\Model\Realisation;
+use Beltoise\Model\Presentation;
 use Beltoise\Service\UploadImageManager;
 use Beltoise\Model\PresentationManager;
-use Beltoise\Model\Presentation;
 
 class RealisationController extends Controller
 {
-    /**
-     * @return string
-     */
+
     public function showAdminPlatrerieAction()
     {
         $platrerie = new Realisation();
@@ -38,7 +36,7 @@ class RealisationController extends Controller
                 $realisationManager = new RealisationManager();
                 $realisationManager->insert($platrerie);
 
-                header('Location: index.php?route=adminPlatrerie');
+                header('Location: admin.php?route=adminPlatrerie');
                 exit;
             }
         }
@@ -54,9 +52,6 @@ class RealisationController extends Controller
         ]);
     }
 
-    /**
-     * @return string
-     */
     public function showAdminRealEcoAction()
     {
         $realEcol = new Realisation();
@@ -76,22 +71,18 @@ class RealisationController extends Controller
                 $realisationManager = new RealisationManager();
                 $realisationManager->insert($realEcol);
 
-                header('Location: index.php?route=adminRealEco');
+                header('Location: admin.php?route=adminRealEco');
                 exit;
             }
         }
 
         $realisationManager = new RealisationManager();
         $realEcos = $realisationManager->findAllRealEco();
-        $presentationRealEcoManager = new PresentationManager();
-        $presentationRealEcos = $presentationRealEcoManager->findAllRealEco();
         return $this->twig->render('Admin/adminRealeco.html.twig', [
             'realEcos' => $realEcos,
             'uploadErrors' => $uploadErrors,
-            'presentationRealEcos' => $presentationRealEcos,
         ]);
     }
-
 
     public function deletePlatrerieAction()
     {
@@ -102,10 +93,9 @@ class RealisationController extends Controller
                 $realisationManager->delete($platrerie);
                 unlink('assets/uploads/' . $platrerie->getImage());
             }
-            header('Location: index.php?route=adminPlatrerie');
+            header('Location: admin.php?route=adminPlatrerie');
         }
     }
-
 
     public function deleteRealEcoAction()
     {
@@ -116,8 +106,9 @@ class RealisationController extends Controller
                 $realisationManager->delete($realEco);
                 unlink('assets/uploads/' . $realEco->getImage());
             }
-            header('Location: index.php?route=adminRealEco');
+            header('Location: admin.php?route=adminRealEco');
         }
     }
+
 
 }
