@@ -1,21 +1,37 @@
 {% include 'Admin/adminHeader.html.twig' %}
+{% include 'Admin/adminNav.html.twig' %}
 <section>
-    <h2>Image d'accueil</h2>
-    {% if uploadErrors %}
-        <ul class="alert alert-danger">
-            {% for uploadError in uploadErrors %}
-                <li>{{ uploadError }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <form action="?route=adminImageAccueil" method="post" enctype="multipart/form-data">
-                Select image to upload:
-                <input type="file" name="upload">
-                <input type="submit" value="Envoyer" name="submit">
-            </form>
+    <h1>Image d'accueil</h1>
+    <div class="admin-box image-uploader">
+        <span id="anchorUpload" class="anchor"></span>
+        <form action="?route=adminImageAccueil" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Ajouter une image :</legend>
+                {% if uploadErrors %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                        <ul>
+                            {% for uploadError in uploadErrors %}
+                                <li>{{ uploadError }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <input id="uploadFile" class="uploaded-file-name" placeholder="Choisissez une image..."
+                       disabled="disabled"/>
+                <div class="fileUpload btn btn-default">
+                    <span>Parcourir</span>
+                    <input id="uploadBtn" type="file" class="upload" name="upload"/>
+                </div>
+                <input type="submit" class="btn btn-success" value="Remplacer" name="submit">
+            </fieldset>
+        </form>
+        <div class="uploaded-images">
+            <img class="thumbnail center-block image-accueil" src="assets/uploads/imageAccueil.jpg"
+                 alt="Actuelle image d'accueil">
         </div>
     </div>
-    <img src="assets/uploads/imageAccueil.jpg" alt="Actuelle image d'accueil">
 </section>
+
+{% include 'Admin/adminFooter.html.twig' %}

@@ -1,18 +1,20 @@
 <hr class="separator">
 <div class="row footer">
-    <div class="hidden-xs hidden-sm col-md-2 text-center">
+    <ul class="hidden-xs hidden-sm col-md-2 text-center image-list ">
         {% for logo in logos %}
-            <div class="logo-certif-mini col-md-3">
-                <p><img src="assets/uploads/{{ logo.name }}" alt="Certification"></p>
+            <div class="logo-certif-mini col-md-6">
+                <li><img src="assets/uploads/{{ logo.name }}" alt="Certification"></li>
             </div>
         {% endfor %}
-    </div>
+    </ul>
     <div class="push-xs-6 col-sm-8 text-center">
         <div class="row logo-beltoise-footer">
-            <img class="footer-logo-beltoise" src="assets/uploads/ENTETE_BELTOISE3.jpg" alt="logo Beltoise">
+
+            <img class="footer-logo-beltoise" src="assets/images/logoBeltoise.png" alt="Logo Beltoise & Fils">
+
         </div>
         {% include 'Home/mention_legales.html.twig' %}
-        <div class="hidden-xs hidden-sm col-md-2 hidden-lgtext-center logoWCS">
+        <div class="hidden-xs hidden-sm col-md-2 text-center logoWCS">
             <a href="http://wildcodeschool.fr/orleans" target="_blank">
                 <div class="row">
                     Site créé par
@@ -28,7 +30,7 @@
                     Site créé par
                 </div>
                 <div class="row">
-                    <img src="assets/images/WCSlogo.jpg" alt="logo Wild Code School"/>
+                    <img src="assets/images/WCSlogo.jpg" alt="Logo Wild Code School"/>
                 </div>
             </a>
         </div>

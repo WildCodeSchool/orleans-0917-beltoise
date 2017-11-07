@@ -1,0 +1,6 @@
+<FilesMatch "admin.php">
+AuthName "beltoise"
+AuthType Basic
+AuthUserFile "public/.htpasswd"
+Require valid-user
+</FilesMatch>

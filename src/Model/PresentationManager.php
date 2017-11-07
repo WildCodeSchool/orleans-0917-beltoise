@@ -8,7 +8,10 @@
 
 namespace Beltoise\Model;
 
-
+/**
+ * Class PresentationManager
+ * @package Beltoise\Model
+ */
 class PresentationManager extends EntityManager
 {
 
@@ -67,6 +70,14 @@ class PresentationManager extends EntityManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);
     }
 
+    public function findAllPrestation()
+    {
+        $query = "SELECT * FROM presentation WHERE section = 'PRESTATION'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(\PDO::FETCH_CLASS, \Beltoise\Model\Presentation::class);
+    }
+
     /**
      * @param Presentation $presentation
      */
@@ -76,6 +87,19 @@ class PresentationManager extends EntityManager
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('texte', $presentation->getTexte(), \PDO::PARAM_STR);
         $statement->bindValue('id', $presentation->getId(), \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    /**
+     * @param Presentation $presentation
+     */
+    public function add(Presentation $presentation)
+    {
+        $query = "INSERT INTO presentation (texte, section) 
+                  VALUES (:texte, :section)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('texte', $presentation->getTexte(), \PDO::PARAM_STR);
+        $statement->bindValue('section', $presentation->getSection(), \PDO::PARAM_STR);
         $statement->execute();
     }
 

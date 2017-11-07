@@ -26,7 +26,7 @@ class FormController extends Controller
 
             $formManager->update($form);
 
-            header('Location: index.php?route=adminForm');
+            header('Location: admin.php?route=adminForm');
             exit;
         }
 

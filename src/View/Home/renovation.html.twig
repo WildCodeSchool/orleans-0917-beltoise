@@ -1,5 +1,5 @@
 <span id="anchorRenovation" class="anchor"></span>
-<div class="row separationImg">
+<div class="row separationImgRenovation">
     <div class="center-title">
         <h2>Rénovation et Restauration</h2>
     </div>
@@ -7,19 +7,26 @@
 <section>
     <div class="section-content">
         <div class="row">
+            <p class="text-center">
+                {% for presentationRenovation in presentationRenovations %}
+                    {{ presentationRenovation.texte | raw }}
+                {% endfor %}
+            </p>
+        </div>
+        <div class="row">
             {% for renovation in renovations %}
-                <div class="col-md-6">
+                <div class="col-md-6 {{ loop.index0>=2 ? 'hidden-xs' }} ">
                     <figure class="thumbnail center-block">
-                        <div class="titreSeparation">
-                        <h3>{{ renovation.title }}</h3>
-                        </div>
+
+                            <h3>{{ renovation.title }}</h3>
+
                         <div class="col-md-6">
                             {% include 'Home/modal_renovation_avant.html.twig' %}
                         </div>
                         <div class="col-md-6">
                             {% include 'Home/modal_renovation_apres.html.twig' %}
                         </div>
-                        <figcaption class="text-center">{{ renovation.text }}</figcaption>
+                            <figcaption class="text-center">{{ renovation.text }}</figcaption>
                     </figure>
                 </div>
             {% endfor %}

@@ -6,6 +6,8 @@ namespace Beltoise\Controller;
 use Beltoise\Model\SlideCertification;
 use Beltoise\Model\SlideCertificationManager;
 use Beltoise\Service\UploadImageManager;
+use Beltoise\Model\PresentationManager;
+use Beltoise\Model\Presentation;
 
 class SlideCertificationController extends Controller
 {
@@ -29,17 +31,19 @@ class SlideCertificationController extends Controller
                 $slideCertificationManager = new SlideCertificationManager();
                 $slideCertificationManager->insert($certification);
 
-                header('Location: index.php?route=adminCertifications');
+                header('Location: admin.php?route=adminCertifications#anchorUpload');
                 exit;
             }
         }
 
         $slideCertificationManager = new SlideCertificationManager();
         $certifications = $slideCertificationManager->findAllCertifications();
-
+        $presentationAccueilManager = new PresentationManager();
+        $presentationAccueils = $presentationAccueilManager->findAllAccueil();
         return $this->twig->render('Admin/adminCertifications.html.twig', [
             'certifications' => $certifications,
             'uploadErrors' => $uploadErrors,
+            'presentationAccueils' => $presentationAccueils,
         ]);
     }
 
@@ -63,17 +67,22 @@ class SlideCertificationController extends Controller
                 $slideCertificationManager = new SlideCertificationManager();
                 $slideCertificationManager->insert($slide);
 
-                header('Location: index.php?route=adminSlider');
+                header('Location: admin.php?route=adminSlider#anchorUpload');
                 exit;
             }
         }
 
         $slideCertificationManager = new SlideCertificationManager();
         $slides = $slideCertificationManager->findAllSlides();
-
+        $presentationMaconnerieManager = new PresentationManager();
+        $presentationMaconneries = $presentationMaconnerieManager->findAllMaconnerie();
+        $presentationPrestationManager = new PresentationManager();
+        $presentationPrestations = $presentationPrestationManager->findAllPrestation();
         return $this->twig->render('Admin/adminSlider.html.twig', [
             'slides' => $slides,
             'uploadErrors' => $uploadErrors,
+            'presentationMaconneries' => $presentationMaconneries,
+            'presentationPrestations' => $presentationPrestations,
         ]);
     }
 
@@ -86,7 +95,7 @@ class SlideCertificationController extends Controller
                 $slideCertificationManager->delete($slide);
                 unlink('assets/uploads/' . $slide->getName());
             }
-            header('Location: index.php?route=adminSlider');
+            header('Location: admin.php?route=adminSlider#anchorUpload');
         }
     }
 
@@ -99,7 +108,7 @@ class SlideCertificationController extends Controller
                 $slideCertificationManager->delete($certification);
                 unlink('assets/uploads/' . $certification->getName());
             }
-            header('Location: index.php?route=adminCertifications');
+            header('Location: admin.php?route=adminCertifications#anchorUpload');
         }
     }
 }

@@ -1,25 +1,25 @@
 <span id="anchorRealeco" class="anchor"></span>
-<div class="row separationImg">
+<div class="row separationImgRealEco">
     <div class="center-title">
-        <h2>Réalisations Ecologiques</h2>
+        <h2>Réalisations écologiques</h2>
     </div>
 </div>
 <section>
     <div class="section-content">
         <div class="row">
             <p class="text-center">
-                {% for presentationRenovation in presentationRenovations %}
-                    {{ presentationRenovation.texte }}
+                {% for presentationRealEco in presentationRealEcos %}
+                    {{ presentationRealEco.texte | raw }}
                 {% endfor %}
             </p>
         </div>
         <div class="row">
             {% for realEco in realEcos %}
-                <div class="col-md-6 col-xs-12 ">
+                <div class="col-md-6 col-xs-12 {{ loop.index0>=2 ? 'hidden-xs' }} ">
                     <figure class="thumbnail center-block">
-                        <div class="titreSeparation">
+
                             <h3>{{ realEco.titre }}</h3>
-                        </div>
+
                         {% include 'Home/modal_realeco.html.twig' %}
                         <figcaption>{{ realEco.texte }}</figcaption>
                     </figure>

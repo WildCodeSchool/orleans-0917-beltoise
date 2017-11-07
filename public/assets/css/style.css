@@ -1,6 +1,6 @@
 /*START CSS */
 
-/*  Style global */
+/* START Style global */
 
 .container-fluid {
     padding-right: 0;
@@ -27,11 +27,44 @@
     margin-left: 0;
 }
 
-.separationImg {
+.separationImgMaconnerie {
     height: 300px;
     line-height: 280px;
     width: 100%;
-    background: url("../uploads/chantiergodat.jpg") no-repeat fixed;
+    background: url("../uploads/imageFondMaconnerie.jpg") no-repeat fixed;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.separationImgPlatrerie {
+    height: 300px;
+    line-height: 280px;
+    width: 100%;
+    background: url("../uploads/imageFondPlatrerie.jpg") no-repeat fixed;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.separationImgRealEco {
+    height: 300px;
+    line-height: 280px;
+    width: 100%;
+    background: url("../uploads/imageFondRealisation.jpg") no-repeat fixed;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.separationImgRenovation {
+    height: 300px;
+    line-height: 280px;
+    width: 100%;
+    background: url("../uploads/imageFondRenovation.jpg") no-repeat fixed;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -50,8 +83,19 @@ h2 {
     text-shadow: 5px 5px black;
 }
 
+@media (max-width: 445px) {
+    h2 {
+        font-size: 5em;
+    }
+}
+
 p, figcaption, ul {
     font-family: 'Dosis', sans-serif;
+    font-size: 2em;
+}
+
+p.text-center {
+    font-size: 2em;
 }
 
 .img-renovation {
@@ -59,6 +103,13 @@ p, figcaption, ul {
     min-height: 200px;
     max-height: 200px;
 }
+
+iframe {
+    width: 100%;
+    height: 450px;
+}
+
+/* END Style global */
 
 /* Start Navbar CSS */
 
@@ -80,11 +131,15 @@ p, figcaption, ul {
 .navbar-default {
     background-color: #004741;
     border: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar-header {
     padding: 0px 15px;
+}
+
+nav li {
+    text-transform: uppercase;
 }
 
 .nav > li > a {
@@ -98,6 +153,10 @@ p, figcaption, ul {
 }
 
 .navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
     color: #fff;
 }
 
@@ -120,14 +179,21 @@ p, figcaption, ul {
 .logo {
     padding: 10px 10px;
     position: absolute;
-    top: 50%;
+    top: 45px;
     transform: translate(0, -50%);
     height: 100%;
     width: auto;
 }
 
+@media (max-width: 1355px) {
+    .logo {
+        top: 25px;
+        height: 60px;
+    }
+}
+
 /* Forces the burger menu to be displayed sooner (default is xs only) */
-@media (min-width: 768px) and (max-width: 1085px) {
+@media (min-width: 768px) and (max-width: 1355px) {
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -207,7 +273,7 @@ p, figcaption, ul {
 }
 
 /*Forces the drop down menu to hide in sync with the burger menu*/
-@media (min-width: 1085px) {
+@media (min-width: 1355px) {
     .navbar-smartphone {
         display: none;
     }
@@ -222,7 +288,7 @@ p, figcaption, ul {
 }
 
 /* Style specific to xs and sm */
-@media (max-width: 1085px) {
+@media (max-width: 1355px) {
 
     .nav li {
         text-align: center;
@@ -256,28 +322,30 @@ p, figcaption, ul {
     font-size: x-large;
 }
 
-.green-bold {
+b {
     color: #004741;
     font-weight: bold;
 }
 
+.image-list {
+    padding: 0;
+    list-style: none;
+}
+
 .logo-certif {
-    display: flex;
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
 }
 
-.logo-certif p + p {
-    padding-left: 20px;
-}
-
-.presentation img {
-    width: 100px;
-    height: 100px;
+.logo-certif img {
+    display: inline-block;
 }
 
 /* END PRESENTATION */
 
 section h3 {
-    font-size: 5em;
+    font-size: 4em;
     text-align: center;
     color: #004741;
     font-family: 'Gidugu', sans-serif;
@@ -285,6 +353,12 @@ section h3 {
 
 section p, section ul {
     font-size: x-large;
+}
+
+.prestations-title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 .thumbnail img {
@@ -304,18 +378,22 @@ section .thumbnail {
     line-height: 100px;
 }
 
+
 /* section maçonnerie */
 
 .myCarousel {
     width: 100%;
-    height: 400px;
-
+    height: 100%;
 }
 
 .myCarousel img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     max-height: 400px;
+}
+
+.carousel-indicators {
+    z-index: 1;
 }
 
 /* Fin section maçonnerie  */
@@ -383,13 +461,21 @@ hr.separator {
     font-family: 'Dosis', sans-serif;
 }
 
+.image-list {
+    padding: 0;
+    list-style: none;
+}
+
 .logo-certif-mini {
-    padding: 40px 0 10px 0;
+    max-height: 150px;
+    max-width: 150px;
+    line-height: 150px;
 }
 
 .logo-certif-mini img {
-    width: 50px;
-    height: 50px;
+    display: inline-block;
+    max-height: 150px;
+    max-width: 150px;
 }
 
 .footer-logo-beltoise {

@@ -13,6 +13,8 @@ use Beltoise\Model\Renovation;
 use Beltoise\Model\RenovationManager;
 use Beltoise\Service\UploadFile;
 use Beltoise\Service\UploadImageManager;
+use Beltoise\Model\PresentationManager;
+use Beltoise\Model\Presentation;
 
 /**
  * Class RenovationController
@@ -26,7 +28,9 @@ class RenovationController extends Controller
     public function showAdminRenovationAction()
     {
         $renovation = new Renovation();
-        $uploadErrors = [];
+        $uploadErrorsBefore = [];
+        $uploadErrorsAfter = [];
+        $errors = [];
 
         if (!empty($_FILES['imageBefore']) AND !empty($_FILES['imageAfter'])) {
 
@@ -34,12 +38,15 @@ class RenovationController extends Controller
             $renovation->setTitle($_POST['title']);
             $renovation->setText($_POST['text']);
 
+            if ($renovation->getTitle() > 100) {
+                $errors[] = 'Le titre ne doit pas faire plus de 100 caractères';
+            }
             $uploadImageBeforeManager = new UploadImageManager();
-            $uploadErrors = $uploadImageBeforeManager->imageUploadBefore($_FILES['imageBefore']);
+            $uploadErrorsBefore = $uploadImageBeforeManager->imageUploadBefore($_FILES['imageBefore']);
             $uploadImageAfterManager = new UploadImageManager();
-            $uploadErrors = $uploadImageAfterManager->imageUploadAfter($_FILES['imageAfter']);
+            $uploadErrorsAfter = $uploadImageAfterManager->imageUploadAfter($_FILES['imageAfter']);
 
-            if (empty($uploadErrors)) {
+            if (empty($uploadErrorsBefore) && empty($uploadErrorsAfter) && empty($errors) ) {
 
                 $renovation->setImageBefore($uploadImageBeforeManager->getImageName());
                 $renovation->setImageAfter($uploadImageAfterManager->getImageName());
@@ -48,19 +55,22 @@ class RenovationController extends Controller
                 $renovationManager->insert($renovation);
 
 
-                header('Location: index.php?route=adminRenovations');
+                header('Location: admin.php?route=adminRenovations');
                 exit;
             }
         }
 
         $renovationManager = new RenovationManager();
         $renovations = $renovationManager->findAllRenovations();
-
+        $presentationRenovationManager = new PresentationManager();
+        $presentationRenovations = $presentationRenovationManager->findAllRenovation();
         return $this->twig->render('Admin/adminRenovations.html.twig', [
             'renovations' => $renovations,
-            'uploadErrors' => $uploadErrors,
+            'uploadErrorsBefores' => $uploadErrorsBefore,
+            'uploadErrorsAfters' => $uploadErrorsAfter,
+            'errors' => $errors,
+            'presentationRenovations' => $presentationRenovations,
         ]);
-
     }
 
     /**
@@ -77,7 +87,7 @@ class RenovationController extends Controller
                 unlink('assets/uploads/' . $renovation->getImageBefore());
                 unlink('assets/uploads/' . $renovation->getImageAfter());
             }
-            header('Location: index.php?route=adminRenovations');
+            header('Location: admin.php?route=adminRenovations#anchorUpload');
         }
     }
 }
