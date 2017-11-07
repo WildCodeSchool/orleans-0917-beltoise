@@ -15,11 +15,11 @@
         </div>
         <div class="row">
             {% for realEco in realEcos %}
-                <div class="col-md-6 col-xs-12 ">
+                <div class="col-md-6 col-xs-12 {{ loop.index0>=2 ? 'hidden-xs' }} ">
                     <figure class="thumbnail center-block">
-                        <div class="titreSeparation">
+
                             <h3>{{ realEco.titre }}</h3>
-                        </div>
+
                         {% include 'Home/modal_realeco.html.twig' %}
                         <figcaption>{{ realEco.texte }}</figcaption>
                     </figure>

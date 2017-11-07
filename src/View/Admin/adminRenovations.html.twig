@@ -48,8 +48,9 @@
             <fieldset>
                 <legend>Ajouter une réalisation :</legend>
                 <label for="name">Titre :</label>
-                <input type="text" class="form-control" name="title" id="title">
-
+                <input type="text" class="form-control" name="title" id="title"
+                       maxlength="100"
+                       title="100 caractères maximum" required  >
                 <label for="description">Texte :</label>
                 <textarea class="form-control" name="text" id="text"></textarea>
                 {% if uploadErrorsBefores or uploadErrorsAfters %}

@@ -21,16 +21,20 @@ class RealisationController extends Controller
     {
         $platrerie = new Realisation();
         $uploadErrors = [];
+        $errors = [];
 
         if (!empty($_POST)) {
             $platrerie->setSection('PLATRERIE');
             $platrerie->setTitre($_POST['titre']);
             $platrerie->setTexte($_POST['texte']);
 
+            if ($platrerie->getTitre() > 100) {
+                $errors[] = 'Le titre ne doit pas faire plus de 100 caractères';
+            }
             $uploadImageManager = new UploadImageManager();
             $uploadErrors = $uploadImageManager->imageUpload($_FILES);
 
-            if (empty($uploadErrors)) {
+            if (empty($uploadErrors) && empty($errors)) {
                 $platrerie->setImage($uploadImageManager->getImageName());
 
                 $realisationManager = new RealisationManager();
@@ -48,6 +52,7 @@ class RealisationController extends Controller
         return $this->twig->render('Admin/adminPlatrerie.html.twig', [
             'platreries' => $platreries,
             'uploadErrors' => $uploadErrors,
+            'errors' => $errors,
             'presentationPlatreries' => $presentationPlatreries,
         ]);
     }
