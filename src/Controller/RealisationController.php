@@ -36,7 +36,7 @@ class RealisationController extends Controller
                 $realisationManager = new RealisationManager();
                 $realisationManager->insert($platrerie);
 
-                header('Location: admin.php?route=adminPlatrerie&#anchorUpload');
+                header('Location: admin.php?route=adminPlatrerie#anchorUpload');
                 exit;
             }
         }
@@ -71,7 +71,7 @@ class RealisationController extends Controller
                 $realisationManager = new RealisationManager();
                 $realisationManager->insert($realEcol);
 
-                header('Location: admin.php?route=adminRealEco&#anchorUpload');
+                header('Location: admin.php?route=adminRealEco#anchorUpload');
                 exit;
             }
         }
@@ -96,7 +96,7 @@ class RealisationController extends Controller
                 $realisationManager->delete($platrerie);
                 unlink('assets/uploads/' . $platrerie->getImage());
             }
-            header('Location: admin.php?route=adminPlatrerie&#anchorUpload');
+            header('Location: admin.php?route=adminPlatrerie#anchorUpload');
         }
     }
 
@@ -109,7 +109,7 @@ class RealisationController extends Controller
                 $realisationManager->delete($realEco);
                 unlink('assets/uploads/' . $realEco->getImage());
             }
-            header('Location: admin.php?route=adminRealEco&#anchorUpload');
+            header('Location: admin.php?route=adminRealEco#anchorUpload');
         }
     }
 
