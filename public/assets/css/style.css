@@ -76,6 +76,10 @@
     background-size: cover;
 }
 
+nav li {
+    text-transform: uppercase;
+}
+
 h2 {
     text-align: center;
     vertical-align: middle;
@@ -96,6 +100,7 @@ h2 {
 
 p, figcaption, ul {
     font-family: 'Dosis', sans-serif;
+    font-size: 2em;
 }
 
 .img-renovation {
@@ -175,7 +180,7 @@ iframe {
     width: auto;
 }
 
-@media (max-width: 1185px) {
+@media (max-width: 1355px) {
     .logo {
         top: 25px;
         height: 60px;
@@ -183,7 +188,7 @@ iframe {
 }
 
 /* Forces the burger menu to be displayed sooner (default is xs only) */
-@media (min-width: 768px) and (max-width: 1185px) {
+@media (min-width: 768px) and (max-width: 1355px) {
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -263,7 +268,7 @@ iframe {
 }
 
 /*Forces the drop down menu to hide in sync with the burger menu*/
-@media (min-width: 1185px) {
+@media (min-width: 1355px) {
     .navbar-smartphone {
         display: none;
     }
@@ -278,7 +283,7 @@ iframe {
 }
 
 /* Style specific to xs and sm */
-@media (max-width: 1185px) {
+@media (max-width: 1355px) {
 
     .nav li {
         text-align: center;
@@ -343,6 +348,12 @@ section h3 {
 
 section p, section ul {
     font-size: x-large;
+}
+
+.prestations-title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 .thumbnail img {
