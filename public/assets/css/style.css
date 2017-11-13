@@ -160,6 +160,11 @@ nav li {
     color: #fff;
 }
 
+.navbar-default .navbar-nav > li:last-child > a:focus {
+    background-color: #00857c;
+    border-color: #00857c;
+}
+
 .navbar-right {
     padding: 25px;
 }
