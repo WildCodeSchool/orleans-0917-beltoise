@@ -15,8 +15,11 @@ use Beltoise\Controller\RealisationController;
 use Beltoise\Controller\PresentationController;
 
 
-$route = $_GET['route'];
-
+if (!empty($_GET['route'])) {
+    $route = $_GET['route'];
+} else {
+    $route = 'admin'; // go to home by default
+}
 
 if ($route == 'admin') {
     $controller = new AdminController();
@@ -88,5 +91,6 @@ if ($route == 'admin') {
     $controller = new FormController();
     echo $controller->showAll();
 } else {
-    echo 'La page n\'existe pas';
+    $controller = new AdminController();
+    echo $controller->showAllAction();
 }
