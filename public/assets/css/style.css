@@ -160,6 +160,11 @@ nav li {
     color: #fff;
 }
 
+.navbar-default .navbar-nav > li:last-child > a:focus {
+    background-color: #00857c;
+    border-color: #00857c;
+}
+
 .navbar-right {
     padding: 25px;
 }
@@ -344,6 +349,7 @@ b {
 
 /* END PRESENTATION */
 
+
 section h3 {
     font-size: 4em;
     text-align: center;
@@ -353,6 +359,11 @@ section h3 {
 
 section p, section ul {
     font-size: x-large;
+}
+
+section p {
+    width: 80%;
+    margin: auto;
 }
 
 .prestations-title {
@@ -474,8 +485,8 @@ hr.separator {
 
 .logo-certif-mini img {
     display: inline-block;
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 100px;
+    max-width: 100px;
 }
 
 .footer-logo-beltoise {
