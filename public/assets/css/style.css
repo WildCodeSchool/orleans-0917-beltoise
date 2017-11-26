@@ -173,7 +173,6 @@ nav li {
     background-color: #00857c;
     border-color: #00857c;
     padding: 10px 16px 13px 16px;
-    outline: none;
 }
 
 .navbar-button:hover .btn-success:hover {
@@ -303,7 +302,6 @@ nav li {
         background-color: #00857c;
         border-color: #00857c;
         padding: 10px 16px;
-        outline: none;
     }
 }
 
@@ -424,7 +422,6 @@ section .thumbnail {
 .button-contact .btn-success, .button-contact .btn-success:visited {
     background-color: #004741;
     border-color: #004741;
-    outline: none;
     font-family: 'Dosis', sans-serif;
 }
 
