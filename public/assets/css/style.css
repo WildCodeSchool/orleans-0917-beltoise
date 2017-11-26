@@ -298,6 +298,10 @@ nav li {
         text-align: center;
     }
 
+    .nav li a:focus {
+        background-color: #004741 !important;
+    }
+
     .navbar-collapse .btn-success {
         background-color: #00857c;
         border-color: #00857c;
@@ -347,7 +351,6 @@ b {
 
 /* END PRESENTATION */
 
-
 section h3 {
     font-size: 4em;
     text-align: center;
@@ -386,7 +389,6 @@ section .thumbnail {
     height: 50px;
     line-height: 100px;
 }
-
 
 /* section maçonnerie */
 
