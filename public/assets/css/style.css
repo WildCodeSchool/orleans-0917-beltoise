@@ -298,8 +298,8 @@ nav li {
         text-align: center;
     }
 
-    .nav li a:focus {
-        background-color: #004741 !important;
+    .navbar-default .navbar-nav > li:last-child > a:focus {
+        background-color: #004741 ;
     }
 
     .navbar-collapse .btn-success {
