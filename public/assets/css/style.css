@@ -173,7 +173,6 @@ nav li {
     background-color: #00857c;
     border-color: #00857c;
     padding: 10px 16px 13px 16px;
-    outline: none;
 }
 
 .navbar-button:hover .btn-success:hover {
@@ -299,11 +298,14 @@ nav li {
         text-align: center;
     }
 
+    .navbar-default .navbar-nav > li:last-child > a:focus {
+        background-color: #004741 ;
+    }
+
     .navbar-collapse .btn-success {
         background-color: #00857c;
         border-color: #00857c;
         padding: 10px 16px;
-        outline: none;
     }
 }
 
@@ -349,7 +351,6 @@ b {
 
 /* END PRESENTATION */
 
-
 section h3 {
     font-size: 4em;
     text-align: center;
@@ -389,7 +390,6 @@ section .thumbnail {
     line-height: 100px;
 }
 
-
 /* section maçonnerie */
 
 .myCarousel {
@@ -424,7 +424,6 @@ section .thumbnail {
 .button-contact .btn-success, .button-contact .btn-success:visited {
     background-color: #004741;
     border-color: #004741;
-    outline: none;
     font-family: 'Dosis', sans-serif;
 }
 
