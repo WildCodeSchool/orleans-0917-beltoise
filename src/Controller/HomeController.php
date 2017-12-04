@@ -74,10 +74,10 @@ class HomeController extends Controller
                 $firstName = ucfirst($_POST['formFirstName']);
                 $lastName = ucfirst($_POST['formLastName']);
                 $formMessage = $_POST['formMessage'];
-                $header = "Envoi de message sur beltoise.com"; // TODO : changer le nom de domaine si nécessaire
+                $header = "Envoi de message sur sarlbeltoise.fr";
 
-                $messageSent = $firstName . ' ' . $lastName . ' vous a envoyé un message sur beltoise.com :'
-                    . "\r\n\r\n" . $formMessage . "\r\n\r\n" . 'E-mail : ' . $setFrom;
+                $messageSent = $firstName . ' ' . $lastName . ' vous a envoyé un message sur sarlbeltoise.fr :'
+                    . "\r\n\r\n" . $formMessage . "\r\n\r\n" . 'Adresse mail : ' . $setFrom;
 
                 require '../mailConfig.php';
 
